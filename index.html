@@ -1,0 +1,1566 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Teatro Español de Azul — Audioguía</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { height: 100%; }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: #111; color: #e8e0d4;
+    max-width: 430px; margin: 0 auto; min-height: 100vh;
+  }
+
+  /* ── SPLASH ── */
+  #splash {
+    position: fixed; inset: 0; max-width: 430px; margin: 0 auto;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: flex-end;
+    padding-bottom: 64px; z-index: 100;
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  #splash.out { opacity: 0; transform: translateY(-16px); pointer-events: none; }
+  .splash-bg {
+    position: absolute; inset: 0;
+    background: url('images/splash.webp') center/cover no-repeat;
+    opacity: 0.80;
+  }
+  .splash-gradient {
+    position: absolute; inset: 0;
+    background: linear-gradient(to top, #0e0e0e 48%, rgba(14,14,14,0.35) 100%);
+  }
+  .splash-content {
+    position: relative; z-index: 2;
+    display: flex; flex-direction: column; align-items: center;
+    gap: 6px; width: 100%;
+  }
+  .splash-eyebrow {
+    font-size: 10px; letter-spacing: 0.4em; text-transform: uppercase;
+    color: #c8a96e; margin-bottom: 4px;
+  }
+  .splash-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 34px; font-weight: 300; line-height: 1.15;
+    text-align: center; padding: 0 32px; color: #f0ebe3;
+  }
+  .splash-sub {
+    font-size: 11px; font-weight: 300; letter-spacing: 0.22em;
+    text-transform: uppercase; color: #666; margin-bottom: 38px;
+  }
+  .splash-langs {
+    display: flex; gap: 10px; flex-wrap: wrap;
+    justify-content: center; padding: 0 28px;
+  }
+  .lang-btn {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12);
+    color: #e8e0d4; border-radius: 100px;
+    padding: 10px 20px; font-family: 'DM Sans', sans-serif;
+    font-size: 14px; cursor: pointer;
+    display: flex; align-items: center; gap: 8px;
+    transition: background 0.2s, border-color 0.2s, color 0.2s;
+    backdrop-filter: blur(8px);
+  }
+  .lang-btn:hover { background: rgba(200,169,110,0.15); border-color: #c8a96e; color: #c8a96e; }
+
+  /* ── HEADER ── */
+  #header {
+    position: sticky; top: 0; z-index: 50;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 15px 20px;
+    background: rgba(17,17,17,0.94);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .header-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 16px; font-weight: 300; letter-spacing: 0.04em;
+    color: #e8e0d4; flex: 1; text-align: center;
+  }
+  .icon-btn {
+    background: none; border: none; color: #666; cursor: pointer;
+    padding: 6px; border-radius: 8px; line-height: 1;
+    display: flex; align-items: center; justify-content: center;
+    width: 36px; height: 36px; transition: color 0.2s;
+  }
+  .icon-btn:hover { color: #c8a96e; }
+
+  /* lang pill — minimal */
+  .lang-pill {
+    font-size: 11px; letter-spacing: 0.1em; font-weight: 500;
+    text-transform: uppercase; color: #666;
+    background: none; border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 4px; padding: 3px 7px; cursor: pointer;
+    font-family: 'DM Sans', sans-serif; transition: all 0.2s;
+    line-height: 1.4;
+  }
+  .lang-pill:hover { border-color: #c8a96e; color: #c8a96e; }
+
+  /* ── SLIDER ── */
+  .slider-wrap {
+    position: relative; width: 100%; aspect-ratio: 16/9;
+    overflow: hidden; background: #1a1a1a;
+  }
+  .slide {
+    position: absolute; inset: 0; width: 100%; height: 100%;
+    object-fit: cover; opacity: 0; transition: opacity 0.5s ease;
+  }
+  .slide.active { opacity: 1; }
+  video.slide { background: #000; }
+  .slider-nav {
+    position: absolute; top: 50%; transform: translateY(-50%);
+    background: rgba(0,0,0,0.42); border: none; color: #fff;
+    width: 32px; height: 32px; border-radius: 50%;
+    cursor: pointer; font-size: 17px;
+    display: flex; align-items: center; justify-content: center;
+    backdrop-filter: blur(4px); z-index: 2; transition: background 0.2s;
+  }
+  .slider-nav:hover { background: rgba(0,0,0,0.7); }
+  .slider-nav.prev { left: 12px; }
+  .slider-nav.next { right: 12px; }
+  .slider-dots {
+    position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%);
+    display: flex; gap: 6px; z-index: 2;
+  }
+  .slider-dot {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: rgba(255,255,255,0.3); border: none; cursor: pointer;
+    transition: background 0.2s; padding: 0;
+  }
+  .slider-dot.active { background: #c8a96e; }
+
+  /* ── ITEM INFO ── */
+  .item-info {
+    padding: 20px 20px 14px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .item-section-label {
+    font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase;
+    color: #c8a96e; margin-bottom: 6px;
+  }
+  .item-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 25px; font-weight: 300; line-height: 1.25; color: #f0ebe3;
+  }
+
+  /* ── PLAYER ── */
+  .player { padding: 18px 20px 16px; border-bottom: 1px solid rgba(255,255,255,0.06); }
+  .player-row { display: flex; align-items: center; gap: 16px; margin-bottom: 14px; }
+  .play-btn {
+    width: 48px; height: 48px; border-radius: 50%;
+    background: #c8a96e; border: none; color: #111;
+    font-size: 17px; cursor: pointer; flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    transition: transform 0.15s, background 0.2s;
+  }
+  .play-btn:hover { transform: scale(1.06); background: #d4b880; }
+  .player-meta { flex: 1; min-width: 0; }
+  .player-time { font-size: 12px; color: #888; letter-spacing: 0.04em; margin-bottom: 10px; }
+  .progress-track {
+    width: 100%; height: 3px; background: rgba(255,255,255,0.1);
+    border-radius: 2px; position: relative; cursor: pointer;
+  }
+  .progress-fill { height: 100%; background: #c8a96e; border-radius: 2px; width: 0%; transition: width 0.15s linear; }
+  .progress-thumb {
+    position: absolute; top: 50%; transform: translate(-50%,-50%);
+    width: 10px; height: 10px; border-radius: 50%; background: #c8a96e; left: 0%;
+  }
+  .read-btn {
+    display: flex; align-items: center; gap: 8px; width: 100%;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    color: #999; border-radius: 8px; padding: 10px 16px;
+    font-family: 'DM Sans', sans-serif; font-size: 13px; cursor: pointer;
+    transition: all 0.2s;
+  }
+  .read-btn:hover { background: rgba(200,169,110,0.08); border-color: #c8a96e; color: #c8a96e; }
+
+  /* progress indicator */
+  .item-progress {
+    font-size: 11px; color: #555; letter-spacing: 0.08em;
+    font-weight: 400; margin-top: 6px;
+  }
+  .item-progress-current { color: #c8a96e; font-weight: 500; }
+
+  /* prev / next navigation */
+  .item-nav {
+    display: flex; gap: 10px; padding: 14px 20px 16px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .item-nav-btn {
+    flex: 1; display: flex; align-items: center; gap: 8px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 8px; padding: 10px 14px;
+    cursor: pointer; transition: all 0.2s; color: #888;
+    font-family: 'DM Sans', sans-serif; font-size: 12px;
+    line-height: 1.3; text-align: left;
+  }
+  .item-nav-btn:hover:not(:disabled) { background: rgba(200,169,110,0.08); border-color: #c8a96e; color: #c8a96e; }
+  .item-nav-btn:disabled { opacity: 0.2; cursor: default; }
+  .item-nav-btn.next { text-align: right; justify-content: flex-end; }
+  .item-nav-btn svg { flex-shrink: 0; }
+  .item-nav-label { font-size: 11px; }
+
+  /* ── INLINE NAV ── */
+  .section-nav { padding: 4px 20px 36px; }
+
+  .nav-item {
+    display: flex; align-items: center; gap: 12px; width: 100%;
+    background: none; border: none; padding: 10px 10px;
+    border-radius: 8px; cursor: pointer; text-align: left; transition: background 0.2s;
+  }
+  .nav-item:hover { background: rgba(255,255,255,0.03); }
+  .nav-item.active { background: rgba(200,169,110,0.07); }
+  .nav-num {
+    width: 24px; height: 24px; border-radius: 50%; flex-shrink: 0;
+    border: 1px solid #444; background: none;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 11px; font-weight: 500; color: #666;
+    transition: border-color 0.2s, color 0.2s, background 0.2s;
+    font-variant-numeric: tabular-nums;
+  }
+  .nav-item.active .nav-num { border-color: #c8a96e; color: #c8a96e; background: rgba(200,169,110,0.08); }
+  .nav-item-label { font-size: 14px; color: #aaa; flex: 1; text-align: left; transition: color 0.2s; }
+  .nav-item.active .nav-item-label { color: #e8e0d4; }
+  .nav-item-dur { font-size: 11px; color: #555; }
+
+  /* group separators */
+  .nav-group-sep {
+    font-size: 9px; letter-spacing: 0.3em; text-transform: uppercase;
+    color: #666; padding: 12px 10px 4px;
+    border-top: 1px solid rgba(255,255,255,0.07); margin-top: 6px;
+  }
+  .nav-group-sep:first-of-type { border-top: none; margin-top: 0; }
+  .drawer-group-sep {
+    font-size: 9px; letter-spacing: 0.28em; text-transform: uppercase;
+    color: #666; padding: 10px 20px 4px;
+    border-top: 1px solid rgba(255,255,255,0.07); margin-top: 4px;
+  }
+
+  /* section heading as button */
+  .section-nav-heading {
+    font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase;
+    color: #777; padding: 20px 0 10px;
+    background: none; border: none; width: 100%; text-align: left;
+    cursor: pointer; font-family: 'DM Sans', sans-serif;
+    display: flex; align-items: center; gap: 6px;
+    transition: color 0.2s;
+  }
+  .section-nav-heading:hover { color: #c8a96e; }
+  .section-nav-heading::after {
+    content: "ⓘ"; font-size: 12px; opacity: 0.4; margin-left: 2px;
+    font-style: normal; letter-spacing: 0;
+  }
+  .section-nav-heading:hover::after { opacity: 0.8; }
+
+  /* splash close (visible only when lang already chosen) */
+  .splash-close {
+    position: absolute; top: 20px; right: 20px; z-index: 3;
+    background: rgba(255,255,255,0.08); border: none; color: #aaa;
+    border-radius: 50%; width: 32px; height: 32px; cursor: pointer;
+    display: none; align-items: center; justify-content: center;
+    transition: background 0.2s;
+  }
+  .splash-close.visible { display: flex; }
+  .splash-close:hover { background: rgba(255,255,255,0.15); color: #fff; }
+
+  /* ── DRAWER ── */
+  #drawer-overlay {
+    position: fixed; inset: 0; background: rgba(0,0,0,0.72);
+    z-index: 80; backdrop-filter: blur(5px);
+    opacity: 0; pointer-events: none; transition: opacity 0.3s;
+  }
+  #drawer-overlay.open { opacity: 1; pointer-events: all; }
+  #drawer {
+    position: fixed; top: 0; right: 0; bottom: 0; width: 285px;
+    background: #161616; z-index: 90;
+    transform: translateX(100%); transition: transform 0.35s cubic-bezier(.4,0,.2,1);
+    border-left: 1px solid rgba(255,255,255,0.06);
+    overflow-y: auto; display: flex; flex-direction: column;
+  }
+  #drawer.open { transform: translateX(0); }
+  .drawer-header {
+    padding: 18px 20px 16px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    display: flex; align-items: center; justify-content: space-between;
+    position: sticky; top: 0; background: #161616; z-index: 2;
+  }
+  .drawer-header-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 16px; font-weight: 300; color: #e8e0d4; line-height: 1.3;
+  }
+  .drawer-section-label {
+    font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase;
+    color: #c8a96e; padding: 18px 20px 8px;
+  }
+  .drawer-item {
+    display: flex; align-items: center;
+    background: none; border: none; width: 100%;
+    padding: 11px 20px; cursor: pointer; text-align: left;
+    transition: background 0.2s; gap: 10px;
+  }
+  .drawer-item:hover { background: rgba(255,255,255,0.03); }
+  .drawer-item.active { background: rgba(200,169,110,0.06); }
+  .drawer-item-num {
+    width: 22px; height: 22px; border-radius: 50%; flex-shrink: 0;
+    border: 1px solid #2a2a2a; background: transparent;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 10px; font-weight: 500; color: #777;
+    transition: border-color 0.2s, color 0.2s;
+    font-family: 'DM Sans', sans-serif;
+  }
+  .drawer-item.active .drawer-item-num { border-color: #c8a96e; color: #c8a96e; }
+  .drawer-item-text { font-size: 13px; color: #aaa; flex: 1; transition: color 0.2s; line-height: 1.4; }
+  .drawer-item.active .drawer-item-text { color: #e8e0d4; }
+  .drawer-item-dur { font-size: 11px; color: #555; white-space: nowrap; }
+
+  /* ── POPUP ── */
+  #popup-overlay {
+    position: fixed; inset: 0; background: rgba(0,0,0,0.82);
+    z-index: 95; backdrop-filter: blur(8px);
+    display: flex; align-items: flex-end;
+    opacity: 0; pointer-events: none; transition: opacity 0.3s;
+  }
+  #popup-overlay.open { opacity: 1; pointer-events: all; }
+  #popup {
+    background: #1c1b1b; width: 100%;
+    border-radius: 20px 20px 0 0;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding: 24px 24px 48px;
+    transform: translateY(24px); transition: transform 0.35s cubic-bezier(.4,0,.2,1);
+    max-height: 76vh; overflow-y: auto; position: relative;
+  }
+  #popup-overlay.open #popup { transform: translateY(0); }
+  .popup-handle {
+    width: 38px; height: 3px; border-radius: 2px;
+    background: rgba(255,255,255,0.1); margin: 0 auto 22px;
+  }
+  .popup-eyebrow { font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase; color: #c8a96e; margin-bottom: 8px; }
+  .popup-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 25px; font-weight: 300; color: #f0ebe3;
+    margin-bottom: 18px; line-height: 1.2;
+  }
+  .popup-body { font-size: 15px; line-height: 1.82; color: #bbb; font-weight: 300; }
+  .popup-close {
+    position: absolute; top: 18px; right: 18px;
+    background: rgba(255,255,255,0.05); border: none;
+    color: #777; border-radius: 50%; width: 30px; height: 30px;
+    cursor: pointer; font-size: 14px;
+    display: flex; align-items: center; justify-content: center; transition: background 0.2s;
+  }
+  .popup-close:hover { background: rgba(255,255,255,0.1); color: #ccc; }
+
+  #main { display: none; }
+
+  /* section intro popup */
+  #section-popup-overlay {
+    position: fixed; inset: 0; background: rgba(0,0,0,0.82);
+    z-index: 95; backdrop-filter: blur(8px);
+    display: flex; align-items: flex-end;
+    opacity: 0; pointer-events: none; transition: opacity 0.3s;
+  }
+  #section-popup-overlay.open { opacity: 1; pointer-events: all; }
+  #section-popup {
+    background: #1c1b1b; width: 100%;
+    border-radius: 20px 20px 0 0;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding: 24px 24px 40px;
+    transform: translateY(24px); transition: transform 0.35s cubic-bezier(.4,0,.2,1);
+    max-height: 70vh; overflow-y: auto; position: relative;
+  }
+  #section-popup-overlay.open #section-popup { transform: translateY(0); }
+  #section-popup-cta {
+    margin-top: 24px; display: flex; align-items: center; gap: 10px;
+    background: #c8a96e; border: none; color: #111;
+    border-radius: 8px; padding: 12px 20px; width: 100%;
+    font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 500;
+    cursor: pointer; justify-content: center; transition: background 0.2s;
+  }
+  #section-popup-cta:hover { background: #d4b880; }
+
+  /* splash dismiss area */
+  #splash-dismiss {
+    position: absolute; inset: 0; z-index: 1; cursor: pointer;
+  }
+</style>
+</head>
+<body>
+
+<script>
+const SITE = {
+  eyebrow: "Audioguía",
+  title: { es: "Teatro Español de Azul", en: "Teatro Español de Azul", pt: "Teatro Español de Azul", fr: "Teatro Español de Azul" },
+  subtitle: { es: "Audioguía oficial", en: "Official Audio Guide", pt: "Audioguia oficial", fr: "Audioguide officiel" },
+  readLabel: { es: "Leer descripción completa", en: "Read full description", pt: "Ler descrição completa", fr: "Lire la description" },
+  splashBg: "images/splash.webp",
+  // imagen que se muestra cuando un ítem no tiene assets propios
+  fallbackImage: "images/splash.webp"
+};
+
+const LANGS = [
+  { code: "es", flag: "🇦🇷", label: "Español" },
+  { code: "en", flag: "🇬🇧", label: "English" },
+  { code: "pt", flag: "🇧🇷", label: "Português" },
+  { code: "fr", flag: "🇫🇷", label: "Français" },
+];
+
+const SECTIONS = [
+
+  // ═══════════════════════════════════════════════════════════════
+  // CIRCUITO A — HISTÓRICO
+  // ═══════════════════════════════════════════════════════════════
+  {
+    id: "historico",
+    label: {
+      es: "Circuito A — Histórico",
+      en: "Circuit A — Historical",
+      pt: "Circuito A — Histórico",
+      fr: "Circuit A — Historique"
+    },
+    intro: {
+      es: "En este circuito vas a conocer el legado de un tesoro histórico y cultural en el corazón de la pampa argentina. Desde los inmigrantes españoles que lo soñaron hasta la comunidad que lo reconstruyó ladrillo a ladrillo durante 25 años.",
+      en: "In this circuit you'll discover the legacy of a historic and cultural treasure at the heart of the Argentine pampas — from the Spanish immigrants who dreamed it up to the community that rebuilt it brick by brick over 25 years.",
+      pt: "Neste circuito você vai conhecer o legado de um tesouro histórico e cultural no coração da pampa argentina, desde os imigrantes espanhóis que o sonharam até a comunidade que o reconstruiu tijolo a tijolo.",
+      fr: "Dans ce circuit, vous découvrirez l'héritage d'un trésor historique et culturel au cœur de la pampa argentine, des immigrants espagnols qui en ont rêvé à la communauté qui l'a reconstruit brique par brique."
+    },
+    items: [
+      {
+        id: "a01",
+        title: { es: "Bienvenida y memoria de los pioneros", en: "Welcome & Memory of the Pioneers", pt: "Boas-vindas e memória dos pioneiros", fr: "Bienvenue et mémoire des pionniers" },
+        duration: "2:30",
+        audioUrl: {
+          es: "audios/01/01-bienvenida-es.mp3",
+          en: "audios/01/01-bienvenida-en.mp3",
+          pt: "audios/01/01-bienvenida-pt.mp3",
+          fr: "audios/01/01-bienvenida-fr.mp3"
+        },
+        text: {
+          es: "Te damos la bienvenida al Teatro Español de Azul.\n\nEn esta audioguía vas a conocer el legado de un tesoro histórico, cultural y arquitectónico en el corazón de la pampa argentina. \n\nInaugurado en 1897—once años antes que el actual edificio del Teatro Colón de Buenos Aires—, este teatro nació de la fuerza y la ilusión de inmigrantes españoles que buscaban algo más que trabajo: buscaban un lugar para desarrollar la cultura y promover el encuentro.\n\nEste edificio es una cadena de sueños y manos que nunca dejaron de sostenerlo. Es el resultado de una comunidad entera empeñada en que este lugar siga vivo.",
+          en: "Welcome to the Teatro Español de Azul.\n\nIn this audio guide, you'll discover the legacy of a historic, cultural and architectural treasure at the heart of the Argentine pampas.\n\nOpened in 1897 — eleven years before the current Teatro Colón in Buenos Aires — this site was born of the spirit and determination of Spanish immigrants who sought more than work: they sought a place to develop culture and build community.\n\nIts Italian neoclassical style, horseshoe-shaped main hall, fine ornamental details and cast-iron columns seat 500 people.\n\nThis building is a living fragment of the culture those pioneers carried in their memory to plant in new soil — a testament to the ideal of progress of their era.",
+          pt: "Bem-vindo ao Teatro Español de Azul.\n\nNesta audioguia, você vai conhecer o legado de um tesouro histórico, cultural e arquitetônico no coração da pampa argentina.\n\nInaugurado em 1897 — onze anos antes do atual Teatro Colón de Buenos Aires —, este lugar nasceu da força e da ilusão de imigrantes espanhóis que buscavam mais do que trabalho: queriam um espaço para desenvolver cultura.",
+          fr: "Bienvenue au Teatro Español de Azul.\n\nDans cet audioguide, vous découvrirez l'héritage d'un trésor historique, culturel et architectural au cœur de la pampa argentine.\n\nInauguré en 1897 — onze ans avant l'actuel Teatro Colón de Buenos Aires —, ce lieu est né de la force et de l'enthousiasme d'immigrants espagnols qui cherchaient bien plus que du travail."
+        },
+        images: ["images/01/01.jpg", "images/01/02.jpg", "images/01/03.jpg",, "images/01/04.jpg", , "images/01/05.jpg", , "images/01/06.jpg"]
+      },
+      {
+        id: "a02",
+        title: { es: "1894–1897: la construcción", en: "1894–1897: The Construction", pt: "1894–1897: A construção", fr: "1894–1897: La construction" },
+        duration: "2:45",
+        audioUrl: {
+          es: "audios/02/02-construccion-es.mp3",
+          en: "audios/02/02-construccion-en.mp3",
+          pt: "audios/02/02-construccion-pt.mp3",
+          fr: "audios/02/02-construccion-fr.mp3"
+        },
+        text: {
+          es: "La construcción del Teatro Español fue un proyecto valiente que reflejó el ideal de progreso de aquella época y no estuvo exento de las tensiones propias de las grandes empresas.\n\n\n\nLa obra comenzó unos años antes de que Azul fuera declarada ciudad. Don Antonio Nieva, entonces presidente de la Asociación Española de Socorros Mutuos, donó los primeros diez mil ladrillos y lanzó una suscripción pública en el diario local para sumar a los vecinos.\n\n\n\nSe decidió que el edificio debía ser “de altos” y con una capacidad para 500 localidades para acompañar el crecimiento de la ciudad. Además, tendría un estilo neoclásico italiano con columnas en la fachada, materiales sólidos y techos altos que, como los grandes edificios del momento, mostraría la importancia del teatro. \n\n\n\nCada paso de la obra fue un esfuerzo colectivo y en tres años se abrió al público.",
+          en: "The construction of the Teatro Español was a brave project, not without the tensions inherent in great enterprises.\n\nDon Antonio Nieva, then president of the Spanish Mutual Aid Society, donated the first ten thousand bricks and launched a public subscription in the local newspaper.\n\nThe original plot proved too small and in 1893 was swapped for this one facing the main square. New plans were drawn up, and it was decided the building should be multi-storey, befitting the town's growth.\n\nEvery step of construction was a collective effort — the theatre taking shape alongside the community of Azul, which was declared a city in 1895.",
+          pt: "A construção do Teatro Español foi um projeto corajoso, não sem as tensões próprias dos grandes empreendimentos.\n\nDon Antonio Nieva doou os primeiros dez mil tijolos e lançou uma subscrição pública no jornal local. O terreno original foi trocado por este, em frente à praça principal, em 1893.",
+          fr: "La construction du Teatro Español fut un projet courageux, non sans les tensions propres aux grandes entreprises.\n\nDon Antonio Nieva fit don des dix mille premiers briques et lança une souscription publique dans le journal local. Le terrain original fut échangé contre celui-ci, face à la place principale, en 1893."
+        },
+        images: ["images/02/01.jpg", "images/02/02.jpg", "images/02/03.jpg", "images/02/04.jpg", "images/02/05.jpg", "images/02/06.jpg", "images/02/07.jpg", "images/02/08.jpg"]
+      },
+      {
+        id: "a03",
+        title: { es: "Decisiones quijotescas", en: "A Key Decision: The Moveable Floor", pt: "Uma decisão-chave: o piso móvel", fr: "Une décision clé : le plancher mobile" },
+        duration: "2:00",
+        audioUrl: {
+          es: "audios/03/03-decisiones-es.mp3",
+          en: "audios/03/03-decisiones-en.mp3",
+          pt: "audios/03/03-decisiones-pt.mp3",
+          fr: "audios/03/03-decisiones-fr.mp3"
+        },
+
+        images: ["images/03/01.jpg", "images/03/02.jpg", "images/03/03.jpg", "images/03/04.jpg"],
+
+        text: {
+          es: "Muchas de las decisiones de diseño desafiaron el sentido común y exigieron esfuerzos “quijotescos”. \n\n\n\nSe estaban terminando los cimientos en un terreno de la calle Burgos cuando se tomó una decisión drástica: había que mudarse a un terreno más grande.  Dejaron todo como estaba, hicieron planos nuevos y empezaron de vuelta en un terreno baldío que estaba frente a la plaza principal. \n\n\n\nEl piso del escenario fue un tema de discusión. Antonio Bugalló, el herrero local, había propuesto un sistema complejo que permitía subir y bajar el escenario. Los defensores de esta idea decían que permitiría realizar bailes y reuniones. Los que estaban en contra, en cambio, sostenían que era inseguro y un gasto innecesario. La solución llegó de una donación que vino con una cláusula: el piso debía ser móvil.",
+          pt: "Durante as obras surgiu uma pergunta que resume o espírito do projeto: a sala deveria ter piso fixo ou móvel?\n\nO ferreiro local Antonio Bugallo apresentou os planos para um sistema móvel. Joaquín Berdes ofereceu-se para perdoar uma dívida do Teatro com uma única condição: que o piso móvel fosse construído.",
+          fr: "Pendant les travaux, une question résuma l'esprit du projet : la salle devait-elle avoir un plancher fixe ou mobile ?\n\nLe forgeron local Antonio Bugallo soumit des plans pour un système mobile. Joaquín Berdes offrit de remettre une dette du Théâtre à une seule condition : que le plancher mobile soit construit."
+        },
+      },
+      {
+        id: "a04",
+        title: { es: "1897: La noche inaugural", en: "1897: The Inaugural Night", pt: "1897: A noite inaugural", fr: "1897: La nuit inaugurale" },
+        duration: "2:15",
+        audioUrl: {
+          es: "audios/04/04-inauguracion-es.mp3",
+          en: "audios/04/04-inauguracion-es.mp3",
+          pt: "audios/04/04-inauguracion-es.mp3",
+          fr: "audios/04/04-inauguracion-es.mp3"
+        },
+        text: {
+          es: "El 16 de enero de 1897, el Teatro Español abrió sus puertas aunque la fachada aún no estuviera terminada.  Los abonos para la función inaugural se agotaron enseguida.\n\n\n\nSe dispuso un gran faro a la entrada para iluminar los arcos del portal de entrada.\n\n\n\nEsa noche brillaron los vestidos, las alhajas y los peinados. El humorista gráfico Piombino contó que no hacía falta rigidez, pero sí sacar “la ropa de cristianar”, reservada para las grandes ocasiones.\n\n\n\nLa Compañía de teatro “Rico y Cos” presentó la zarzuela “La Tempestad” con un elenco de treinta artistas.",
+          en: "On January 16, 1897, the Teatro Español opened its doors. All subscriptions for the inaugural performance had sold out. And although the facade was still unfinished, a great beacon illuminated the arches of the entrance portal.\n\nThat night dresses, jewels and hairstyles sparkled. The graphic humorist Piombino noted that strict formality wasn't required, but one should bring out their 'christening clothes' — reserved for the grandest occasions.\n\nThe Rico y Cos Company presented the zarzuela La Tempestad with a cast of thirty artists.",
+          pt: "Em 16 de janeiro de 1897, o Teatro Español abriu suas portas com a casa esgotada. Embora a fachada ainda não estivesse terminada, um grande farol iluminava os arcos da entrada. A Companhia de Rico y Cos apresentou a zarzuela La Tempestad com trinta artistas.",
+          fr: "Le 16 janvier 1897, le Teatro Español ouvrit ses portes. Toutes les places pour la soirée inaugurale étaient vendues. Bien que la façade fût encore inachevée, un grand phare illuminait les arches du portail. La Compagnie de Rico y Cos présenta la zarzuela La Tempestad avec trente artistes."
+        },
+        images: ["images/04/01.jpg", "images/04/02.jpg", "images/04/03.jpg", "images/04/04.jpg", "images/04/05.jpg", "images/04/06.jpg", "images/04/07.jpg"]
+      },
+      {
+        id: "a05",
+        title: { es: "Primeros años: Vida, riesgo y comunidad", en: "Early Years: Life, Risk & Community", pt: "Primeiros anos: vida, risco e comunidade", fr: "Premières années : vie, risque et communauté" },
+        duration: "2:10",
+
+        audioUrl: {
+          es: "audios/05/05-inicios-es.mp3",
+          en: "audios/05/05-inicios-es.mp3",
+          pt: "audios/05/05-inicios-es.mp3",
+          fr: "audios/05/05-inicios-es.mp3"
+        },
+
+        text: {
+          es: "En sus primeros años, el teatro fue el centro de la vida social y la audacia cultural de la región. La comunidad se encontraba, compartía emociones y construía identidad.\n\n\n\nNi el invierno, ni el viento Pampero que se colaba en cada apertura del telón, detenían al público. Llegaban compañías de todo el país con funciones teatrales, musicales, sainetes, magia e ilusionismo.\n\n\n\nLa sala conservaba el espíritu de los antiguos corrales de comedia con palcos abiertos y butacas móviles que acercaban al público con la escena.",
+          en: "In its early years the theatre was the centre of social life and cultural daring in the region. The community gathered, shared emotions and built identity.\n\nNeither the winter cold nor the Pampero wind that crept in with every opening of the curtain stopped the audience. Companies arrived from across the country with theatrical, musical and variety performances, magic and illusion shows.\n\nThe hall preserved the spirit of the old Spanish comedy courtyards, with balustraded boxes and moveable seats that brought the audience close to the action.",
+          pt: "Nos primeiros anos, o teatro foi o centro da vida social da região. Nem o inverno nem o vento Pampeiro detinham o público. Chegavam companhias de todo o país com teatro, música, mágica e ilusionismo.",
+          fr: "Dans ses premières années, le théâtre fut le centre de la vie sociale de la région. Ni l'hiver ni le vent Pampero n'arrêtaient le public. Des troupes de tout le pays venaient présenter théâtre, musique, magie et illusionnisme."
+        },
+        images: ["images/05/01.jpg", "images/05/02.jpg", "images/05/03.jpg", "images/05/04.jpg", "images/05/05.jpg", "images/05/06.jpg", "images/05/07.jpg", "images/05/08.jpg", "images/05/09.jpg", "images/05/10.jpg", "images/05/11.jpg", "images/05/12.jpg", "images/05/13.jpg", "images/05/14.jpg", "images/05/15.jpg", "images/05/16.jpg", "images/05/17.jpg"]
+      },
+      {
+        id: "a06",
+        title: { es: "El cine llega al Teatro", en: "Cinema Arrives at the Theatre", pt: "O cinema chega ao teatro", fr: "Le cinéma arrive au théâtre" },
+        duration: "2:20",
+        audioUrl: {
+          es: "audios/06/06-cine-es.mp3",
+          en: "audios/06/06-cine-es.mp3",
+          pt: "audios/06/06-cine-es.mp3",
+          fr: "audios/06/06-cine-es.mp3"
+        },
+        text: {
+          es: "Pocas semanas después de la inauguración, en marzo de 1897, el diario anunciaba una novedad extraordinaria: el cinematógrafo llegaría al Teatro Español. Las imágenes se proyectarían a tamaño natural y ocuparían todo el escenario. \n\n\n\nEn esos tiempos las proyecciones eran realizadas por operadores ambulantes que iban de pueblo en pueblo mostrando cortometrajes de vida cotidiana, paisajes o máquinas. Con el avance del cine, pronto empezaron a llegar también películas. Al ser todas filmaciones mudas, la  presencia de un pianista era fundamental en la sala.  \n\n\n\nCerca de 1920 se compró un proyector francés marca “Pathé”. Este aparato había sido fabricado años antes y se manejaba con una manivela lateral que había que girar durante toda la película. ",
+          en: "Just weeks after the inauguration, in March 1897, the newspaper announced an extraordinary novelty: the cinematograph was coming to the Teatro Español. Images were projected life-size across the entire stage.\n\nThe Pathé projector now displayed in the foyer dates from 1905 and witnesses a story full of contrasts: popular fascination with technological progress first, then the damaging use of the hall as a cinema that accelerated its decay.\n\nBy the 1970s people said, with irony and sadness, that you could see real horror movies here — bats swooping over the audience. The splendour had long since faded…",
+          pt: "Poucas semanas após a inauguração, em março de 1897, o jornal anunciava o cinematógrafo. O projetor Pathé, exposto no hall, data de 1905. Nos anos 70 dizia-se que aqui se podiam ver filmes de terror reais, com morcegos sobrevoando a sala.",
+          fr: "Quelques semaines après l'inauguration, en mars 1897, le journal annonçait l'arrivée du cinématographe. Le projecteur Pathé, exposé dans le hall, date de 1905. Dans les années 70, on disait qu'on pouvait voir de vrais films d'horreur ici, les chauves-souris survolant la salle."
+        },
+        images: ["images/06/01.jpg", "images/06/02.jpg", "images/06/03.jpg", "images/06/04.jpg", "images/06/05.jpg", "images/06/06.jpg", "images/06/07.jpg"]
+      },
+      {
+        id: "a07",
+        title: { es: "1930: Modernización y transformación", en: "1930: Modernisation & Transformation", pt: "1930: Modernização e transformação", fr: "1930: Modernisation et transformation" },
+        duration: "2:00",
+        audioUrl: {
+          es: "audios/07/07-modernizacion-es.mp3",
+          en: "audios/07/07-modernizacion-es.mp3",
+          pt: "audios/07/07-modernizacion-es.mp3",
+          fr: "audios/07/07-modernizacion-es.mp3"
+        },
+        text: {
+          es: "Hacia la década del 30, Azul y la Argentina vivía tiempos de “vacas gordas” y el teatro buscó mejorar la experiencia del público.\n\n\n\nLa remodelación fue profunda: se trabajó en fortalecer estructuras, modernizar electricidad y mejorar la calefacción.\n\n\n\nSe renovaron las butacas y se desplazaron un metro hacia atrás las pesadas columnas de fundición del primer piso que interferían en la visión.\n\n\n\nLos palcos abiertos fueron cerrados para evitar “miradas indiscretas” a los tobillos de las damas que ya no usaban polleras hasta el piso. Se aprovechó esta modificación para decorarlos con molduras finas de yeso París.\n\n\n\nLa sala tomó un aire palaciego que dejaba atrás el estilo más popular de los años iniciales.",
+          en: "By the 1930s, Azul and Argentina were living through prosperous times, and the theatre sought to improve the audience experience.\n\nThe refurbishment was thorough: structural reinforcement, modernised electricity, heating and aesthetics. Seats were replaced and the cast-iron columns that blocked sightlines were moved back.\n\nThe old box balusters were replaced with Paris plaster mouldings, giving the hall a palatial air that still impresses today.",
+          pt: "Na década de 1930, o teatro buscou melhorar a experiência do público. A reforma foi profunda: estruturas reforçadas, eletricidade e aquecimento modernizados, colunas deslocadas. Os balaústres dos camarotes foram substituídos por molduras de gesso Paris.",
+          fr: "Dans les années 1930, le théâtre chercha à améliorer l'expérience du public. La rénovation fut profonde : structures renforcées, électricité et chauffage modernisés, colonnes déplacées. Les balustrades des loges furent remplacées par des moulures en plâtre de Paris."
+        },
+        images: ["images/07/01.jpg", "images/07/02.jpg", "images/07/03.jpg", "images/07/04.jpg", "images/07/05.jpg", "images/07/06.jpg"]
+      },
+      {
+        id: "a08",
+        title: { es: "Cambios inesperados", en: "Crisis & Decline", pt: "Crise e decadência", fr: "Crise et déclin" },
+        duration: "2:10",
+        audioUrl: {
+          es: "audios/08/08-cambios-es.mp3",
+          en: "audios/08/08-cambios-en.mp3",
+          pt: "audios/08/08-cambios-pt.mp3",
+          fr: "audios/08/08-cambios-fr.mp3"
+        },
+        text: {
+          es: "A partir de 1940 la sala empezó a decaer lentamente. \n\n\n\nLa baja del flujo inmigratorio y la oferta de hospitales y servicios de parte del Estado debilitó a la Asociación Española que ahora contaba con menos integrantes y no tenía el mismo poder de acción ni la demanda que antes. \n\n\n\nEl teatro fue dado en concesión a una empresa que no cuidó la sala ni hizo los mantenimientos adecuados. Como por esos años se había promulgado una ley de alquileres que prorrogaba los contratos indefinidamente, no había manera de exigir que se cumpliera con lo pactado y/o de revocar el acuerdo. \n\n\n\nA esto se sumó la inauguración del Cine Teatro San Martín con lugar para 1300 espectadores y una tecnología más moderna que hizo que muchos espectáculos migraran para esa sala. \n\n\n\nEl Teatro Español se iba apagando e ignorando, pero aún en pie, esperaba que alguien volviera a mirarlo.",
+          en: "The 1930s and 40s brought profound changes across the country.\n\nThe weakening flow of immigration affected the Spanish Association. In the 1940s, the opening of the modern Cine Teatro San Martín — capacity 1,500 — marked a turning point.\n\nA law that extended rental contracts indefinitely left the theatre in the hands of concessionaires who neglected the building. Without maintenance, the hall fell into progressive decay.\n\nOur Teatro Español was fading, overlooked — but still standing, waiting for someone to look its way again.",
+          pt: "As décadas de 1930 e 1940 trouxeram mudanças profundas. A inauguração do Cine Teatro San Martín (1.500 lugares) foi um ponto de ruptura. Uma lei prorrogou indefinidamente os aluguéis, deixando o teatro em mãos de concessionários negligentes.",
+          fr: "Les années 1930 et 1940 apportèrent de profonds changements. L'inauguration du Cine Teatro San Martín (1 500 places) marqua un tournant. Une loi prolongeant les baux indéfiniment laissa le théâtre entre des mains négligentes."
+        },
+        images: ["images/08/01.jpg", "images/08/02.jpg", "images/08/03.jpg", "images/08/04.jpg", "images/08/05.jpg", "images/08/06.jpg", "images/08/07.jpg", "images/08/08.jpg", "images/08/09.jpg", "images/08/10.jpg", "images/08/11.jpg", "images/08/12.jpg", "images/08/13.jpg", "images/08/14.jpg", "images/08/15.jpg", "images/08/16.jpg", "images/08/17.jpg", "images/08/18.jpg", , "images/08/19.jpg", "images/08/20.jpg"]
+      },
+      {
+        id: "a09",
+        title: { es: "Riesgo de desaparición y rescate", en: "Risk of Disappearance & Rescue", pt: "Risco de desaparecimento e resgate", fr: "Risque de disparition et sauvetage" },
+        duration: "2:20",
+
+      
+        audioUrl: {
+          es: "audios/09/09-riesgo-es.mp3",
+          en: "audios/09/09-riesgo-e.mp3",
+          pt: "audios/09/09-riesgo-pt.mp3",
+          fr: "audios/09/09-riesgo-fr.mp3"
+        },
+        
+        text: {
+          es: "A mediados de 1970 el teatro tenía tal abandono y descuido que estuvo a punto de ser demolido. \n\n\n\nEl piso del escenario estaba en mal estado, las butacas rotas, faltaban lámparas, muchas decoraciones de yeso se habían caído, había plagas…\n\n\n\nNada quedaba de las glorias de otros tiempos en donde las mejores compañías y artistas venían al teatro. Los espectadores que se aventuraban a entrar relataban el estado deplorable del lugar.  Se decía, con ironía y tristeza, que podían verse películas de terror reales porque los murciélagos sobrevolaban la sala. \n\n\n\nUna estrategia decisiva cambió el rumbo: en “sana complicidad” con la Asociación Española, la Municipalidad clausuró el teatro por razones de seguridad.\n\n\n\nEl edificio, volvió finalmente a manos de sus legítimos dueños.",
+          en: "In time the theatre faced the risk of demolition, and rumours of expropriation circulated.\n\nThe cartoonist Leovú in the newspaper El Tiempo caricatured the indignation of Don Manuel Sánchez Trespalacios — fierce champion of the theatre's recovery — at the idea of the building being seized.\n\nIn the mid-1970s a decisive strategy changed the course: in 'healthy complicity' with the Spanish Association, the Municipality closed the theatre on safety grounds.\n\nThe building, now in ruins, finally returned to its rightful owners.",
+          pt: "O teatro esteve em risco de demolição. Don Manuel Sánchez Trespalacios lutou ferrenhamente contra a expropriação. Em meados dos anos 70, a Municipalidade clausurou o teatro em 'sã cumplicidade' com a Associação Espanhola, devolvendo-o aos seus legítimos donos.",
+          fr: "Le théâtre courut le risque d'être démoli. Don Manuel Sánchez Trespalacios lutta farouchement contre l'expropriation. Au milieu des années 70, la Municipalité ferma le théâtre en 'saine complicité' avec l'Association Espagnole, le rendant à ses propriétaires légitimes."
+        },
+        images: ["images/09/01.jpg", "images/09/02.jpg", "images/09/03.jpg", "images/09/04.jpg", "images/09/05.jpg"]
+      },
+      {
+        id: "a10",
+        title: { es: "1978–2003: La reconstrucción", en: "1978–2003: The Reconstruction", pt: "1978–2003: A reconstrução", fr: "1978–2003: La reconstruction" },
+        duration: "3:00",
+        audioUrl: {
+          es: "audios/10/10-reconstruccion-es.mp3",
+          en: "audios/10/10-reconstruccion-en.mp3",
+          pt: "audios/10/10-reconstruccion-pt.mp3",
+          fr: "audios/10/10-reconstruccion-fr.mp3"
+        },
+        text: {
+          es: "El presidente de la asociación española de esos tiempos, Manuel Sánchez Trespalacios, tomó a su cargo la reconstrucción del teatro. Llamó personalmente a las personas que consideraba idóneas y armó tres comisiones de trabajo: administración, financiamiento y técnica.\n\n\n\nLas obras comenzaron sin un plan prefijado y sin saber de dónde iba a llegar el financiamiento. Los guiaba la convicción y el lema -desde arriba hacia abajo y desde atrás hacia adelante-\n\n\n\nSe consiguieron donaciones y se presentó un plan de abonos para funciones futuras. Además, muchas de las personas involucradas, se endeudaron para cumplir los plazos de pago. \n\n\n\nLa obra llevó 25 años y el esfuerzo y la perseverancia fueron fundamentales. Hubo que lidiar con deudas de años anteriores, una inundación que destruyó las butacas recién reparadas y una cantidad inesperada de problemas que se resolvieron con decisión, audacia y mucha imaginación.",
+
+          en: "Twenty-five years of work were needed to recover the entire building.\n\nThe guiding motto: 'from top to bottom and from back to front' — the opposite of what politics sometimes does.\n\nIt was serious, patient work: the Cultural Hall opened in 1980; the café reopened in 1982; the main hall was reinaugurated in 1992; the facade was restored in 1996; and in 2003 the Secretariat opened, marking the end of construction.\n\nThis chapter taught that effort, imagination and perseverance overcome abandonment — and that an organised community can reverse destinies that seem inevitable.",
+          pt: "Vinte e cinco anos de obras foram necessários. O lema: «de cima para baixo e de trás para a frente». Em 1980, o Salão Cultural; 1982, a confeitaria; 1992, a sala principal; 1996, a fachada; 2003, a Secretaria.",
+          fr: "Vingt-cinq ans de travaux furent nécessaires. La devise : « de haut en bas et de l'arrière vers l'avant ». 1980: Salle Culturelle; 1982: café; 1992: salle principale; 1996: façade; 2003: Secrétariat."
+        },
+        images: ["images/10/01.jpg", "images/10/02.jpg", "images/10/03.jpg", "images/10/04.jpg", "images/10/05.jpg", "images/10/06.jpg", "images/10/07.jpg", "images/10/08.jpg", "images/10/09.jpg", "images/10/10.jpg", "images/10/11.jpg", "images/10/12.jpg", "images/10/13.jpg", "images/10/14.jpg", "images/10/15.jpg", "images/10/16.jpg", "images/10/17.jpg", "images/10/18.jpg", , "images/10/19.jpg", "images/10/20.jpg", "images/10/21.jpg", "images/10/22.jpg", "images/10/23.jpg"]
+      },
+      {
+        id: "a11",
+        title: { es: "10 de octubre de 1992: La reinauguración", en: "October 10, 1992: The Reinauguration", pt: "10 de outubro de 1992: A reinauguração", fr: "10 octobre 1992: La réinauguration" },
+        duration: "2:30",
+        audioUrl: {
+          es: "audios/11/11-reinaguracion-es.mp3",
+          en: "audios/11/11-reinaguracion-es.mp3",
+          pt: "audios/11/11-reinaguracion-es.mp3",
+          fr: "audios/11/11-reinaguracion-es.mp3"
+        },
+        text: {
+          es: "La reinauguración fue un acontecimiento inolvidable.\n\n\n\nLa plaza San Martín se colmó de personas que escuchaban bandas juveniles mientras la persiana metálica del acceso se levantaba lentamente. Los festejos duraron tres jornadas, con el Ballet del Teatro Argentino de La Plata y elencos locales.\n\n\n\nEl Teatro Español volvía a latir, combinando el esplendor del siglo XIX con el confort requerido para el público de finales del XX y el desafío que significaba el siglo XXI y el nuevo milenio",
+          en: "The reinauguration was an unforgettable event.\n\nThe Plaza San Martín filled with people listening to youth bands as the metal shutter of the entrance rose slowly. The celebrations lasted three days, featuring the Ballet of the Teatro Argentino de La Plata and local ensembles.\n\nThe Teatro Español was beating again, combining 19th-century splendour with the comfort required by late-20th-century audiences and the challenge of the new millennium.",
+          pt: "A reinauguração foi inesquecível. A Plaza San Martín encheu-se de pessoas enquanto a persiana metálica da entrada subia lentamente. As festividades duraram três dias, com o Ballet do Teatro Argentino de La Plata e elencos locais.",
+          fr: "La réinauguration fut inoubliable. La Plaza San Martín se remplit de gens tandis que le rideau métallique de l'entrée se levait lentement. Les festivités durèrent trois jours avec le Ballet du Teatro Argentino de La Plata et des troupes locales."
+        },
+        images: ["images/11/01.jpg", "images/11/02.jpg", "images/11/03.jpg", "images/11/04.jpg", "images/11/05.jpg", "images/11/06.jpg", "images/11/07.jpg", "images/11/08.jpg"]
+      },
+      {
+        id: "a12",
+        title: { es: "Reconocimientos y distinciones", en: "Recognitions & Awards", pt: "Reconhecimentos e distinções", fr: "Reconnaissances et distinctions" },
+        duration: "1:50",
+        audioUrl: { es: "", en: "", pt: "", fr: "" },
+
+        audioUrl: {
+          es: "audios/12/12-reconocimientos-es.mp3",
+          en: "audios/12/12-reconocimientos-es.mp3",
+          pt: "audios/12/12-reconocimientos-es.mp3",
+          fr: "audios/12/12-reconocimientos-es.mp3"
+        },
+
+    
+        text: {
+          es: "Todo este esfuerzo colectivo no pasó desapercibido. La Provincia lo declaró Monumento Histórico y en 1996 llegó el gran reconocimiento: recibió el Premio Nacional de Patrimonio Edificado.\n\n\n\nEste premio fue compartido con el Palacio de Correos de Buenos Aires (Palacio Libertad-ex CCK) que había sido restaurado en ese tiempo. \n\n\n\nAzul demostró que una obra nacida de la voluntad de un pueblo puede estar a la par de los monumentos más importantes del país.",
+          en: "All this collective effort did not go unnoticed. First, the Province declared it a Historical Monument. But the great recognition came in 1996: the reconstruction project received the National Built Heritage Award.\n\nDo you know who shared the podium with our theatre at that moment?\n\nNone other than the restoration of the Buenos Aires Post Office — the imposing building now known as Palacio Libertad (formerly CCK). Azul proved that a work born of the will of a community can stand alongside the most important monuments in the country.",
+          pt: "Em 1996, o projeto de reconstrução recebeu o Prêmio Nacional de Patrimônio Edificado — dividindo o pódio com a restauração do Palácio dos Correios de Buenos Aires, hoje Palácio Libertad.",
+          fr: "En 1996, le projet de reconstruction reçut le Prix National du Patrimoine Bâti — partageant le podium avec la restauration du Palais des Postes de Buenos Aires, aujourd'hui Palacio Libertad."
+        },
+        images: ["images/12/01.jpg", "images/12/02.jpg", "images/12/03.jpg", "images/12/04.jpg", "images/12/05.jpg"]
+      },
+      {
+        id: "a13",
+        title: { es: "El teatro hoy y la Ciudad Cervantina", en: "The Theatre Today & Cervantes City", pt: "O teatro hoje e a Cidade Cervantina", fr: "Le théâtre aujourd'hui et la Cité Cervantine" },
+        duration: "2:00",
+
+      
+      audioUrl: {
+          es: "audios/13/13-hoy-es.mp3",
+          en: "audios/13/13-hoy-es.mp3",
+          pt: "audios/13/13-hoy-es.mp3",
+          fr: "audios/13/13-hoy-es.mp3"
+        },
+        
+        text: {
+          es: "La relación del teatro con lo cervantino es una marca que lo atraviesa en diferentes sentidos. \n\n\n\nLa construcción y reforma del teatro tuvo siempre espíritu quijotesco. Tanto los pioneros como los que vinieron después se embarcaron en ideas que parecían imposibles y que llevaron adelante con valor y audacia. Tenían un sueño más grande que ellos mismos. \n\n\n\nEn 1932 el señor Bartolomé Ronco, un vecino de la ciudad, redobló esta identidad: presentó su colección de “Quijotes” en el teatro. Pronto se supo que era una de las más grandes del mundo y estaba a unos pasos del teatro. Luego de su muerte y la de su esposa estos libros fueron donados para la comunidad, pero hubo que esperar a 2004 para que este patrimonio se difundiera por toda la ciudad. La gesta de la comisión española de ese momento con Carlos Filipetti a la cabeza y ya sin españoles de origen, logró que se abrieran las puertas y se difundiera en la sociedad entera. \n\n\n\nEn 2007 Azul fue nombrada «Ciudad Cervantina de la Argentina» por el Cervantes Virtual Center y pronto se organizó el festival Cervantino. Un evento que se realiza todos los años en el mes de octubre reuniendo a la población en torno a obras de teatro, desfiles, actividades en la plaza y encuentros de académicos",
+          en: "Today the Teatro Español is a space of cultural leadership and an engine of local development. From the powerhouse that first supplied electric light to Azul's central square in 1897 to its central role in the 'Azul Ciudad Cervantina' project, it has been an icon of encounter and inspiration.\n\nOwned by the Spanish Association and managed by the Teatro Español de Azul Foundation since 2013, this building demonstrates that culture is not a luxury, but a powerful tool for building identity and collectively imagining the future.",
+          pt: "Hoje, o Teatro Español é um espaço de liderança cultural e motor de desenvolvimento local. Propriedade da Associação Espanhola e gerido pela Fundação do Teatro Español de Azul desde 2013.",
+          fr: "Aujourd'hui, le Teatro Español est un espace de leadership culturel. Propriété de l'Association Espagnole et géré par la Fondation du Teatro Español de Azul depuis 2013."
+        },
+        images: ["images/13/01.jpg", "images/13/02.jpg", "images/13/03.jpg", "images/13/04.jpg", "images/13/05.jpg", "images/13/06.jpg", "images/13/07.jpg", "images/13/08.jpg", "images/13/09.jpg", "images/13/10.jpg", "images/13/11.jpg", "images/13/12.jpg", "images/13/13.jpg", "images/13/14.jpg", "images/13/15.jpg"]
+      },
+      {
+        id: "a14",
+        title: { es: "Memoria activa y continuidad", en: "Active Memory & Continuity", pt: "Memória ativa e continuidade", fr: "Mémoire active et continuité" },
+        duration: "1:30",
+
+        audioUrl: {
+          es: "audios/14/14-memoria-es.mp3",
+          en: "audios/14/14-memoria-es.mp3",
+          pt: "audios/14/14-memoria-es.mp3",
+          fr: "audios/14/14-memoria-es.mp3"
+        },
+        
+
+
+        text: {
+          es: "La historia del Teatro Español es memoria en movimiento.\n\n\n\nCada generación que se sienta en estas butacas suma una capa nueva al relato.\n\n\n\nLa continuidad no se hereda, se construye todos los días con respeto por lo recibido y libertad para innovar.\n\n\n\nSi hay algo que une toda esta historia, es la voluntad colectiva.\n\n\n\nDesde sus pioneros hasta hoy, el teatro nos enseña que los sueños se sostienen con compromiso y trabajo compartido.\n\n\n\nAl recorrer estas salas, estás entrando en una historia que sigue escribiéndose función tras función.\n\n\n\nGracias por ser parte de este camino.",
+          en: "The history of the Teatro Español is memory in motion.\n\nEvery generation that sits in these seats adds a new layer to the story.\n\nContinuity is not inherited — it is built every day, with respect for what has been received and freedom to innovate.",
+          pt: "A história do Teatro Español é memória em movimento. Cada geração que se senta nestas poltronas acrescenta uma nova camada à narrativa. A continuidade não se herda, constrói-se todos os dias.",
+          fr: "L'histoire du Teatro Español est une mémoire en mouvement. Chaque génération qui s'assoit dans ces fauteuils ajoute une nouvelle couche au récit. La continuité ne s'hérite pas, elle se construit chaque jour."
+        },
+        images: ["images/14/01.jpg", "images/14/02.jpg", "images/14/03.jpg", "images/14/04.jpg", "images/14/05.jpg"]
+      }
+      
+    ]
+  },
+
+  // ═══════════════════════════════════════════════════════════════
+  // CIRCUITO B — ARQUITECTÓNICO + TECNOLOGÍA Y EQUIPAMIENTO
+  // ═══════════════════════════════════════════════════════════════
+  {
+    id: "arquitectonico",
+    label: {
+      es: "Circuito B — Arquitectónico",
+      en: "Circuit B — Architectural",
+      pt: "Circuito B — Arquitetônico",
+      fr: "Circuit B — Architectural"
+    },
+    intro: {
+      es: "Este circuito te invita a leer el edificio como un documento vivo. Desde la fachada hasta los camarines, cada detalle cuenta la historia de quienes lo construyeron, lo perdieron y lo recuperaron con sus propias manos.",
+      en: "This circuit invites you to read the building as a living document. From the facade to the dressing rooms, every detail tells the story of those who built it, lost it, and reclaimed it with their own hands.",
+      pt: "Este circuito convida você a ler o edifício como um documento vivo. Da fachada aos camarins, cada detalhe conta a história de quem o construiu, perdeu e recuperou com as próprias mãos.",
+      fr: "Ce circuit vous invite à lire le bâtiment comme un document vivant. De la façade aux loges, chaque détail raconte l'histoire de ceux qui l'ont construit, perdu et récupéré de leurs propres mains."
+    },
+    items: [
+      // ── EL FRENTE ────────────────────────────────────────────────
+      {
+        id: "b01",
+        group: { es: "El frente", en: "The Facade", pt: "A fachada", fr: "La façade" },
+        title: { es: "El frente: una reconstrucción paciente", en: "The Facade: A Patient Reconstruction", pt: "A fachada: uma reconstrução paciente", fr: "La façade: une reconstruction patiente" },
+        duration: "2:00",
+        audioUrl: { es: "", en: "", pt: "", fr: "" },
+        text: {
+          es: "Levantá la vista.\n\nLo que ves a casi 18 metros de altura fue una verdadera proeza.\n\nEntre 1994 y 1996, el frentista Lamberti trabajó aquí arriba desafiando la gravedad… ¡y con un brazo enyesado!\n\nObservá la delicadeza de los detalles; se recuperaron usando mano de obra local y andamios diseñados especialmente.\n\nUn secreto: fijate en el friso anterior a la cornisa. Ahí arriba, en el último modillón colocado, descansa una botella con un mensaje oculto para las generaciones futuras. Algún día, alguien lo encontrará.",
+          en: "Look up.\n\nWhat you see nearly 18 metres above was a genuine feat.\n\nBetween 1994 and 1996, plasterer Lamberti worked up here defying gravity… with one arm in plaster!\n\nNotice the delicacy of the details — recovered using local labour and specially designed scaffolding.\n\nA secret: look at the frieze just below the cornice. Up there, in the last modillion placed, rests a bottle with a hidden message for future generations. One day, someone will find it.",
+          pt: "Olhe para cima. O que você vê a quase 18 metros de altura foi uma verdadeira proeza. Entre 1994 e 1996, o estuquista Lamberti trabalhou aqui em cima desafiando a gravidade — com um braço engessado! No último modilhão colocado descansa uma garrafa com uma mensagem para as gerações futuras.",
+          fr: "Levez les yeux. Ce que vous voyez à près de 18 mètres de hauteur fut une véritable prouesse. Entre 1994 et 1996, le façadier Lamberti travailla là-haut en défiant la gravité — avec un bras dans le plâtre ! Dans le dernier modillon posé repose une bouteille avec un message pour les générations futures."
+        },
+        images: ["https://images.unsplash.com/photo-1555993539-1732b0258235?w=800&q=80"]
+      },
+      {
+        id: "b02",
+        group: { es: "El frente", en: "The Facade", pt: "A fachada", fr: "La façade" },
+        title: { es: "La marquesina y la persiana de acceso", en: "The Canopy & Entrance Shutter", pt: "A marquise e a persiana de acesso", fr: "Le auvent et le rideau d'entrée" },
+        duration: "1:50",
+        audioUrl: { es: "", en: "", pt: "", fr: "" },
+        text: {
+          es: "Detente bajo la marquesina de hierro fundido.\n\nEn los años 90, su restauración parecía un sueño imposible por los costos, hasta que apareció «Manolete» (Jorge Vila), el concesionario de la confitería, y decidió financiarla él mismo.\n\nPara mover esta mole de arte, se necesitaron grúas militares.\n\nMirá los tonos dorados y bronceados: se terminaron de ajustar «in situ» mientras el público ya entraba el día de la reinauguración.",
+          en: "Stop under the cast-iron canopy.\n\nIn the 1990s its restoration seemed an impossible dream due to costs — until 'Manolete' (Jorge Vila), the café concession-holder, decided to finance it himself.\n\nMoving this mass of art required military cranes.\n\nNotice the gold and bronze tones: the finishing touches were applied on-site while the public was already entering on the day of the reinauguration.",
+          pt: "Pare sob a marquise de ferro fundido. Nos anos 90, sua restauração parecia impossível — até que 'Manolete' (Jorge Vila), o concessionário da confeitaria, decidiu financiá-la. Para mover essa massa de arte foram necessárias gruas militares.",
+          fr: "Arrêtez-vous sous l'auvent en fonte. Dans les années 90, sa restauration semblait impossible — jusqu'à ce que 'Manolete' (Jorge Vila), le concessionnaire du café, décide de la financer lui-même. Des grues militaires furent nécessaires pour déplacer cette masse d'art."
+        },
+        images: ["https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800&q=80"]
+      },
+      {
+        id: "b03",
+        group: { es: "El frente", en: "The Facade", pt: "A fachada", fr: "La façade" },
+        title: { es: "La rampa: integración y respeto", en: "The Ramp: Integration & Respect", pt: "A rampa: integração e respeito", fr: "La rampe: intégration et respect" },
+        duration: "1:20",
+        audioUrl: { es: "", en: "", pt: "", fr: "" },
+        text: {
+          es: "Caminá hacia el lateral que colinda con la Catedral.\n\nNotarás que la rampa no parece un «parche» moderno, sino que fluye con el estilo neogótico del entorno.\n\nSe inauguró en 2001 y es el símbolo de una convicción: hacer las cosas bien, aunque lleve más tiempo, para que el teatro sea de todos.",
+          en: "Walk towards the side adjoining the Cathedral.\n\nYou'll notice the ramp doesn't feel like a modern 'patch' — it flows with the neo-Gothic style of the surroundings.\n\nIt was inaugurated in 2001 and is the symbol of a conviction: to do things properly, even if it takes longer, so that the theatre belongs to everyone.",
+          pt: "Caminhe em direção ao lado que faz divisa com a Catedral. A rampa não parece um 'remendo' moderno — flui com o estilo neogótico do entorno. Foi inaugurada em 2001.",
+          fr: "Marchez vers le côté jouxtant la Cathédrale. La rampe ne ressemble pas à un 'rajout' moderne — elle s'intègre au style néo-gothique des environs. Elle fut inaugurée en 2001."
+        },
+        images: ["https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80"]
+      },
+      // ── EL HALL ──────────────────────────────────────────────────
+      {
+        id: "b04",
+        group: { es: "El hall de entrada", en: "The Entrance Hall", pt: "O hall de entrada", fr: "Le hall d'entrée" },
+        title: { es: "El hall: umbral y bienvenida", en: "The Hall: Threshold & Welcome", pt: "O hall: umbral e boas-vindas", fr: "Le hall: seuil et bienvenue" },
+        duration: "1:50",
+        audioUrl: { es: "", en: "", pt: "", fr: "" },
+        text: {
+          es: "Entrá y dejá que el espacio te reciba.\n\nEste es el «umbral». Durante la reconstrucción, aquí solo se veían ladrillos y madera vieja. Los cielorrasos originales debieron ser desmontados quedando a la vista las frágiles bovedillas de ladrillos y madera que sostenían el Salón Cultural de la Planta Alta.\n\nRecuperar el hall implicó mucho más que embellecerlo. Significó devolverle su función simbólica: prepararte y dejar atrás el ruido de la calle para entrar en la expectativa del espectáculo.",
+          en: "Enter and let the space receive you.\n\nThis is the 'threshold'. During reconstruction, only bricks and old timber were visible here. The original ceilings had to be dismantled, exposing the fragile brick-and-timber vaults supporting the Cultural Hall on the upper floor.\n\nRecovering the hall meant far more than beautifying it. It meant restoring its symbolic function: preparing you, leaving the noise of the street behind, and entering the anticipation of the performance.",
+          pt: "Entre e deixe o espaço recebê-lo. Este é o 'umbral'. Durante a reconstrução, só havia tijolos e madeira velha. Recuperar o hall significou restaurar sua função simbólica: preparar o espectador para o espetáculo.",
+          fr: "Entrez et laissez l'espace vous accueillir. C'est le 'seuil'. Pendant la reconstruction, il n'y avait ici que briques et vieille charpente. Récupérer le hall signifiait restaurer sa fonction symbolique : vous préparer au spectacle."
+        },
+        images: ["https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=800&q=80"]
+      },
+      {
+        id: "b05",
+        group: { es: "El hall de entrada", en: "The Entrance Hall", pt: "O hall de entrada", fr: "Le hall d'entrée" },
+        title: { es: "Cielorrasos y frisos: artesanía recuperada", en: "Ceilings & Friezes: Recovered Craftsmanship", pt: "Forros e frisos: artesanato recuperado", fr: "Plafonds et frises: artisanat récupéré" },
+        duration: "1:50",
+        audioUrl: { es: "", en: "", pt: "", fr: "" },
+        text: {
+          es: "Mirá hacia arriba.\n\nEsos cielorrasos esconden un pasado industrial: se sostienen con vigas del antiguo Banco Nación. Pero lo que ves es puro arte.\n\nLos yeseros locales Gilardi y Mirón colocaron una a una las casi 200 piezas y rosetones que Carlos Pérez Ortiz fabricó en moldes de caucho siliconado.\n\nEl modillón —esa pieza ornamental que se repite— se convirtió en el símbolo de toda la reconstrucción.",
+          en: "Look up.\n\nThose ceilings hide an industrial past: they are supported by beams from the old Banco Nación. But what you see is pure art.\n\nLocal plasterers Gilardi and Mirón placed one by one the nearly 200 pieces and rosettes that Carlos Pérez Ortiz made in silicone rubber moulds.\n\nThe modillion — that repeating ornamental piece — became the symbol of the entire reconstruction.",
+          pt: "Olhe para cima. Esses forros escondem um passado industrial: sustentam-se com vigas do antigo Banco Nación. Os gesseiros locais Gilardi e Mirón colocaram uma a uma as quase 200 peças fabricadas por Carlos Pérez Ortiz.",
+          fr: "Regardez en haut. Ces plafonds cachent un passé industriel : ils reposent sur des poutres de l'ancien Banco Nación. Les plâtriers locaux Gilardi et Mirón ont posé une à une les quelque 200 pièces fabriquées par Carlos Pérez Ortiz."
+        },
+        images: ["https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=800&q=80"]
+      },
+      {
+        id: "b06",
+        group: { es: "El hall de entrada", en: "The Entrance Hall", pt: "O hall de entrada", fr: "Le hall d'entrée" },
+        title: { es: "Las arañas y las tulipas", en: "The Chandeliers & Tulip Shades", pt: "As araras e as tulipas", fr: "Les lustres et les tulipes" },
+        duration: "2:00",
+        audioUrl: { es: "", en: "", pt: "", fr: "" },
+        text: {
+          es: "Ubicá la gran araña de bronce dorado a la hoja que domina el centro; se colocó en 1991, pero parece haber estado siempre. Fue adquirida por la Asociación Española y conserva todos sus ornamentos originales.\n\nAhora buscá la que está frente a la boletería: fue rescatada de un depósito de escenografía y se cree que es la original de 1897.\n\nUn detalle de orgullo: las tulipas de esa araña y de las antorchas de la escalera son de opalina francesa original. El proveedor quiso cambiarlas por nuevas, pero el teatro dijo «no». Son las originales y con eso no se negocia.",
+          en: "Find the large gold leaf–gilded bronze chandelier dominating the centre; placed in 1991, it looks as if it has always been there. Acquired by the Spanish Association, it retains all its original ornaments.\n\nNow find the one facing the box office: rescued from a scenery store, it is believed to be the original from 1897.\n\nA point of pride: the tulip shades on that chandelier and the staircase torches are original French opaline glass. The supplier wanted to replace them with new ones, but the theatre said 'no'. They are the originals and that is non-negotiable.",
+          pt: "Encontre o grande lustre de bronze dourado a ouro que domina o centro — colocado em 1991, parece ter sempre estado ali. O lustre em frente à bilheteria é o original de 1897. As tulipas são de opalina francesa original — o fornecedor queria substituí-las, mas o teatro disse não.",
+          fr: "Trouvez le grand lustre en bronze doré à la feuille qui domine le centre — posé en 1991, il semble y avoir toujours été. Le lustre face à la billetterie serait l'original de 1897. Les tulipes sont en opaline française originale — le fournisseur voulait les remplacer, mais le théâtre a dit non."
+        },
+        images: ["https://images.unsplash.com/photo-1573164574572-cb89e39749b4?w=800&q=80"]
+      },
+      {
+        id: "b07",
+        group: { es: "El hall de entrada", en: "The Entrance Hall", pt: "O hall de entrada", fr: "Le hall d'entrée" },
+        title: { es: "Los vitrales", en: "The Stained Glass Windows", pt: "Os vitrais", fr: "Les vitraux" },
+        duration: "1:40",
+        audioUrl: { es: "", en: "", pt: "", fr: "" },
+        text: {
+          es: "Buscá con la mirada el vitral sobre la puerta de la sala.\n\nDurante un siglo, ese espacio estuvo vacío.\n\nEl artista azuleño Daniel Cogliatti logró, mediante tres cocciones de vidrio, darle a ese vitral la luz definitiva que se había soñado cien años atrás. La realización de estas piezas exigía una técnica compleja: vidrios pigmentados, pintados y horneados en tres cocciones.\n\nCon su trabajo el hall recuperó ese artefacto decorativo que le faltaba.",
+          en: "Look for the stained glass window above the hall door.\n\nFor a century, that space was empty.\n\nAzul artist Daniel Cogliatti achieved through three firings of glass the definitive light that had been dreamed of a hundred years earlier. Creating these pieces required complex technique: pigmented, painted and kiln-fired glass in three stages.\n\nWith his work the hall recovered the decorative element it had always lacked.",
+          pt: "Procure o vitral acima da porta da sala. Durante um século, esse espaço ficou vazio. O artista Daniel Cogliatti conseguiu, mediante três cozeduras de vidro, dar a esse vitral a luz definitiva sonhada cem anos antes.",
+          fr: "Cherchez le vitrail au-dessus de la porte de la salle. Pendant un siècle, cet espace est resté vide. L'artiste Daniel Cogliatti a réussi, par trois cuissons du verre, à donner à ce vitrail la lumière définitive rêvée cent ans plus tôt."
+        },
+        images: ["https://images.unsplash.com/photo-1524985069026-dd778a71c7b4?w=800&q=80"]
+      },
+      {
+        id: "b08",
+        group: { es: "El hall de entrada", en: "The Entrance Hall", pt: "O hall de entrada", fr: "Le hall d'entrée" },
+        title: { es: "La boletería", en: "The Box Office", pt: "A bilheteria", fr: "La billetterie" },
+        duration: "1:20",
+        audioUrl: { es: "", en: "", pt: "", fr: "" },
+        text: {
+          es: "Acercate a la boletería.\n\nEl mostrador de madera reemplazó a una vieja ventana enrejada.\n\nBuscá el vitral quijotesco de Omar Carreras —un guiño a Azul como Ciudad Cervantina— y el grabado de Gardel del artista azuleño Adolfo Godoy.\n\nEs el primer punto de contacto entre el espectador y el artista.",
+          en: "Approach the box office.\n\nThe wooden counter replaced an old barred window.\n\nLook for the Quixote-themed stained glass by Omar Carreras — a nod to Azul as a Cervantine City — and the Gardel engraving by Azul artist Adolfo Godoy.\n\nThis is the first point of contact between spectator and artist.",
+          pt: "Aproxime-se da bilheteria. O balcão de madeira substituiu uma velha janela gradeada. Procure o vitral quixotesco de Omar Carreras e o gravado de Gardel do artista Adolfo Godoy.",
+          fr: "Approchez-vous de la billetterie. Le comptoir en bois a remplacé une vieille fenêtre à barreaux. Cherchez le vitrail quichottesque d'Omar Carreras et la gravure de Gardel de l'artiste Adolfo Godoy."
+        },
+        images: ["https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80"]
+      },
+      {
+        id: "b09",
+        group: { es: "El hall de entrada", en: "The Entrance Hall", pt: "O hall de entrada", fr: "Le hall d'entrée" },
+        title: { es: "Los pisos", en: "The Floors", pt: "Os pisos", fr: "Les sols" },
+        duration: "1:20",
+        audioUrl: { es: "", en: "", pt: "", fr: "" },
+        text: {
+          es: "Los pisos graníticos del hall fueron colocados durante la remodelación de 1930. Al restaurarse el teatro en los 90, era imposible reproducir exactamente los tonos originales.\n\nLa solución fue generar un contraste deliberado: en el sector lindero a la sala se colocaron pisos graníticos negros, marcando un límite visual y funcional entre el hall y el espacio escénico.\n\nFue una decisión sencilla y efectiva que ordena el recorrido y hoy acompaña la transición hacia la sala.",
+          en: "The granite floors of the hall were laid during the 1930 refurbishment. When the theatre was restored in the 1990s, exactly reproducing the original tones was impossible.\n\nThe solution was deliberate contrast: black granite floors were placed in the section adjoining the hall, marking a visual and functional boundary between the hall and the performance space.\n\nA simple, effective decision that organises the circulation and today guides the transition into the hall.",
+          pt: "Os pisos graníticos do hall foram colocados na reforma de 1930. Nos anos 90, era impossível reproduzir exatamente os tons originais. A solução foi um contraste deliberado: pisos graníticos pretos no setor contíguo à sala.",
+          fr: "Les sols en granit du hall furent posés lors de la rénovation de 1930. Dans les années 90, reproduire exactement les teintes originales était impossible. La solution fut un contraste délibéré : des sols en granit noir dans le secteur adjacent à la salle."
+        },
+        images: ["https://images.unsplash.com/photo-1555993539-1732b0258235?w=800&q=80"]
+      },
+      // ── LA SALA ──────────────────────────────────────────────────
+      {
+        id: "b10",
+        group: { es: "La sala", en: "The Hall", pt: "A sala", fr: "La salle" },
+        title: { es: "La sala: forma, historia y mirada", en: "The Hall: Form, History & Gaze", pt: "A sala: forma, história e olhar", fr: "La salle: forme, histoire et regard" },
+        duration: "2:00",
+        audioUrl: { es: "", en: "", pt: "", fr: "" },
+        text: {
+          es: "Estás en el corazón del teatro. Esta sala neoclásica «a la italiana» tiene la clásica forma de herradura y capacidad para 500 espectadores.\n\nUn dato para dimensionar su valor: se construyó entre 1894 y 1897, once años antes de que se inaugurara el actual edificio del Teatro Colón en Buenos Aires.\n\nConsta de tres plantas y, aunque hoy ves los palcos cerrados con molduras, en sus inicios estaban abiertos, con balaustres visibles, al estilo de los antiguos corrales de comedias españoles.",
+          en: "You are at the heart of the theatre. This Italian-style neoclassical hall has the classic horseshoe shape and seats 500.\n\nA figure to put its value in perspective: it was built between 1894 and 1897, eleven years before the current Teatro Colón in Buenos Aires was inaugurated.\n\nIt has three levels, and although today you see the boxes closed with mouldings, originally they were open with visible balusters, in the style of the old Spanish comedy courtyards.",
+          pt: "Você está no coração do teatro. Esta sala neoclássica 'à italiana' tem a clássica forma de ferradura e capacidade para 500 espectadores. Foi construída entre 1894 e 1897, onze anos antes do atual Teatro Colón.",
+          fr: "Vous êtes au cœur du théâtre. Cette salle néoclassique 'à l'italienne' a la forme classique en fer à cheval et accueille 500 spectateurs. Elle fut construite entre 1894 et 1897, onze ans avant l'actuel Teatro Colón."
+        },
+        images: ["https://images.unsplash.com/photo-1517457373958-b7bdd4587205?w=800&q=80"]
+      },
+      {
+        id: "b11",
+        group: { es: "La sala", en: "The Hall", pt: "A sala", fr: "La salle" },
+        title: { es: "Pintura y decorados: recuperar el color", en: "Paint & Decoration: Recovering Colour", pt: "Pintura e decoração: recuperar a cor", fr: "Peinture et décor: retrouver la couleur" },
+        duration: "1:50",
+        audioUrl: { es: "", en: "", pt: "", fr: "" },
+        text: {
+          es: "Observá los capiteles de las columnas. ¿Ves ese tono oscuro?\n\nDurante los años de abandono, la sala perdió su brillo y fue pintada de un tono celeste sin criterio histórico.\n\nPara recuperar los colores originales, se hizo un trabajo de «detectives»: se investigó detrás de marcos y varillas hasta encontrar las capas ocultas.\n\nEn 1992, el famoso «marrón africano» se eligió tras intensos debates para devolverle la identidad a la sala.",
+          en: "Look at the column capitals. Do you see that dark tone?\n\nDuring the years of abandonment the hall lost its lustre and was painted sky-blue without any historical criteria.\n\nRecovering the original colours required detective work: investigating behind frames and rods to find the hidden layers.\n\nIn 1992, the famous 'African brown' was chosen after intense debate to restore the hall's identity.",
+          pt: "Observe os capitéis das colunas. Durante os anos de abandono, a sala foi pintada de azul celeste sem critério histórico. Em 1992, o famoso 'marrom africano' foi escolhido após intensos debates.",
+          fr: "Observez les chapiteaux des colonnes. Pendant les années d'abandon, la salle fut peinte en bleu ciel sans aucun critère historique. En 1992, le fameux 'brun africain' fut choisi après d'intenses débats."
+        },
+        images: ["https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=800&q=80"]
+      },
+      {
+        id: "b12",
+        group: { es: "La sala", en: "The Hall", pt: "A sala", fr: "La salle" },
+        title: { es: "El empapelado: sonido y estética", en: "The Wallpaper: Sound & Aesthetics", pt: "O papel de parede: som e estética", fr: "Le papier peint: son et esthétique" },
+        duration: "1:40",
+        audioUrl: { es: "", en: "", pt: "", fr: "" },
+        text: {
+          es: "El empapelado bordó que ves no es solo decorativo; es una pieza clave de la acústica.\n\nSe analizaron muchísimas opciones hasta que el importador Dante Artemisi trajo muestras a Azul para evaluarlas «in situ».\n\nSon papeles opacos, sin componentes acrílicos, traídos de Estados Unidos para evitar que el sonido rebote o se distorsione.\n\nGracias a esa elección técnica, hoy disfrutamos de una nitidez sonora de excelencia.",
+          en: "The burgundy wallpaper you see is not merely decorative — it is a key component of the acoustics.\n\nCountless options were analysed until importer Dante Artemisi brought samples to Azul to evaluate them on-site.\n\nThey are matte papers, free of acrylic compounds, brought from the United States to prevent sound from bouncing or distorting.\n\nThanks to that technical choice, today we enjoy exceptional sound clarity.",
+          pt: "O papel de parede bordô não é apenas decorativo — é uma peça-chave da acústica. Papéis opacos, sem componentes acrílicos, trazidos dos Estados Unidos para evitar que o som ressoe ou se distorça.",
+          fr: "Le papier peint bordeaux n'est pas seulement décoratif — c'est un élément clé de l'acoustique. Des papiers mats, sans composants acryliques, importés des États-Unis pour éviter que le son ne rebondisse ou ne se distorde."
+        },
+        images: ["https://images.unsplash.com/photo-1460723237483-7a6dc9d0b212?w=800&q=80"]
+      },
+      {
+        id: "b13",
+        group: { es: "La sala", en: "The Hall", pt: "A sala", fr: "La salle" },
+        title: { es: "Iluminación de la sala", en: "Hall Lighting", pt: "Iluminação da sala", fr: "Éclairage de la salle" },
+        duration: "1:40",
+        audioUrl: { es: "", en: "", pt: "", fr: "" },
+        text: {
+          es: "La iluminación es una obra de artesanía.\n\nLa firma Mateazzi Hnos., de Buenos Aires, replicó los apliques de bronce originales. Pero el trabajo más paciente lo hizo Mario Ferrari: él pulió manualmente cada una de las más de cien tulipas de cristal para que encajaran con precisión en las grillas de bronce.\n\nEse nivel de detalle es el que permitió que hoy la sala luzca con la misma coherencia estética de hace un siglo.",
+          en: "The lighting is a work of craftsmanship.\n\nThe firm Mateazzi Hnos. of Buenos Aires replicated the original bronze wall sconces. But the most patient work was done by Mario Ferrari: he manually polished each of more than a hundred crystal tulip shades so they would fit precisely into the bronze grilles.\n\nThat level of detail is what allows the hall today to shine with the same aesthetic coherence as a century ago.",
+          pt: "A iluminação é uma obra de artesanato. A firma Mateazzi Hnos. replicou os apliques de bronze originais. Mario Ferrari poliu manualmente cada uma das mais de cem tulipas de cristal.",
+          fr: "L'éclairage est une œuvre artisanale. La firme Mateazzi Hnos. répliqua les appliques en bronze originales. Mario Ferrari poli manuellement chacune des plus de cent tulipes en cristal."
+        },
+        images: ["https://images.unsplash.com/photo-1527529482837-4698179dc6ce?w=800&q=80"]
+      },
+      {
+        id: "b14",
+        group: { es: "La sala", en: "The Hall", pt: "A sala", fr: "La salle" },
+        title: { es: "La araña central de la sala", en: "The Central Chandelier", pt: "A araça central da sala", fr: "Le lustre central de la salle" },
+        duration: "1:30",
+        audioUrl: { es: "", en: "", pt: "", fr: "" },
+        text: {
+          es: "Mirá hacia el techo una vez más.\n\nLa gran araña central, de estilo Art Nouveau, es una de las pocas piezas que se conservó intacta a lo largo de toda la historia del teatro.\n\nDurante la reconstrucción fue acondicionada y se reforzaron sus estructuras.\n\nFijate cómo combina su diseño con los cuatro vitrales de las paredes de los palcos bajos. El moldurado oval que la rodea fue incorporado en 1930 para resaltarla aún más.",
+          en: "Look up at the ceiling once more.\n\nThe great central Art Nouveau chandelier is one of the few pieces preserved intact throughout the theatre's entire history.\n\nDuring the reconstruction it was overhauled and its structure reinforced.\n\nNotice how its design combines with the four stained glass windows on the lower box walls. The oval moulding surrounding it was added in 1930 to make it stand out even more.",
+          pt: "Olhe para o teto mais uma vez. O grande lustre central em estilo Art Nouveau é uma das poucas peças conservadas intactas ao longo de toda a história do teatro.",
+          fr: "Regardez encore le plafond. Le grand lustre central de style Art Nouveau est l'une des rares pièces conservées intactes tout au long de l'histoire du théâtre."
+        },
+        images: ["https://images.unsplash.com/photo-1514306191717-452ec28c7814?w=800&q=80"]
+      },
+      {
+        id: "b15",
+        group: { es: "La sala", en: "The Hall", pt: "A sala", fr: "La salle" },
+        title: { es: "Los frisos y molduras", en: "Friezes & Mouldings", pt: "Os frisos e molduras", fr: "Les frises et moulures" },
+        duration: "1:40",
+        audioUrl: { es: "", en: "", pt: "", fr: "" },
+        text: {
+          es: "La restauración de las molduras fue casi quirúrgica.\n\nSe contrató a Carlos Pérez Ortiz, quien trabajó con materiales sintéticos y caucho para crear los moldes de los frisos.\n\nSin embargo, en muchos sectores el daño era tal que no se pudieron usar moldes: hubo que reconstruir las piezas a mano, una por una, usando el material original: yeso «París».\n\nCada detalle que ves en las paredes es fruto de ese oficio artesanal.",
+          en: "The restoration of the mouldings was almost surgical.\n\nCarlos Pérez Ortiz was hired, working with synthetic materials and rubber to create the frieze moulds.\n\nHowever, in many areas the damage was so severe that moulds couldn't be used: pieces had to be reconstructed by hand, one by one, using the original material: 'Paris' plaster.\n\nEvery detail you see on the walls is the fruit of that craft.",
+          pt: "A restauração das molduras foi quase cirúrgica. Carlos Pérez Ortiz criou os moldes dos frisos. Em muitos setores, o dano era tal que foi preciso reconstruir as peças à mão, uma a uma, usando gesso 'Paris'.",
+          fr: "La restauration des moulures fut presque chirurgicale. Carlos Pérez Ortiz créa les moules des frises. Dans de nombreuses zones, les dégâts étaient tels qu'il fallut reconstruire les pièces à la main, une par une, avec du plâtre 'Paris'."
+        },
+        images: ["https://images.unsplash.com/photo-1493723843671-1d655e66ac1c?w=800&q=80"]
+      },
+      {
+        id: "b16",
+        group: { es: "La sala", en: "The Hall", pt: "A sala", fr: "La salle" },
+        title: { es: "Las butacas", en: "The Seats", pt: "As poltronas", fr: "Les fauteuils" },
+        duration: "2:00",
+        audioUrl: { es: "", en: "", pt: "", fr: "" },
+        text: {
+          es: "Sentate… ponete cómodo.\n\nLas primeras butacas de 1897 eran de madera con respaldo de esterillas, y permitían desatornillarlas para realizar usos no convencionales: bailes, boxeo, etc. En 1930 fueron reemplazadas por butacas procedentes de Chicago.\n\nEn 1979 se repararon y durante la inundación de 1980 se arruinaron. Más adelante, por convenio entre el municipio y la provincia, se consiguieron 300 butacas para la sala, sumadas a 200 adquiridas en Las Flores en 1978.\n\nIncluso el «gallinero» —allá arriba—, que antes tenía simples tablones, hoy cuenta con el mismo confort que la platea.",
+          en: "Sit down… get comfortable.\n\nThe first seats of 1897 were wooden with rattan backs and could be unscrewed for non-conventional uses: dances, boxing matches, etc. In 1930 they were replaced by seats from Chicago.\n\nRepaired in 1979, they were ruined in the 1980 flood. Later, through an agreement between the municipality and the province, 300 seats were obtained for the hall, added to 200 acquired in Las Flores in 1978.\n\nEven the 'gods' — up there — which once had simple planks, today has the same comfort as the stalls.",
+          pt: "Sente-se… fique confortável. As primeiras poltronas de 1897 eram de madeira e podiam ser desaparafusadas para usos não convencionais: bailes, boxe, etc. Hoje, mesmo o 'galinheiro' lá em cima tem o mesmo conforto da plateia.",
+          fr: "Asseyez-vous… mettez-vous à l'aise. Les premiers fauteuils de 1897 étaient en bois et pouvaient être dévissés pour des usages non conventionnels : bals, boxe, etc. Aujourd'hui, même le 'poulailler' là-haut a le même confort que le parterre."
+        },
+        images: ["https://images.unsplash.com/photo-1519056349672-a0694a3a08b9?w=800&q=80"]
+      },
+      {
+        id: "b17",
+        group: { es: "La sala", en: "The Hall", pt: "A sala", fr: "La salle" },
+        title: { es: "Las sillas de los palcos", en: "The Box Chairs", pt: "As cadeiras dos camarotes", fr: "Les chaises des loges" },
+        duration: "1:30",
+        audioUrl: { es: "", en: "", pt: "", fr: "" },
+        text: {
+          es: "En los palcos altos vas a ver las sillas originales: unas hermosas «Thonet» checoslovacas del siglo XIX que fueron retapizadas al inicio de la reconstrucción.\n\nPara los palcos bajos e intermedios, se compraron doscientas sillas nuevas modelo «Sheraton», manteniendo el mismo tono de pana púrpura para que toda la sala tenga una armonía visual perfecta.",
+          en: "In the upper boxes you'll see the original chairs: beautiful 19th-century Czechoslovak 'Thonet' chairs reupholstered at the start of the reconstruction.\n\nFor the lower and intermediate boxes, two hundred new 'Sheraton' model chairs were purchased, maintaining the same tone of purple velvet so that the entire hall achieves perfect visual harmony.",
+          pt: "Nos camarotes superiores você verá as cadeiras originais: belas 'Thonet' checoslovacas do século XIX retapizadas. Para os camarotes inferiores, compraram-se 200 cadeiras 'Sheraton' no mesmo tom de veludo púrpura.",
+          fr: "Dans les loges supérieures vous verrez les chaises originales : de belles 'Thonet' tchécoslovaques du XIXe siècle retapissées. Pour les loges inférieures, 200 chaises 'Sheraton' furent achetées dans le même ton de velours pourpre."
+        },
+        images: ["https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=800&q=80"]
+      },
+      {
+        id: "b18",
+        group: { es: "La sala", en: "The Hall", pt: "A sala", fr: "La salle" },
+        title: { es: "El foso y el piso móvil", en: "The Orchestra Pit & Moveable Floor", pt: "O fosso e o piso móvel", fr: "La fosse et le plancher mobile" },
+        duration: "1:50",
+        audioUrl: { es: "", en: "", pt: "", fr: "" },
+        text: {
+          es: "Como te contábamos al principio, el piso de esta sala tiene un secreto: un sistema móvil que se accionaba con una palanca desde el bajo escenario para ponerlo a nivel.\n\nEsto permitió que aquí se celebraran bailes de carnaval y peleas de boxeo históricas, como las de Luis Ángel Firpo.\n\nDurante la reconstrucción se decidió desactivarlo y cubrir el foso de la orquesta para priorizar la capacidad de la sala, aunque el mecanismo sigue ahí, bajo tus pies, como testigo de otra época.",
+          en: "As we mentioned at the beginning, this hall's floor hides a secret: a moveable system operated by a lever from beneath the stage to level it.\n\nThis allowed carnival dances and historic boxing matches to be held here, including bouts featuring Luis Ángel Firpo.\n\nDuring the reconstruction it was decided to deactivate it and cover the orchestra pit to maximise seating capacity — though the mechanism is still there, beneath your feet, as a witness to another era.",
+          pt: "O piso desta sala tem um segredo: um sistema móvel acionado por uma alavanca. Isso permitiu bailes de carnaval e lutas de boxe históricas, como as de Luís Ángel Firpo. O mecanismo ainda está lá, sob seus pés.",
+          fr: "Le sol de cette salle cache un secret: un système mobile actionné par un levier. Cela permit des bals de carnaval et des combats de boxe historiques, comme ceux de Luis Ángel Firpo. Le mécanisme est toujours là, sous vos pieds."
+        },
+        images: ["https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=800&q=80"]
+      },
+      {
+        id: "b19",
+        group: { es: "La sala", en: "The Hall", pt: "A sala", fr: "La salle" },
+        title: { es: "Climatización de la sala", en: "Hall Air Conditioning", pt: "Climatização da sala", fr: "Climatisation de la salle" },
+        duration: "1:20",
+        audioUrl: { es: "", en: "", pt: "", fr: "" },
+        text: {
+          es: "Desde 2011, nuestra sala está climatizada para que la experiencia sea placentera en cualquier estación.\n\nFinanciar los equipos fue un esfuerzo de todos: se hizo una rifa comunitaria y se contó con el asesoramiento de técnicos locales como Federico Verna.\n\nLa instalación requirió obras complejas de electricidad y albañilería, pero hoy nos permite disfrutar del arte con el confort que este coliseo merece.",
+          en: "Since 2011 our hall has been air-conditioned so the experience is pleasant in any season.\n\nFunding the equipment was a collective effort: a community raffle was held and local technicians such as Federico Verna provided their expertise.\n\nThe installation required complex electrical and masonry work, but today it allows us to enjoy art with the comfort this building deserves.",
+          pt: "Desde 2011, nossa sala é climatizada. O financiamento dos equipamentos foi um esforço coletivo: uma rifa comunitária e o assessoramento de técnicos locais como Federico Verna.",
+          fr: "Depuis 2011, notre salle est climatisée. Le financement des équipements fut un effort collectif : une tombola communautaire et l'expertise de techniciens locaux comme Federico Verna."
+        },
+        images: ["https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=800&q=80"]
+      },
+      // ── EL ESCENARIO ─────────────────────────────────────────────
+      {
+        id: "b20",
+        group: { es: "El escenario", en: "The Stage", pt: "O palco", fr: "La scène" },
+        title: { es: "La boca de escena", en: "The Proscenium Arch", pt: "A boca de cena", fr: "La bouche de scène" },
+        duration: "1:40",
+        audioUrl: { es: "", en: "", pt: "", fr: "" },
+        text: {
+          es: "Observá el arco que rodea el escenario.\n\nArriba, a los lados, te miran Miguel de Cervantes y Fray Luis de León.\n\nEl paisaje pampeano del centro fue pintado en 1992.\n\nBuscá las «cubre candilejas» en el suelo; imaginálас encendidas, iluminando a los actores desde abajo con una luz casi mágica.",
+          en: "Look at the arch surrounding the stage.\n\nAbove, on either side, Miguel de Cervantes and Fray Luis de León look down at you.\n\nThe pampas landscape at the centre was painted in 1992.\n\nLook for the footlight covers on the floor — imagine them lit, illuminating the actors from below with an almost magical light.",
+          pt: "Observe o arco que envolve o palco. Acima, dos lados, Miguel de Cervantes e Fray Luis de León olham para você. A paisagem pampeana do centro foi pintada em 1992.",
+          fr: "Observez l'arche entourant la scène. En haut, des deux côtés, Miguel de Cervantes et Fray Luis de León vous regardent. Le paysage de pampa au centre fut peint en 1992."
+        },
+        images: ["https://images.unsplash.com/photo-1514306191717-452ec28c7814?w=800&q=80"]
+      },
+      {
+        id: "b21",
+        group: { es: "El escenario", en: "The Stage", pt: "O palco", fr: "La scène" },
+        title: { es: "Pisar el escenario: un mito teatral", en: "Treading the Boards: A Theatrical Myth", pt: "Pisar o palco: um mito teatral", fr: "Fouler la scène: un mythe théâtral" },
+        duration: "2:00",
+        audioUrl: { es: "", en: "", pt: "", fr: "" },
+        text: {
+          es: "Pisar estas tablas es pisar historia.\n\nDurante la reconstrucción, la madera de pino Brasil se dejó estacionar en este mismo lugar durante tres años antes de ser colocada.\n\nPara los laterales se usó pinotea recuperada: es la misma madera que pisó el «Morocho del Abasto», Carlos Gardel, en su última visita a Azul en 1933.\n\nCuidar este piso es una obsesión para nosotros; hay reglas estrictas para mantenerlo, porque este escenario es el orgullo máximo de todo el equipo técnico.",
+          en: "To tread these boards is to tread history.\n\nDuring reconstruction the Brazilian pine was left to season in this very spot for three years before being laid.\n\nFor the wings, recovered pinotea was used — the same timber trodden by 'El Morocho del Abasto', Carlos Gardel, on his last visit to Azul in 1933.\n\nCaring for this floor is an obsession for us; strict rules govern its maintenance, because this stage is the greatest pride of the entire technical team.",
+          pt: "Pisar estas tábuas é pisar na história. A madeira de pinho Brasil ficou estacionada neste lugar por três anos. Para as laterais, usou-se pinotea recuperada — a mesma que pisou Carlos Gardel em sua última visita a Azul em 1933.",
+          fr: "Fouler ces planches, c'est fouler l'histoire. Le bois de pin Brésil fut laissé à sécher sur place pendant trois ans. Pour les côtés, on utilisa de la pinotea récupérée — le même bois que foulait Carlos Gardel lors de sa dernière visite à Azul en 1933."
+        },
+        images: ["https://images.unsplash.com/photo-1460723237483-7a6dc9d0b212?w=800&q=80"]
+      },
+      {
+        id: "b22",
+        group: { es: "El escenario", en: "The Stage", pt: "O palco", fr: "La scène" },
+        title: { es: "El telón de boca", en: "The House Curtain", pt: "O pano de boca", fr: "Le rideau de scène" },
+        duration: "1:50",
+        audioUrl: { es: "", en: "", pt: "", fr: "" },
+        text: {
+          es: "El telón púrpura que ves es una de nuestras piezas más queridas.\n\nEl original de 1897, con bordados en hilos de oro, se perdió tras un incendio y años de abandono. Del viejo telón solo pudimos rescatar los bordados con las siglas «T» y «E», que fueron cosidos a mano sobre esta nueva pana acrílica.\n\nEl 7 de septiembre de 1992, cuando el telón se abrió por primera vez tras la reconstrucción —incluso antes de tener las butacas listas—, la emoción fue tan grande que no faltaron las lágrimas. Su apertura sigue siendo el momento mágico en que la función comienza.",
+          en: "The purple curtain you see is one of our most cherished pieces.\n\nThe original from 1897, embroidered with gold thread, was lost to fire and years of neglect. From the old curtain we could only rescue the embroidered initials 'T' and 'E', which were hand-stitched onto this new acrylic velvet.\n\nOn September 7, 1992, when the curtain opened for the first time after the reconstruction — even before the seats were ready — the emotion was so great that tears were not uncommon. Its opening remains the magical moment when the performance begins.",
+          pt: "O telão púrpura é uma das nossas peças mais queridas. Do original de 1897 só conseguimos resgatar os bordados com as iniciais 'T' e 'E'. Em 7 de setembro de 1992, quando o telão abriu pela primeira vez após a reconstrução, as lágrimas não faltaram.",
+          fr: "Le rideau pourpre est l'une de nos pièces les plus chéries. De l'original de 1897, nous n'avons pu sauver que les broderies avec les initiales 'T' et 'E'. Le 7 septembre 1992, quand le rideau s'ouvrit pour la première fois après la reconstruction, les larmes ne manquèrent pas."
+        },
+        images: ["https://images.unsplash.com/photo-1527529482837-4698179dc6ce?w=800&q=80"]
+      },
+      {
+        id: "b23",
+        group: { es: "El escenario", en: "The Stage", pt: "O palco", fr: "La scène" },
+        title: { es: "La parrilla y la mecánica escénica", en: "The Grid & Stage Mechanics", pt: "A vara e a mecânica cênica", fr: "La grille et la mécanique scénique" },
+        duration: "1:40",
+        audioUrl: { es: "", en: "", pt: "", fr: "" },
+        text: {
+          es: "Sobre el escenario se extiende la parrilla, una estructura fundamental que permite el manejo de telones, bambalinas y elementos escenográficos.\n\nDurante la restauración se reforzaron vigas, se revisaron poleas y se recuperaron mecanismos originales, combinándolos con mejoras de seguridad.\n\nParte de este sistema funciona de manera manual, como en los teatros históricos. Un saber técnico que requiere oficio, precisión y trabajo en equipo.",
+          en: "Above the stage extends the grid, a fundamental structure for managing curtains, borders and scenic elements.\n\nDuring restoration, beams were reinforced, pulleys checked and original mechanisms recovered, combined with safety improvements.\n\nPart of this system works manually, as in historic theatres — technical knowledge that requires skill, precision and teamwork.",
+          pt: "Sobre o palco estende-se a vara, estrutura fundamental para o manejo de telões e elementos cênicos. Durante a restauração, vigas foram reforçadas e mecanismos originais recuperados.",
+          fr: "Au-dessus de la scène s'étend la grille, structure fondamentale pour la gestion des rideaux et éléments scéniques. Pendant la restauration, les poutres furent renforcées et les mécanismes originaux récupérés."
+        },
+        images: ["https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=800&q=80"]
+      },
+      {
+        id: "b24",
+        group: { es: "El escenario", en: "The Stage", pt: "O palco", fr: "La scène" },
+        title: { es: "El sistema de iluminación de escenario", en: "The Stage Lighting System", pt: "O sistema de iluminação do palco", fr: "Le système d'éclairage de scène" },
+        duration: "1:40",
+        audioUrl: { es: "", en: "", pt: "", fr: "" },
+        text: {
+          es: "El escenario fue concebido como una verdadera máquina de precisión.\n\nSu iluminación no se hizo de un día para otro; se concretó por etapas buscando siempre la máxima calidad técnica.\n\nEn 1992 recibimos el asesoramiento del equipo del Teatro Auditorium de Mar del Plata para diseñar las estructuras básicas. Desde entonces, hemos ido renovando consolas y artefactos para que, en cada función, la luz trabaje a favor de la escena.\n\nAcá nada es decorativo: cada foco cumple una función vital.",
+          en: "The stage was conceived as a true precision machine.\n\nIts lighting was not achieved overnight — it was built up in stages, always seeking the highest technical quality.\n\nIn 1992 we received guidance from the team at the Teatro Auditorium in Mar del Plata to design the basic structures. Since then we have been continually updating consoles and fixtures so that in every performance the light works in service of the scene.\n\nHere nothing is decorative: every spotlight serves a vital function.",
+          pt: "O palco foi concebido como uma verdadeira máquina de precisão. Em 1992, recebemos o assessoramento da equipe do Teatro Auditorium de Mar del Plata. Desde então, renovamos consoles e equipamentos para que a luz sirva a cada espetáculo.",
+          fr: "La scène fut conçue comme une véritable machine de précision. En 1992, nous reçûmes les conseils de l'équipe du Teatro Auditorium de Mar del Plata. Depuis, nous renouvelons consoles et équipements pour que la lumière serve chaque spectacle."
+        },
+        images: ["https://images.unsplash.com/photo-1524985069026-dd778a71c7b4?w=800&q=80"]
+      },
+      {
+        id: "b25",
+        group: { es: "El escenario", en: "The Stage", pt: "O palco", fr: "La scène" },
+        title: { es: "Los camarines", en: "The Dressing Rooms", pt: "Os camarins", fr: "Les loges d'artistes" },
+        duration: "1:40",
+        audioUrl: { es: "", en: "", pt: "", fr: "" },
+        text: {
+          es: "Antes de salir a escena, los artistas pasan por acá.\n\nEl teatro cuenta con catorce camarines restaurados y modernizados, con todas las comodidades.\n\nEn esta puesta en valor trabajaron carpinteros locales como Pastore, los hermanos Fortunato y Lateana, logrando un espacio que combina la calidez de la madera con la funcionalidad necesaria para un elenco.\n\nEn estos pasillos, entre el maquillaje y los nervios del debut, es donde se cruzan las generaciones de artistas que le dan vida al Español. ¿Sabés qué artistas los ocuparon?",
+          en: "Before stepping onto the stage, artists pass through here.\n\nThe theatre has fourteen restored and modernised dressing rooms, fully equipped.\n\nLocal carpenters including Pastore, the Fortunato brothers and Lateana worked on this restoration, creating a space that combines the warmth of wood with the functionality a cast requires.\n\nIn these corridors, between make-up and first-night nerves, the generations of artists who bring the Español to life cross paths. Do you know which artists have occupied them?",
+          pt: "Antes de entrar no palco, os artistas passam por aqui. O teatro conta com quatorze camarins restaurados e modernizados. Nestes corredores, entre a maquiagem e os nervos da estreia, cruzam-se as gerações de artistas que dão vida ao Español.",
+          fr: "Avant d'entrer en scène, les artistes passent par ici. Le théâtre dispose de quatorze loges restaurées et modernisées. Dans ces couloirs, entre le maquillage et le trac du premier soir, se croisent les générations d'artistes qui donnent vie à l'Español."
+        },
+        images: ["https://images.unsplash.com/photo-1493723843671-1d655e66ac1c?w=800&q=80"]
+      },
+    ]
+  }
+
+]
+</script>
+
+<!-- ══════════ HTML ══════════ -->
+<div id="splash">
+  <div id="splash-dismiss"></div>
+  <div class="splash-bg" id="splash-bg"></div>
+  <div class="splash-gradient"></div>
+  <div class="splash-content">
+    <div class="splash-eyebrow" id="splash-eyebrow"></div>
+    <div class="splash-title" id="splash-title"></div>
+    <div class="splash-sub" id="splash-sub"></div>
+    <div class="splash-langs" id="splash-langs"></div>
+  </div>
+</div>
+
+<div id="main">
+  <div id="header">
+    <button class="icon-btn" id="btn-menu" aria-label="Menú">
+      <svg width="18" height="13" viewBox="0 0 18 13" fill="none">
+        <rect width="18" height="1.5" rx="0.75" fill="currentColor"/>
+        <rect y="5.75" width="12" height="1.5" rx="0.75" fill="currentColor"/>
+        <rect y="11.5" width="18" height="1.5" rx="0.75" fill="currentColor"/>
+      </svg>
+    </button>
+    <div class="header-title" id="header-title"></div>
+    <button class="lang-pill" id="btn-lang">ES</button>
+  </div>
+
+  <div class="slider-wrap" id="slider-wrap"></div>
+
+  <div class="item-info">
+    <div class="item-section-label" id="item-section-label"></div>
+    <div class="item-title" id="item-title"></div>
+    <div class="item-progress" id="item-progress"></div>
+  </div>
+
+  <div class="player">
+    <div class="player-row">
+      <button class="play-btn" id="play-btn">
+        <svg width="16" height="18" viewBox="0 0 16 18" fill="currentColor"><path d="M0 0L16 9L0 18V0Z"/></svg>
+      </button>
+      <div class="player-meta">
+        <div class="player-time" id="player-time">0:00 / 0:00</div>
+        <div class="progress-track" id="progress-track">
+          <div class="progress-fill" id="progress-fill"></div>
+          <div class="progress-thumb" id="progress-thumb"></div>
+        </div>
+      </div>
+    </div>
+    <button class="read-btn" id="read-btn">
+      <svg width="14" height="16" viewBox="0 0 14 16" fill="none" stroke="currentColor" stroke-width="1.5">
+        <rect x="1" y="1" width="12" height="14" rx="1.5"/>
+        <line x1="4" y1="5" x2="10" y2="5"/>
+        <line x1="4" y1="8" x2="10" y2="8"/>
+        <line x1="4" y1="11" x2="7" y2="11"/>
+      </svg>
+      <span id="read-label"></span>
+    </button>
+  </div>
+
+  <div class="item-nav">
+    <button class="item-nav-btn prev" id="btn-prev">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 2L4 7l5 5"/></svg>
+      <span class="item-nav-label" id="prev-label"></span>
+    </button>
+    <button class="item-nav-btn next" id="btn-next">
+      <span class="item-nav-label" id="next-label"></span>
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 2l5 5-5 5"/></svg>
+    </button>
+  </div>
+
+  <div class="section-nav" id="section-nav"></div>
+</div>
+
+<div id="drawer-overlay"></div>
+<div id="drawer">
+  <div class="drawer-header">
+    <div class="drawer-header-title" id="drawer-title"></div>
+    <button class="icon-btn" id="btn-close-drawer">
+      <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
+        <line x1="1" y1="1" x2="11" y2="11"/><line x1="11" y1="1" x2="1" y2="11"/>
+      </svg>
+    </button>
+  </div>
+  <div id="drawer-body"></div>
+</div>
+
+<!-- SECTION INTRO POPUP -->
+<div id="section-popup-overlay">
+  <div id="section-popup">
+    <button class="popup-close" id="section-popup-close">
+      <svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5">
+        <line x1="1" y1="1" x2="9" y2="9"/><line x1="9" y1="1" x2="1" y2="9"/>
+      </svg>
+    </button>
+    <div class="popup-handle"></div>
+    <div class="popup-eyebrow" id="section-popup-eyebrow"></div>
+    <div class="popup-title" id="section-popup-title"></div>
+    <div class="popup-body" id="section-popup-body"></div>
+    <button id="section-popup-cta">
+      <span id="section-popup-cta-label"></span>
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+    </button>
+  </div>
+</div>
+
+<div id="popup-overlay">
+  <div id="popup">
+    <button class="popup-close" id="popup-close">
+      <svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5">
+        <line x1="1" y1="1" x2="9" y2="9"/><line x1="9" y1="1" x2="1" y2="9"/>
+      </svg>
+    </button>
+    <div class="popup-handle"></div>
+    <div class="popup-eyebrow" id="popup-eyebrow"></div>
+    <div class="popup-title" id="popup-title"></div>
+    <div class="popup-body" id="popup-body"></div>
+  </div>
+</div>
+
+<script>
+let lang = null, activeItem = null, activeSection = null;
+let sliderIdx = 0;
+
+const $ = id => document.getElementById(id);
+const t = obj => (obj && typeof obj === "object") ? (obj[lang] || obj.es || "") : (obj || "");
+
+function fmt(s) { s = isNaN(s) ? 0 : s; return `${Math.floor(s/60)}:${String(Math.floor(s%60)).padStart(2,"0")}`; }
+
+// ── AUDIO ELEMENT ─────────────────────────────────────────────────
+const audio = new Audio();
+audio.preload = "metadata";
+
+audio.addEventListener("timeupdate", () => {
+  if (!audio.duration) return;
+  const pct = (audio.currentTime / audio.duration * 100).toFixed(1);
+  $("progress-fill").style.width = pct + "%";
+  $("progress-thumb").style.left = `calc(${pct}% - 5px)`;
+  $("player-time").textContent = `${fmt(audio.currentTime)} / ${fmt(audio.duration)}`;
+});
+
+audio.addEventListener("ended", () => {
+  $("play-btn").innerHTML = PLAY_SVG;
+  $("progress-fill").style.width = "0%";
+  $("progress-thumb").style.left = "0%";
+  if (activeItem) $("player-time").textContent = `0:00 / ${fmt(audio.duration)}`;
+});
+
+audio.addEventListener("loadedmetadata", () => {
+  $("player-time").textContent = `0:00 / ${fmt(audio.duration)}`;
+});
+
+function loadAudio(item) {
+  audio.pause();
+  $("play-btn").innerHTML = PLAY_SVG;
+  $("progress-fill").style.width = "0%";
+  $("progress-thumb").style.left = "0%";
+
+  const url = item.audioUrl
+    ? (typeof item.audioUrl === "object" ? (item.audioUrl[lang] || item.audioUrl.es || "") : item.audioUrl)
+    : "";
+
+  if (url) {
+    audio.src = url;
+    audio.load();
+    $("play-btn").disabled = false;
+    $("player-time").textContent = `0:00 / …`;
+    $("progress-track").style.opacity = "1";
+    // autoplay — works because this is always triggered by a user gesture
+    audio.play().then(() => {
+      $("play-btn").innerHTML = PAUSE_SVG;
+    }).catch(() => {
+      // browser blocked autoplay — player stays in paused state, no error shown
+    });
+  } else {
+    audio.src = "";
+    $("play-btn").disabled = true;
+    $("player-time").textContent = "— / —";
+    $("progress-track").style.opacity = "0.3";
+  }
+}
+
+// ── SPLASH ────────────────────────────────────────────────────────
+function initSplash() {
+  $("splash-eyebrow").textContent = SITE.eyebrow;
+  $("splash-title").textContent = t(SITE.title);
+  $("splash-sub").textContent = t(SITE.subtitle);
+  const c = $("splash-langs"); c.innerHTML = "";
+  LANGS.forEach(l => {
+    const btn = document.createElement("button");
+    btn.className = "lang-btn";
+    btn.innerHTML = `<span>${l.flag}</span><span>${l.label}</span>`;
+    btn.addEventListener("click", () => selectLang(l.code));
+    c.appendChild(btn);
+  });
+}
+
+function selectLang(code) {
+  lang = code;
+  localStorage.setItem("audioguia_lang", code);
+  $("splash").classList.add("out");
+  $("main").style.cssText = "display:flex;flex-direction:column;";
+  $("btn-lang").textContent = code.toUpperCase();
+  renderMain();
+  const hash = location.hash.replace("#","");
+  const sec = SECTIONS.find(s => s.id === hash);
+  loadItem(sec ? sec.items[0] : SECTIONS[0].items[0], sec || SECTIONS[0]);
+  if (sec && sec.intro) setTimeout(() => openSectionIntro(sec), 400);
+}
+
+// ── RENDER ────────────────────────────────────────────────────────
+function renderMain() {
+  $("header-title").textContent = t(SITE.title);
+  $("drawer-title").textContent = t(SITE.title);
+  $("read-label").textContent = t(SITE.readLabel);
+  renderDrawer(); renderSectionNav();
+}
+
+// flat list of all items across sections for prev/next
+function getAllItems() {
+  return SECTIONS.flatMap(s => s.items.map(it => ({ item: it, section: s })));
+}
+
+function loadItem(item, section) {
+  activeItem = item; activeSection = section;
+  $("item-section-label").textContent = t(section.label);
+  $("item-title").textContent = t(item.title);
+  $("read-label").textContent = t(SITE.readLabel);
+  loadAudio(item);
+  const rawMedia = item.media || (item.images ? item.images.map(u => ({ type: "image", url: u })) : []);
+  const media = rawMedia.length ? rawMedia : [{ type: "image", url: SITE.fallbackImage }];
+  renderMedia(media);
+  updateNavActive(); updateDrawerActive();
+  updateItemNav();
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+function updateItemNav() {
+  const all = getAllItems();
+  const idx = all.findIndex(e => e.item.id === activeItem.id);
+  const total = all.length;
+
+  // progress indicator
+  $("item-progress").innerHTML =
+    `<span class="item-progress-current">${idx + 1}</span> / ${total}`;
+
+  // prev button
+  const prevEntry = all[idx - 1] || null;
+  const btnPrev = $("btn-prev");
+  if (prevEntry) {
+    btnPrev.disabled = false;
+    $("prev-label").textContent = t(prevEntry.item.title);
+    btnPrev.onclick = () => loadItem(prevEntry.item, prevEntry.section);
+  } else {
+    btnPrev.disabled = true;
+    $("prev-label").textContent = "";
+  }
+
+  // next button
+  const nextEntry = all[idx + 1] || null;
+  const btnNext = $("btn-next");
+  if (nextEntry) {
+    btnNext.disabled = false;
+    $("next-label").textContent = t(nextEntry.item.title);
+    btnNext.onclick = () => loadItem(nextEntry.item, nextEntry.section);
+  } else {
+    btnNext.disabled = true;
+    $("next-label").textContent = "";
+  }
+}
+
+// ── MEDIA SLIDER (images + video) ────────────────────────────────
+function renderMedia(mediaArr) {
+  sliderIdx = 0;
+  const w = $("slider-wrap"); w.innerHTML = "";
+
+  mediaArr.forEach((m, i) => {
+    let el;
+    if (m.type === "video") {
+      el = document.createElement("video");
+      el.src = m.url; el.autoplay = true; el.muted = true;
+      el.loop = true; el.playsInline = true;
+      el.setAttribute("playsinline", ""); // iOS
+    } else {
+      el = document.createElement("img");
+      el.src = m.url; el.alt = "";
+    }
+    el.className = "slide" + (i === 0 ? " active" : "");
+    w.appendChild(el);
+  });
+
+  if (mediaArr.length > 1) {
+    const prev = document.createElement("button"); prev.className="slider-nav prev"; prev.textContent="‹"; prev.addEventListener("click",()=>moveSlide(-1));
+    const next = document.createElement("button"); next.className="slider-nav next"; next.textContent="›"; next.addEventListener("click",()=>moveSlide(1));
+    const dots = document.createElement("div"); dots.className="slider-dots"; dots.id="slider-dots";
+    mediaArr.forEach((_,i)=>{ const d=document.createElement("button"); d.className="slider-dot"+(i===0?" active":""); d.addEventListener("click",()=>goSlide(i)); dots.appendChild(d); });
+    w.appendChild(prev); w.appendChild(next); w.appendChild(dots);
+  }
+}
+
+function moveSlide(dir) { const s=$("slider-wrap").querySelectorAll(".slide"); goSlide((sliderIdx+dir+s.length)%s.length); }
+
+// ── SWIPE ─────────────────────────────────────────────────────────
+let touchStartX = null;
+$("slider-wrap").addEventListener("touchstart", e => {
+  touchStartX = e.touches[0].clientX;
+}, { passive: true });
+$("slider-wrap").addEventListener("touchend", e => {
+  if (touchStartX === null) return;
+  const delta = e.changedTouches[0].clientX - touchStartX;
+  touchStartX = null;
+  if (Math.abs(delta) < 50) return; // umbral mínimo
+  const slides = $("slider-wrap").querySelectorAll(".slide");
+  if (slides.length < 2) return;
+  moveSlide(delta < 0 ? 1 : -1);
+}, { passive: true });
+
+function goSlide(idx) {
+  const slides = $("slider-wrap").querySelectorAll(".slide");
+  const dots   = $("slider-wrap").querySelectorAll(".slider-dot");
+
+  // pause video leaving
+  const leaving = slides[sliderIdx];
+  if (leaving && leaving.tagName === "VIDEO") leaving.pause();
+
+  slides[sliderIdx].classList.remove("active");
+  if (dots[sliderIdx]) dots[sliderIdx].classList.remove("active");
+
+  sliderIdx = idx;
+  slides[sliderIdx].classList.add("active");
+  if (dots[sliderIdx]) dots[sliderIdx].classList.add("active");
+
+  // play video entering
+  const entering = slides[sliderIdx];
+  if (entering && entering.tagName === "VIDEO") entering.play().catch(()=>{});
+}
+
+// ── PLAYER CONTROLS ───────────────────────────────────────────────
+const PLAY_SVG = `<svg width="16" height="18" viewBox="0 0 16 18" fill="currentColor"><path d="M0 0L16 9L0 18V0Z"/></svg>`;
+const PAUSE_SVG = `<svg width="14" height="18" viewBox="0 0 14 18" fill="currentColor"><rect width="5" height="18" rx="1"/><rect x="9" width="5" height="18" rx="1"/></svg>`;
+
+$("play-btn").addEventListener("click", () => {
+  if (audio.paused) {
+    audio.play();
+    $("play-btn").innerHTML = PAUSE_SVG;
+  } else {
+    audio.pause();
+    $("play-btn").innerHTML = PLAY_SVG;
+  }
+});
+
+$("progress-track").addEventListener("click", e => {
+  if (!audio.duration) return;
+  const r = e.currentTarget.getBoundingClientRect();
+  audio.currentTime = ((e.clientX - r.left) / r.width) * audio.duration;
+});
+
+// ── INLINE NAV ────────────────────────────────────────────────────
+function renderSectionNav() {
+  const nav = $("section-nav"); nav.innerHTML = "";
+  let globalNum = 1;
+  SECTIONS.forEach(section => {
+    const h = document.createElement("div");
+    h.className = "section-nav-heading"; h.id = section.id;
+    h.textContent = t(section.label);
+    if (section.intro) h.addEventListener("click", () => openSectionIntro(section));
+    nav.appendChild(h);
+    let lastGroup = null;
+    section.items.forEach(item => {
+      const num = globalNum++;
+      // group separator
+      if (item.group) {
+        const g = t(item.group);
+        if (g !== lastGroup) {
+          lastGroup = g;
+          const sep = document.createElement("div");
+          sep.className = "nav-group-sep";
+          sep.textContent = g;
+          nav.appendChild(sep);
+        }
+      }
+      const btn = document.createElement("button"); btn.className="nav-item"; btn.dataset.itemId=item.id;
+      btn.innerHTML=`<span class="nav-num">${num}</span><span class="nav-item-label">${t(item.title)}</span><span class="nav-item-dur">${item.duration}</span>`;
+      btn.addEventListener("click",()=>loadItem(item,section)); nav.appendChild(btn);
+    });
+  });
+}
+function updateNavActive() { $("section-nav").querySelectorAll(".nav-item").forEach(b=>b.classList.toggle("active",b.dataset.itemId===activeItem.id)); }
+
+// ── SECTION INTRO POPUP ────────────────────────────────────────────
+const EXPLORE_LABEL = { es: "Ver ítems del circuito", en: "Explore this circuit", pt: "Ver itens do circuito", fr: "Explorer ce circuit" };
+
+function openSectionIntro(section) {
+  $("section-popup-eyebrow").textContent = t(SITE.title);
+  $("section-popup-title").textContent = t(section.label);
+  $("section-popup-body").textContent = t(section.intro);
+  $("section-popup-cta-label").textContent = EXPLORE_LABEL[lang] || EXPLORE_LABEL.es;
+  $("section-popup-overlay").classList.add("open");
+
+  $("section-popup-cta").onclick = () => {
+    $("section-popup-overlay").classList.remove("open");
+    const el = document.getElementById(section.id);
+    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+}
+$("section-popup-close").addEventListener("click", () => $("section-popup-overlay").classList.remove("open"));
+$("section-popup-overlay").addEventListener("click", e => { if(e.target===$("section-popup-overlay")) $("section-popup-overlay").classList.remove("open"); });
+
+// ── DRAWER ────────────────────────────────────────────────────────
+function renderDrawer() {
+  const body = $("drawer-body"); body.innerHTML = "";
+  let globalNum = 1;
+  SECTIONS.forEach(section => {
+    const lbl = document.createElement("div"); lbl.className="drawer-section-label"; lbl.textContent=t(section.label); body.appendChild(lbl);
+    let lastGroup = null;
+    section.items.forEach(item => {
+      const num = globalNum++;
+      if (item.group) {
+        const g = t(item.group);
+        if (g !== lastGroup) {
+          lastGroup = g;
+          const sep = document.createElement("div");
+          sep.className = "drawer-group-sep";
+          sep.textContent = g;
+          body.appendChild(sep);
+        }
+      }
+      const btn = document.createElement("button"); btn.className="drawer-item"; btn.dataset.itemId=item.id;
+      btn.innerHTML=`<span class="drawer-item-num">${num}</span><span class="drawer-item-text">${t(item.title)}</span><span class="drawer-item-dur">${item.duration}</span>`;
+      btn.addEventListener("click",()=>{ loadItem(item,section); closeDrawer(); }); body.appendChild(btn);
+    });
+  });
+}
+function updateDrawerActive() { $("drawer-body").querySelectorAll(".drawer-item").forEach(b=>b.classList.toggle("active",b.dataset.itemId===activeItem.id)); }
+function openDrawer() { $("drawer").classList.add("open"); $("drawer-overlay").classList.add("open"); }
+function closeDrawer() { $("drawer").classList.remove("open"); $("drawer-overlay").classList.remove("open"); }
+$("btn-menu").addEventListener("click", openDrawer);
+$("btn-close-drawer").addEventListener("click", closeDrawer);
+$("drawer-overlay").addEventListener("click", closeDrawer);
+
+// ── POPUP ─────────────────────────────────────────────────────────
+$("read-btn").addEventListener("click", () => {
+  $("popup-eyebrow").textContent = t(activeSection.label);
+  $("popup-title").textContent = t(activeItem.title);
+  $("popup-body").textContent = t(activeItem.text);
+  $("popup-overlay").classList.add("open");
+});
+$("popup-close").addEventListener("click", () => $("popup-overlay").classList.remove("open"));
+$("popup-overlay").addEventListener("click", e => { if(e.target===$("popup-overlay")) $("popup-overlay").classList.remove("open"); });
+
+// ── LANG CHANGE ───────────────────────────────────────────────────
+function showSplash() { $("splash").classList.remove("out"); initSplash(); }
+$("btn-lang").addEventListener("click", showSplash);
+$("splash-dismiss").addEventListener("click", () => {
+  // only dismiss if a language has already been chosen
+  if (lang) $("splash").classList.add("out");
+});
+
+// ── HASH ROUTING ──────────────────────────────────────────────────
+window.addEventListener("hashchange", () => {
+  if (!lang) return;
+  const hash = location.hash.replace("#","");
+  const sec = SECTIONS.find(s => s.id === hash);
+  if (sec) {
+    loadItem(sec.items[0], sec);
+    if (sec.intro) openSectionIntro(sec);
+  } else {
+    const el = document.getElementById(hash);
+    if (el) el.scrollIntoView({ behavior: "smooth" });
+  }
+});
+
+// ── BOOT ──────────────────────────────────────────────────────────
+const savedLang = localStorage.getItem("audioguia_lang");
+if (savedLang && LANGS.find(l => l.code === savedLang)) {
+  // idioma ya conocido — saltear splash
+  initSplash(); // inicializa el splash por si el visitante quiere cambiarlo
+  selectLang(savedLang);
+} else {
+  initSplash();
+}
+</script>
+</body>
+</html>
