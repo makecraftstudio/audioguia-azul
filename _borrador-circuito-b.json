@@ -1,0 +1,796 @@
+{
+  "sections": [
+    {
+      "id": "arquitectonico",
+      "label": {
+        "es": "Circuito B — Arquitectónico",
+        "en": "Circuit B — Architectural",
+        "pt": "Circuito B — Arquitetônico",
+        "fr": "Circuit B — Architectural"
+      },
+      "intro": {
+        "es": "Este circuito te invita a leer el edificio como un documento vivo. Desde la fachada hasta los camarines, cada detalle cuenta la historia de quienes lo construyeron, lo perdieron y lo recuperaron con sus propias manos.",
+        "en": "This circuit invites you to read the building as a living document. From the facade to the dressing rooms, every detail tells the story of those who built it, lost it, and reclaimed it with their own hands.",
+        "pt": "Este circuito convida você a ler o edifício como um documento vivo. Da fachada aos camarins, cada detalhe conta a história de quem o construiu, perdeu e recuperou com as próprias mãos.",
+        "fr": "Ce circuit vous invite à lire le bâtiment comme un document vivant. De la façade aux loges, chaque détail raconte l'histoire de ceux qui l'ont construit, perdu et récupéré de leurs propres mains."
+      },
+      "items": [
+        {
+          "id": "b01",
+          "title": {
+            "es": "El frente: una reconstrucción paciente",
+            "en": "The Facade: A Patient Reconstruction",
+            "pt": "A fachada: uma reconstrução paciente",
+            "fr": "La façade: une reconstruction patiente"
+          },
+          "duration": "2:00",
+          "audioUrl": {
+            "es": "",
+            "en": "",
+            "pt": "",
+            "fr": ""
+          },
+          "text": {
+            "es": "Levantá la vista.\n\nLo que ves a casi 18 metros de altura fue una verdadera proeza.\n\nEntre 1994 y 1996, el frentista Lamberti trabajó aquí arriba desafiando la gravedad… ¡y con un brazo enyesado!\n\nObservá la delicadeza de los detalles; se recuperaron usando mano de obra local y andamios diseñados especialmente.\n\nUn secreto: fijate en el friso anterior a la cornisa. Ahí arriba, en el último modillón colocado, descansa una botella con un mensaje oculto para las generaciones futuras. Algún día, alguien lo encontrará.",
+            "en": "Look up.\n\nWhat you see nearly 18 metres above was a genuine feat.\n\nBetween 1994 and 1996, plasterer Lamberti worked up here defying gravity… with one arm in plaster!\n\nNotice the delicacy of the details — recovered using local labour and specially designed scaffolding.\n\nA secret: look at the frieze just below the cornice. Up there, in the last modillion placed, rests a bottle with a hidden message for future generations. One day, someone will find it.",
+            "pt": "Olhe para cima. O que você vê a quase 18 metros de altura foi uma verdadeira proeza. Entre 1994 e 1996, o estuquista Lamberti trabalhou aqui em cima desafiando a gravidade — com um braço engessado! No último modilhão colocado descansa uma garrafa com uma mensagem para as gerações futuras.",
+            "fr": "Levez les yeux. Ce que vous voyez à près de 18 mètres de hauteur fut une véritable prouesse. Entre 1994 et 1996, le façadier Lamberti travailla là-haut en défiant la gravité — avec un bras dans le plâtre ! Dans le dernier modillon posé repose une bouteille avec un message pour les générations futures."
+          },
+          "images": [
+            "https://images.unsplash.com/photo-1555993539-1732b0258235?w=800&q=80"
+          ],
+          "group": {
+            "es": "El frente",
+            "en": "The Facade",
+            "pt": "A fachada",
+            "fr": "La façade"
+          }
+        },
+        {
+          "id": "b02",
+          "title": {
+            "es": "La marquesina y la persiana de acceso",
+            "en": "The Canopy & Entrance Shutter",
+            "pt": "A marquise e a persiana de acesso",
+            "fr": "Le auvent et le rideau d'entrée"
+          },
+          "duration": "1:50",
+          "audioUrl": {
+            "es": "",
+            "en": "",
+            "pt": "",
+            "fr": ""
+          },
+          "text": {
+            "es": "Detente bajo la marquesina de hierro fundido.\n\nEn los años 90, su restauración parecía un sueño imposible por los costos, hasta que apareció «Manolete» (Jorge Vila), el concesionario de la confitería, y decidió financiarla él mismo.\n\nPara mover esta mole de arte, se necesitaron grúas militares.\n\nMirá los tonos dorados y bronceados: se terminaron de ajustar «in situ» mientras el público ya entraba el día de la reinauguración.",
+            "en": "Stop under the cast-iron canopy.\n\nIn the 1990s its restoration seemed an impossible dream due to costs — until 'Manolete' (Jorge Vila), the café concession-holder, decided to finance it himself.\n\nMoving this mass of art required military cranes.\n\nNotice the gold and bronze tones: the finishing touches were applied on-site while the public was already entering on the day of the reinauguration.",
+            "pt": "Pare sob a marquise de ferro fundido. Nos anos 90, sua restauração parecia impossível — até que 'Manolete' (Jorge Vila), o concessionário da confeitaria, decidiu financiá-la. Para mover essa massa de arte foram necessárias gruas militares.",
+            "fr": "Arrêtez-vous sous l'auvent en fonte. Dans les années 90, sa restauration semblait impossible — jusqu'à ce que 'Manolete' (Jorge Vila), le concessionnaire du café, décide de la financer lui-même. Des grues militaires furent nécessaires pour déplacer cette masse d'art."
+          },
+          "images": [
+            "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800&q=80"
+          ],
+          "group": {
+            "es": "El frente",
+            "en": "The Facade",
+            "pt": "A fachada",
+            "fr": "La façade"
+          }
+        },
+        {
+          "id": "b03",
+          "title": {
+            "es": "La rampa: integración y respeto",
+            "en": "The Ramp: Integration & Respect",
+            "pt": "A rampa: integração e respeito",
+            "fr": "La rampe: intégration et respect"
+          },
+          "duration": "1:20",
+          "audioUrl": {
+            "es": "",
+            "en": "",
+            "pt": "",
+            "fr": ""
+          },
+          "text": {
+            "es": "Caminá hacia el lateral que colinda con la Catedral.\n\nNotarás que la rampa no parece un «parche» moderno, sino que fluye con el estilo neogótico del entorno.\n\nSe inauguró en 2001 y es el símbolo de una convicción: hacer las cosas bien, aunque lleve más tiempo, para que el teatro sea de todos.",
+            "en": "Walk towards the side adjoining the Cathedral.\n\nYou'll notice the ramp doesn't feel like a modern 'patch' — it flows with the neo-Gothic style of the surroundings.\n\nIt was inaugurated in 2001 and is the symbol of a conviction: to do things properly, even if it takes longer, so that the theatre belongs to everyone.",
+            "pt": "Caminhe em direção ao lado que faz divisa com a Catedral. A rampa não parece um 'remendo' moderno — flui com o estilo neogótico do entorno. Foi inaugurada em 2001.",
+            "fr": "Marchez vers le côté jouxtant la Cathédrale. La rampe ne ressemble pas à un 'rajout' moderne — elle s'intègre au style néo-gothique des environs. Elle fut inaugurée en 2001."
+          },
+          "images": [
+            "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80"
+          ],
+          "group": {
+            "es": "El frente",
+            "en": "The Facade",
+            "pt": "A fachada",
+            "fr": "La façade"
+          }
+        },
+        {
+          "id": "b04",
+          "title": {
+            "es": "El hall: umbral y bienvenida",
+            "en": "The Hall: Threshold & Welcome",
+            "pt": "O hall: umbral e boas-vindas",
+            "fr": "Le hall: seuil et bienvenue"
+          },
+          "duration": "1:50",
+          "audioUrl": {
+            "es": "",
+            "en": "",
+            "pt": "",
+            "fr": ""
+          },
+          "text": {
+            "es": "Entrá y dejá que el espacio te reciba.\n\nEste es el «umbral». Durante la reconstrucción, aquí solo se veían ladrillos y madera vieja. Los cielorrasos originales debieron ser desmontados quedando a la vista las frágiles bovedillas de ladrillos y madera que sostenían el Salón Cultural de la Planta Alta.\n\nRecuperar el hall implicó mucho más que embellecerlo. Significó devolverle su función simbólica: prepararte y dejar atrás el ruido de la calle para entrar en la expectativa del espectáculo.",
+            "en": "Enter and let the space receive you.\n\nThis is the 'threshold'. During reconstruction, only bricks and old timber were visible here. The original ceilings had to be dismantled, exposing the fragile brick-and-timber vaults supporting the Cultural Hall on the upper floor.\n\nRecovering the hall meant far more than beautifying it. It meant restoring its symbolic function: preparing you, leaving the noise of the street behind, and entering the anticipation of the performance.",
+            "pt": "Entre e deixe o espaço recebê-lo. Este é o 'umbral'. Durante a reconstrução, só havia tijolos e madeira velha. Recuperar o hall significou restaurar sua função simbólica: preparar o espectador para o espetáculo.",
+            "fr": "Entrez et laissez l'espace vous accueillir. C'est le 'seuil'. Pendant la reconstruction, il n'y avait ici que briques et vieille charpente. Récupérer le hall signifiait restaurer sa fonction symbolique : vous préparer au spectacle."
+          },
+          "images": [
+            "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=800&q=80"
+          ],
+          "group": {
+            "es": "El hall de entrada",
+            "en": "The Entrance Hall",
+            "pt": "O hall de entrada",
+            "fr": "Le hall d'entrée"
+          }
+        },
+        {
+          "id": "b05",
+          "title": {
+            "es": "Cielorrasos y frisos: artesanía recuperada",
+            "en": "Ceilings & Friezes: Recovered Craftsmanship",
+            "pt": "Forros e frisos: artesanato recuperado",
+            "fr": "Plafonds et frises: artisanat récupéré"
+          },
+          "duration": "1:50",
+          "audioUrl": {
+            "es": "",
+            "en": "",
+            "pt": "",
+            "fr": ""
+          },
+          "text": {
+            "es": "Mirá hacia arriba.\n\nEsos cielorrasos esconden un pasado industrial: se sostienen con vigas del antiguo Banco Nación. Pero lo que ves es puro arte.\n\nLos yeseros locales Gilardi y Mirón colocaron una a una las casi 200 piezas y rosetones que Carlos Pérez Ortiz fabricó en moldes de caucho siliconado.\n\nEl modillón —esa pieza ornamental que se repite— se convirtió en el símbolo de toda la reconstrucción.",
+            "en": "Look up.\n\nThose ceilings hide an industrial past: they are supported by beams from the old Banco Nación. But what you see is pure art.\n\nLocal plasterers Gilardi and Mirón placed one by one the nearly 200 pieces and rosettes that Carlos Pérez Ortiz made in silicone rubber moulds.\n\nThe modillion — that repeating ornamental piece — became the symbol of the entire reconstruction.",
+            "pt": "Olhe para cima. Esses forros escondem um passado industrial: sustentam-se com vigas do antigo Banco Nación. Os gesseiros locais Gilardi e Mirón colocaram uma a uma as quase 200 peças fabricadas por Carlos Pérez Ortiz.",
+            "fr": "Regardez en haut. Ces plafonds cachent un passé industriel : ils reposent sur des poutres de l'ancien Banco Nación. Les plâtriers locaux Gilardi et Mirón ont posé une à une les quelque 200 pièces fabriquées par Carlos Pérez Ortiz."
+          },
+          "images": [
+            "https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=800&q=80"
+          ],
+          "group": {
+            "es": "El hall de entrada",
+            "en": "The Entrance Hall",
+            "pt": "O hall de entrada",
+            "fr": "Le hall d'entrée"
+          }
+        },
+        {
+          "id": "b06",
+          "title": {
+            "es": "Las arañas y las tulipas",
+            "en": "The Chandeliers & Tulip Shades",
+            "pt": "As araras e as tulipas",
+            "fr": "Les lustres et les tulipes"
+          },
+          "duration": "2:00",
+          "audioUrl": {
+            "es": "",
+            "en": "",
+            "pt": "",
+            "fr": ""
+          },
+          "text": {
+            "es": "Ubicá la gran araña de bronce dorado a la hoja que domina el centro; se colocó en 1991, pero parece haber estado siempre. Fue adquirida por la Asociación Española y conserva todos sus ornamentos originales.\n\nAhora buscá la que está frente a la boletería: fue rescatada de un depósito de escenografía y se cree que es la original de 1897.\n\nUn detalle de orgullo: las tulipas de esa araña y de las antorchas de la escalera son de opalina francesa original. El proveedor quiso cambiarlas por nuevas, pero el teatro dijo «no». Son las originales y con eso no se negocia.",
+            "en": "Find the large gold leaf–gilded bronze chandelier dominating the centre; placed in 1991, it looks as if it has always been there. Acquired by the Spanish Association, it retains all its original ornaments.\n\nNow find the one facing the box office: rescued from a scenery store, it is believed to be the original from 1897.\n\nA point of pride: the tulip shades on that chandelier and the staircase torches are original French opaline glass. The supplier wanted to replace them with new ones, but the theatre said 'no'. They are the originals and that is non-negotiable.",
+            "pt": "Encontre o grande lustre de bronze dourado a ouro que domina o centro — colocado em 1991, parece ter sempre estado ali. O lustre em frente à bilheteria é o original de 1897. As tulipas são de opalina francesa original — o fornecedor queria substituí-las, mas o teatro disse não.",
+            "fr": "Trouvez le grand lustre en bronze doré à la feuille qui domine le centre — posé en 1991, il semble y avoir toujours été. Le lustre face à la billetterie serait l'original de 1897. Les tulipes sont en opaline française originale — le fournisseur voulait les remplacer, mais le théâtre a dit non."
+          },
+          "images": [
+            "https://images.unsplash.com/photo-1573164574572-cb89e39749b4?w=800&q=80"
+          ],
+          "group": {
+            "es": "El hall de entrada",
+            "en": "The Entrance Hall",
+            "pt": "O hall de entrada",
+            "fr": "Le hall d'entrée"
+          }
+        },
+        {
+          "id": "b07",
+          "title": {
+            "es": "Los vitrales",
+            "en": "The Stained Glass Windows",
+            "pt": "Os vitrais",
+            "fr": "Les vitraux"
+          },
+          "duration": "1:40",
+          "audioUrl": {
+            "es": "",
+            "en": "",
+            "pt": "",
+            "fr": ""
+          },
+          "text": {
+            "es": "Buscá con la mirada el vitral sobre la puerta de la sala.\n\nDurante un siglo, ese espacio estuvo vacío.\n\nEl artista azuleño Daniel Cogliatti logró, mediante tres cocciones de vidrio, darle a ese vitral la luz definitiva que se había soñado cien años atrás. La realización de estas piezas exigía una técnica compleja: vidrios pigmentados, pintados y horneados en tres cocciones.\n\nCon su trabajo el hall recuperó ese artefacto decorativo que le faltaba.",
+            "en": "Look for the stained glass window above the hall door.\n\nFor a century, that space was empty.\n\nAzul artist Daniel Cogliatti achieved through three firings of glass the definitive light that had been dreamed of a hundred years earlier. Creating these pieces required complex technique: pigmented, painted and kiln-fired glass in three stages.\n\nWith his work the hall recovered the decorative element it had always lacked.",
+            "pt": "Procure o vitral acima da porta da sala. Durante um século, esse espaço ficou vazio. O artista Daniel Cogliatti conseguiu, mediante três cozeduras de vidro, dar a esse vitral a luz definitiva sonhada cem anos antes.",
+            "fr": "Cherchez le vitrail au-dessus de la porte de la salle. Pendant un siècle, cet espace est resté vide. L'artiste Daniel Cogliatti a réussi, par trois cuissons du verre, à donner à ce vitrail la lumière définitive rêvée cent ans plus tôt."
+          },
+          "images": [
+            "https://images.unsplash.com/photo-1524985069026-dd778a71c7b4?w=800&q=80"
+          ],
+          "group": {
+            "es": "El hall de entrada",
+            "en": "The Entrance Hall",
+            "pt": "O hall de entrada",
+            "fr": "Le hall d'entrée"
+          }
+        },
+        {
+          "id": "b08",
+          "title": {
+            "es": "La boletería",
+            "en": "The Box Office",
+            "pt": "A bilheteria",
+            "fr": "La billetterie"
+          },
+          "duration": "1:20",
+          "audioUrl": {
+            "es": "",
+            "en": "",
+            "pt": "",
+            "fr": ""
+          },
+          "text": {
+            "es": "Acercate a la boletería.\n\nEl mostrador de madera reemplazó a una vieja ventana enrejada.\n\nBuscá el vitral quijotesco de Omar Carreras —un guiño a Azul como Ciudad Cervantina— y el grabado de Gardel del artista azuleño Adolfo Godoy.\n\nEs el primer punto de contacto entre el espectador y el artista.",
+            "en": "Approach the box office.\n\nThe wooden counter replaced an old barred window.\n\nLook for the Quixote-themed stained glass by Omar Carreras — a nod to Azul as a Cervantine City — and the Gardel engraving by Azul artist Adolfo Godoy.\n\nThis is the first point of contact between spectator and artist.",
+            "pt": "Aproxime-se da bilheteria. O balcão de madeira substituiu uma velha janela gradeada. Procure o vitral quixotesco de Omar Carreras e o gravado de Gardel do artista Adolfo Godoy.",
+            "fr": "Approchez-vous de la billetterie. Le comptoir en bois a remplacé une vieille fenêtre à barreaux. Cherchez le vitrail quichottesque d'Omar Carreras et la gravure de Gardel de l'artiste Adolfo Godoy."
+          },
+          "images": [
+            "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80"
+          ],
+          "group": {
+            "es": "El hall de entrada",
+            "en": "The Entrance Hall",
+            "pt": "O hall de entrada",
+            "fr": "Le hall d'entrée"
+          }
+        },
+        {
+          "id": "b09",
+          "title": {
+            "es": "Los pisos",
+            "en": "The Floors",
+            "pt": "Os pisos",
+            "fr": "Les sols"
+          },
+          "duration": "1:20",
+          "audioUrl": {
+            "es": "",
+            "en": "",
+            "pt": "",
+            "fr": ""
+          },
+          "text": {
+            "es": "Los pisos graníticos del hall fueron colocados durante la remodelación de 1930. Al restaurarse el teatro en los 90, era imposible reproducir exactamente los tonos originales.\n\nLa solución fue generar un contraste deliberado: en el sector lindero a la sala se colocaron pisos graníticos negros, marcando un límite visual y funcional entre el hall y el espacio escénico.\n\nFue una decisión sencilla y efectiva que ordena el recorrido y hoy acompaña la transición hacia la sala.",
+            "en": "The granite floors of the hall were laid during the 1930 refurbishment. When the theatre was restored in the 1990s, exactly reproducing the original tones was impossible.\n\nThe solution was deliberate contrast: black granite floors were placed in the section adjoining the hall, marking a visual and functional boundary between the hall and the performance space.\n\nA simple, effective decision that organises the circulation and today guides the transition into the hall.",
+            "pt": "Os pisos graníticos do hall foram colocados na reforma de 1930. Nos anos 90, era impossível reproduzir exatamente os tons originais. A solução foi um contraste deliberado: pisos graníticos pretos no setor contíguo à sala.",
+            "fr": "Les sols en granit du hall furent posés lors de la rénovation de 1930. Dans les années 90, reproduire exactement les teintes originales était impossible. La solution fut un contraste délibéré : des sols en granit noir dans le secteur adjacent à la salle."
+          },
+          "images": [
+            "https://images.unsplash.com/photo-1555993539-1732b0258235?w=800&q=80"
+          ],
+          "group": {
+            "es": "El hall de entrada",
+            "en": "The Entrance Hall",
+            "pt": "O hall de entrada",
+            "fr": "Le hall d'entrée"
+          }
+        },
+        {
+          "id": "b10",
+          "title": {
+            "es": "La sala: forma, historia y mirada",
+            "en": "The Hall: Form, History & Gaze",
+            "pt": "A sala: forma, história e olhar",
+            "fr": "La salle: forme, histoire et regard"
+          },
+          "duration": "2:00",
+          "audioUrl": {
+            "es": "",
+            "en": "",
+            "pt": "",
+            "fr": ""
+          },
+          "text": {
+            "es": "Estás en el corazón del teatro. Esta sala neoclásica «a la italiana» tiene la clásica forma de herradura y capacidad para 500 espectadores.\n\nUn dato para dimensionar su valor: se construyó entre 1894 y 1897, once años antes de que se inaugurara el actual edificio del Teatro Colón en Buenos Aires.\n\nConsta de tres plantas y, aunque hoy ves los palcos cerrados con molduras, en sus inicios estaban abiertos, con balaustres visibles, al estilo de los antiguos corrales de comedias españoles.",
+            "en": "You are at the heart of the theatre. This Italian-style neoclassical hall has the classic horseshoe shape and seats 500.\n\nA figure to put its value in perspective: it was built between 1894 and 1897, eleven years before the current Teatro Colón in Buenos Aires was inaugurated.\n\nIt has three levels, and although today you see the boxes closed with mouldings, originally they were open with visible balusters, in the style of the old Spanish comedy courtyards.",
+            "pt": "Você está no coração do teatro. Esta sala neoclássica 'à italiana' tem a clássica forma de ferradura e capacidade para 500 espectadores. Foi construída entre 1894 e 1897, onze anos antes do atual Teatro Colón.",
+            "fr": "Vous êtes au cœur du théâtre. Cette salle néoclassique 'à l'italienne' a la forme classique en fer à cheval et accueille 500 spectateurs. Elle fut construite entre 1894 et 1897, onze ans avant l'actuel Teatro Colón."
+          },
+          "images": [
+            "https://images.unsplash.com/photo-1517457373958-b7bdd4587205?w=800&q=80"
+          ],
+          "group": {
+            "es": "La sala",
+            "en": "The Hall",
+            "pt": "A sala",
+            "fr": "La salle"
+          }
+        },
+        {
+          "id": "b11",
+          "title": {
+            "es": "Pintura y decorados: recuperar el color",
+            "en": "Paint & Decoration: Recovering Colour",
+            "pt": "Pintura e decoração: recuperar a cor",
+            "fr": "Peinture et décor: retrouver la couleur"
+          },
+          "duration": "1:50",
+          "audioUrl": {
+            "es": "",
+            "en": "",
+            "pt": "",
+            "fr": ""
+          },
+          "text": {
+            "es": "Observá los capiteles de las columnas. ¿Ves ese tono oscuro?\n\nDurante los años de abandono, la sala perdió su brillo y fue pintada de un tono celeste sin criterio histórico.\n\nPara recuperar los colores originales, se hizo un trabajo de «detectives»: se investigó detrás de marcos y varillas hasta encontrar las capas ocultas.\n\nEn 1992, el famoso «marrón africano» se eligió tras intensos debates para devolverle la identidad a la sala.",
+            "en": "Look at the column capitals. Do you see that dark tone?\n\nDuring the years of abandonment the hall lost its lustre and was painted sky-blue without any historical criteria.\n\nRecovering the original colours required detective work: investigating behind frames and rods to find the hidden layers.\n\nIn 1992, the famous 'African brown' was chosen after intense debate to restore the hall's identity.",
+            "pt": "Observe os capitéis das colunas. Durante os anos de abandono, a sala foi pintada de azul celeste sem critério histórico. Em 1992, o famoso 'marrom africano' foi escolhido após intensos debates.",
+            "fr": "Observez les chapiteaux des colonnes. Pendant les années d'abandon, la salle fut peinte en bleu ciel sans aucun critère historique. En 1992, le fameux 'brun africain' fut choisi après d'intenses débats."
+          },
+          "images": [
+            "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=800&q=80"
+          ],
+          "group": {
+            "es": "La sala",
+            "en": "The Hall",
+            "pt": "A sala",
+            "fr": "La salle"
+          }
+        },
+        {
+          "id": "b12",
+          "title": {
+            "es": "El empapelado: sonido y estética",
+            "en": "The Wallpaper: Sound & Aesthetics",
+            "pt": "O papel de parede: som e estética",
+            "fr": "Le papier peint: son et esthétique"
+          },
+          "duration": "1:40",
+          "audioUrl": {
+            "es": "",
+            "en": "",
+            "pt": "",
+            "fr": ""
+          },
+          "text": {
+            "es": "El empapelado bordó que ves no es solo decorativo; es una pieza clave de la acústica.\n\nSe analizaron muchísimas opciones hasta que el importador Dante Artemisi trajo muestras a Azul para evaluarlas «in situ».\n\nSon papeles opacos, sin componentes acrílicos, traídos de Estados Unidos para evitar que el sonido rebote o se distorsione.\n\nGracias a esa elección técnica, hoy disfrutamos de una nitidez sonora de excelencia.",
+            "en": "The burgundy wallpaper you see is not merely decorative — it is a key component of the acoustics.\n\nCountless options were analysed until importer Dante Artemisi brought samples to Azul to evaluate them on-site.\n\nThey are matte papers, free of acrylic compounds, brought from the United States to prevent sound from bouncing or distorting.\n\nThanks to that technical choice, today we enjoy exceptional sound clarity.",
+            "pt": "O papel de parede bordô não é apenas decorativo — é uma peça-chave da acústica. Papéis opacos, sem componentes acrílicos, trazidos dos Estados Unidos para evitar que o som ressoe ou se distorça.",
+            "fr": "Le papier peint bordeaux n'est pas seulement décoratif — c'est un élément clé de l'acoustique. Des papiers mats, sans composants acryliques, importés des États-Unis pour éviter que le son ne rebondisse ou ne se distorde."
+          },
+          "images": [
+            "https://images.unsplash.com/photo-1460723237483-7a6dc9d0b212?w=800&q=80"
+          ],
+          "group": {
+            "es": "La sala",
+            "en": "The Hall",
+            "pt": "A sala",
+            "fr": "La salle"
+          }
+        },
+        {
+          "id": "b13",
+          "title": {
+            "es": "Iluminación de la sala",
+            "en": "Hall Lighting",
+            "pt": "Iluminação da sala",
+            "fr": "Éclairage de la salle"
+          },
+          "duration": "1:40",
+          "audioUrl": {
+            "es": "",
+            "en": "",
+            "pt": "",
+            "fr": ""
+          },
+          "text": {
+            "es": "La iluminación es una obra de artesanía.\n\nLa firma Mateazzi Hnos., de Buenos Aires, replicó los apliques de bronce originales. Pero el trabajo más paciente lo hizo Mario Ferrari: él pulió manualmente cada una de las más de cien tulipas de cristal para que encajaran con precisión en las grillas de bronce.\n\nEse nivel de detalle es el que permitió que hoy la sala luzca con la misma coherencia estética de hace un siglo.",
+            "en": "The lighting is a work of craftsmanship.\n\nThe firm Mateazzi Hnos. of Buenos Aires replicated the original bronze wall sconces. But the most patient work was done by Mario Ferrari: he manually polished each of more than a hundred crystal tulip shades so they would fit precisely into the bronze grilles.\n\nThat level of detail is what allows the hall today to shine with the same aesthetic coherence as a century ago.",
+            "pt": "A iluminação é uma obra de artesanato. A firma Mateazzi Hnos. replicou os apliques de bronze originais. Mario Ferrari poliu manualmente cada uma das mais de cem tulipas de cristal.",
+            "fr": "L'éclairage est une œuvre artisanale. La firme Mateazzi Hnos. répliqua les appliques en bronze originales. Mario Ferrari poli manuellement chacune des plus de cent tulipes en cristal."
+          },
+          "images": [
+            "https://images.unsplash.com/photo-1527529482837-4698179dc6ce?w=800&q=80"
+          ],
+          "group": {
+            "es": "La sala",
+            "en": "The Hall",
+            "pt": "A sala",
+            "fr": "La salle"
+          }
+        },
+        {
+          "id": "b14",
+          "title": {
+            "es": "La araña central de la sala",
+            "en": "The Central Chandelier",
+            "pt": "A araça central da sala",
+            "fr": "Le lustre central de la salle"
+          },
+          "duration": "1:30",
+          "audioUrl": {
+            "es": "",
+            "en": "",
+            "pt": "",
+            "fr": ""
+          },
+          "text": {
+            "es": "Mirá hacia el techo una vez más.\n\nLa gran araña central, de estilo Art Nouveau, es una de las pocas piezas que se conservó intacta a lo largo de toda la historia del teatro.\n\nDurante la reconstrucción fue acondicionada y se reforzaron sus estructuras.\n\nFijate cómo combina su diseño con los cuatro vitrales de las paredes de los palcos bajos. El moldurado oval que la rodea fue incorporado en 1930 para resaltarla aún más.",
+            "en": "Look up at the ceiling once more.\n\nThe great central Art Nouveau chandelier is one of the few pieces preserved intact throughout the theatre's entire history.\n\nDuring the reconstruction it was overhauled and its structure reinforced.\n\nNotice how its design combines with the four stained glass windows on the lower box walls. The oval moulding surrounding it was added in 1930 to make it stand out even more.",
+            "pt": "Olhe para o teto mais uma vez. O grande lustre central em estilo Art Nouveau é uma das poucas peças conservadas intactas ao longo de toda a história do teatro.",
+            "fr": "Regardez encore le plafond. Le grand lustre central de style Art Nouveau est l'une des rares pièces conservées intactes tout au long de l'histoire du théâtre."
+          },
+          "images": [
+            "https://images.unsplash.com/photo-1514306191717-452ec28c7814?w=800&q=80"
+          ],
+          "group": {
+            "es": "La sala",
+            "en": "The Hall",
+            "pt": "A sala",
+            "fr": "La salle"
+          }
+        },
+        {
+          "id": "b15",
+          "title": {
+            "es": "Los frisos y molduras",
+            "en": "Friezes & Mouldings",
+            "pt": "Os frisos e molduras",
+            "fr": "Les frises et moulures"
+          },
+          "duration": "1:40",
+          "audioUrl": {
+            "es": "",
+            "en": "",
+            "pt": "",
+            "fr": ""
+          },
+          "text": {
+            "es": "La restauración de las molduras fue casi quirúrgica.\n\nSe contrató a Carlos Pérez Ortiz, quien trabajó con materiales sintéticos y caucho para crear los moldes de los frisos.\n\nSin embargo, en muchos sectores el daño era tal que no se pudieron usar moldes: hubo que reconstruir las piezas a mano, una por una, usando el material original: yeso «París».\n\nCada detalle que ves en las paredes es fruto de ese oficio artesanal.",
+            "en": "The restoration of the mouldings was almost surgical.\n\nCarlos Pérez Ortiz was hired, working with synthetic materials and rubber to create the frieze moulds.\n\nHowever, in many areas the damage was so severe that moulds couldn't be used: pieces had to be reconstructed by hand, one by one, using the original material: 'Paris' plaster.\n\nEvery detail you see on the walls is the fruit of that craft.",
+            "pt": "A restauração das molduras foi quase cirúrgica. Carlos Pérez Ortiz criou os moldes dos frisos. Em muitos setores, o dano era tal que foi preciso reconstruir as peças à mão, uma a uma, usando gesso 'Paris'.",
+            "fr": "La restauration des moulures fut presque chirurgicale. Carlos Pérez Ortiz créa les moules des frises. Dans de nombreuses zones, les dégâts étaient tels qu'il fallut reconstruire les pièces à la main, une par une, avec du plâtre 'Paris'."
+          },
+          "images": [
+            "https://images.unsplash.com/photo-1493723843671-1d655e66ac1c?w=800&q=80"
+          ],
+          "group": {
+            "es": "La sala",
+            "en": "The Hall",
+            "pt": "A sala",
+            "fr": "La salle"
+          }
+        },
+        {
+          "id": "b16",
+          "title": {
+            "es": "Las butacas",
+            "en": "The Seats",
+            "pt": "As poltronas",
+            "fr": "Les fauteuils"
+          },
+          "duration": "2:00",
+          "audioUrl": {
+            "es": "",
+            "en": "",
+            "pt": "",
+            "fr": ""
+          },
+          "text": {
+            "es": "Sentate… ponete cómodo.\n\nLas primeras butacas de 1897 eran de madera con respaldo de esterillas, y permitían desatornillarlas para realizar usos no convencionales: bailes, boxeo, etc. En 1930 fueron reemplazadas por butacas procedentes de Chicago.\n\nEn 1979 se repararon y durante la inundación de 1980 se arruinaron. Más adelante, por convenio entre el municipio y la provincia, se consiguieron 300 butacas para la sala, sumadas a 200 adquiridas en Las Flores en 1978.\n\nIncluso el «gallinero» —allá arriba—, que antes tenía simples tablones, hoy cuenta con el mismo confort que la platea.",
+            "en": "Sit down… get comfortable.\n\nThe first seats of 1897 were wooden with rattan backs and could be unscrewed for non-conventional uses: dances, boxing matches, etc. In 1930 they were replaced by seats from Chicago.\n\nRepaired in 1979, they were ruined in the 1980 flood. Later, through an agreement between the municipality and the province, 300 seats were obtained for the hall, added to 200 acquired in Las Flores in 1978.\n\nEven the 'gods' — up there — which once had simple planks, today has the same comfort as the stalls.",
+            "pt": "Sente-se… fique confortável. As primeiras poltronas de 1897 eram de madeira e podiam ser desaparafusadas para usos não convencionais: bailes, boxe, etc. Hoje, mesmo o 'galinheiro' lá em cima tem o mesmo conforto da plateia.",
+            "fr": "Asseyez-vous… mettez-vous à l'aise. Les premiers fauteuils de 1897 étaient en bois et pouvaient être dévissés pour des usages non conventionnels : bals, boxe, etc. Aujourd'hui, même le 'poulailler' là-haut a le même confort que le parterre."
+          },
+          "images": [
+            "https://images.unsplash.com/photo-1519056349672-a0694a3a08b9?w=800&q=80"
+          ],
+          "group": {
+            "es": "La sala",
+            "en": "The Hall",
+            "pt": "A sala",
+            "fr": "La salle"
+          }
+        },
+        {
+          "id": "b17",
+          "title": {
+            "es": "Las sillas de los palcos",
+            "en": "The Box Chairs",
+            "pt": "As cadeiras dos camarotes",
+            "fr": "Les chaises des loges"
+          },
+          "duration": "1:30",
+          "audioUrl": {
+            "es": "",
+            "en": "",
+            "pt": "",
+            "fr": ""
+          },
+          "text": {
+            "es": "En los palcos altos vas a ver las sillas originales: unas hermosas «Thonet» checoslovacas del siglo XIX que fueron retapizadas al inicio de la reconstrucción.\n\nPara los palcos bajos e intermedios, se compraron doscientas sillas nuevas modelo «Sheraton», manteniendo el mismo tono de pana púrpura para que toda la sala tenga una armonía visual perfecta.",
+            "en": "In the upper boxes you'll see the original chairs: beautiful 19th-century Czechoslovak 'Thonet' chairs reupholstered at the start of the reconstruction.\n\nFor the lower and intermediate boxes, two hundred new 'Sheraton' model chairs were purchased, maintaining the same tone of purple velvet so that the entire hall achieves perfect visual harmony.",
+            "pt": "Nos camarotes superiores você verá as cadeiras originais: belas 'Thonet' checoslovacas do século XIX retapizadas. Para os camarotes inferiores, compraram-se 200 cadeiras 'Sheraton' no mesmo tom de veludo púrpura.",
+            "fr": "Dans les loges supérieures vous verrez les chaises originales : de belles 'Thonet' tchécoslovaques du XIXe siècle retapissées. Pour les loges inférieures, 200 chaises 'Sheraton' furent achetées dans le même ton de velours pourpre."
+          },
+          "images": [
+            "https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=800&q=80"
+          ],
+          "group": {
+            "es": "La sala",
+            "en": "The Hall",
+            "pt": "A sala",
+            "fr": "La salle"
+          }
+        },
+        {
+          "id": "b18",
+          "title": {
+            "es": "El foso y el piso móvil",
+            "en": "The Orchestra Pit & Moveable Floor",
+            "pt": "O fosso e o piso móvel",
+            "fr": "La fosse et le plancher mobile"
+          },
+          "duration": "1:50",
+          "audioUrl": {
+            "es": "",
+            "en": "",
+            "pt": "",
+            "fr": ""
+          },
+          "text": {
+            "es": "Como te contábamos al principio, el piso de esta sala tiene un secreto: un sistema móvil que se accionaba con una palanca desde el bajo escenario para ponerlo a nivel.\n\nEsto permitió que aquí se celebraran bailes de carnaval y peleas de boxeo históricas, como las de Luis Ángel Firpo.\n\nDurante la reconstrucción se decidió desactivarlo y cubrir el foso de la orquesta para priorizar la capacidad de la sala, aunque el mecanismo sigue ahí, bajo tus pies, como testigo de otra época.",
+            "en": "As we mentioned at the beginning, this hall's floor hides a secret: a moveable system operated by a lever from beneath the stage to level it.\n\nThis allowed carnival dances and historic boxing matches to be held here, including bouts featuring Luis Ángel Firpo.\n\nDuring the reconstruction it was decided to deactivate it and cover the orchestra pit to maximise seating capacity — though the mechanism is still there, beneath your feet, as a witness to another era.",
+            "pt": "O piso desta sala tem um segredo: um sistema móvel acionado por uma alavanca. Isso permitiu bailes de carnaval e lutas de boxe históricas, como as de Luís Ángel Firpo. O mecanismo ainda está lá, sob seus pés.",
+            "fr": "Le sol de cette salle cache un secret: un système mobile actionné par un levier. Cela permit des bals de carnaval et des combats de boxe historiques, comme ceux de Luis Ángel Firpo. Le mécanisme est toujours là, sous vos pieds."
+          },
+          "images": [
+            "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=800&q=80"
+          ],
+          "group": {
+            "es": "La sala",
+            "en": "The Hall",
+            "pt": "A sala",
+            "fr": "La salle"
+          }
+        },
+        {
+          "id": "b19",
+          "title": {
+            "es": "Climatización de la sala",
+            "en": "Hall Air Conditioning",
+            "pt": "Climatização da sala",
+            "fr": "Climatisation de la salle"
+          },
+          "duration": "1:20",
+          "audioUrl": {
+            "es": "",
+            "en": "",
+            "pt": "",
+            "fr": ""
+          },
+          "text": {
+            "es": "Desde 2011, nuestra sala está climatizada para que la experiencia sea placentera en cualquier estación.\n\nFinanciar los equipos fue un esfuerzo de todos: se hizo una rifa comunitaria y se contó con el asesoramiento de técnicos locales como Federico Verna.\n\nLa instalación requirió obras complejas de electricidad y albañilería, pero hoy nos permite disfrutar del arte con el confort que este coliseo merece.",
+            "en": "Since 2011 our hall has been air-conditioned so the experience is pleasant in any season.\n\nFunding the equipment was a collective effort: a community raffle was held and local technicians such as Federico Verna provided their expertise.\n\nThe installation required complex electrical and masonry work, but today it allows us to enjoy art with the comfort this building deserves.",
+            "pt": "Desde 2011, nossa sala é climatizada. O financiamento dos equipamentos foi um esforço coletivo: uma rifa comunitária e o assessoramento de técnicos locais como Federico Verna.",
+            "fr": "Depuis 2011, notre salle est climatisée. Le financement des équipements fut un effort collectif : une tombola communautaire et l'expertise de techniciens locaux comme Federico Verna."
+          },
+          "images": [
+            "https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=800&q=80"
+          ],
+          "group": {
+            "es": "La sala",
+            "en": "The Hall",
+            "pt": "A sala",
+            "fr": "La salle"
+          }
+        },
+        {
+          "id": "b20",
+          "title": {
+            "es": "La boca de escena",
+            "en": "The Proscenium Arch",
+            "pt": "A boca de cena",
+            "fr": "La bouche de scène"
+          },
+          "duration": "1:40",
+          "audioUrl": {
+            "es": "",
+            "en": "",
+            "pt": "",
+            "fr": ""
+          },
+          "text": {
+            "es": "Observá el arco que rodea el escenario.\n\nArriba, a los lados, te miran Miguel de Cervantes y Fray Luis de León.\n\nEl paisaje pampeano del centro fue pintado en 1992.\n\nBuscá las «cubre candilejas» en el suelo; imaginálас encendidas, iluminando a los actores desde abajo con una luz casi mágica.",
+            "en": "Look at the arch surrounding the stage.\n\nAbove, on either side, Miguel de Cervantes and Fray Luis de León look down at you.\n\nThe pampas landscape at the centre was painted in 1992.\n\nLook for the footlight covers on the floor — imagine them lit, illuminating the actors from below with an almost magical light.",
+            "pt": "Observe o arco que envolve o palco. Acima, dos lados, Miguel de Cervantes e Fray Luis de León olham para você. A paisagem pampeana do centro foi pintada em 1992.",
+            "fr": "Observez l'arche entourant la scène. En haut, des deux côtés, Miguel de Cervantes et Fray Luis de León vous regardent. Le paysage de pampa au centre fut peint en 1992."
+          },
+          "images": [
+            "https://images.unsplash.com/photo-1514306191717-452ec28c7814?w=800&q=80"
+          ],
+          "group": {
+            "es": "El escenario",
+            "en": "The Stage",
+            "pt": "O palco",
+            "fr": "La scène"
+          }
+        },
+        {
+          "id": "b21",
+          "title": {
+            "es": "Pisar el escenario: un mito teatral",
+            "en": "Treading the Boards: A Theatrical Myth",
+            "pt": "Pisar o palco: um mito teatral",
+            "fr": "Fouler la scène: un mythe théâtral"
+          },
+          "duration": "2:00",
+          "audioUrl": {
+            "es": "",
+            "en": "",
+            "pt": "",
+            "fr": ""
+          },
+          "text": {
+            "es": "Pisar estas tablas es pisar historia.\n\nDurante la reconstrucción, la madera de pino Brasil se dejó estacionar en este mismo lugar durante tres años antes de ser colocada.\n\nPara los laterales se usó pinotea recuperada: es la misma madera que pisó el «Morocho del Abasto», Carlos Gardel, en su última visita a Azul en 1933.\n\nCuidar este piso es una obsesión para nosotros; hay reglas estrictas para mantenerlo, porque este escenario es el orgullo máximo de todo el equipo técnico.",
+            "en": "To tread these boards is to tread history.\n\nDuring reconstruction the Brazilian pine was left to season in this very spot for three years before being laid.\n\nFor the wings, recovered pinotea was used — the same timber trodden by 'El Morocho del Abasto', Carlos Gardel, on his last visit to Azul in 1933.\n\nCaring for this floor is an obsession for us; strict rules govern its maintenance, because this stage is the greatest pride of the entire technical team.",
+            "pt": "Pisar estas tábuas é pisar na história. A madeira de pinho Brasil ficou estacionada neste lugar por três anos. Para as laterais, usou-se pinotea recuperada — a mesma que pisou Carlos Gardel em sua última visita a Azul em 1933.",
+            "fr": "Fouler ces planches, c'est fouler l'histoire. Le bois de pin Brésil fut laissé à sécher sur place pendant trois ans. Pour les côtés, on utilisa de la pinotea récupérée — le même bois que foulait Carlos Gardel lors de sa dernière visite à Azul en 1933."
+          },
+          "images": [
+            "https://images.unsplash.com/photo-1460723237483-7a6dc9d0b212?w=800&q=80"
+          ],
+          "group": {
+            "es": "El escenario",
+            "en": "The Stage",
+            "pt": "O palco",
+            "fr": "La scène"
+          }
+        },
+        {
+          "id": "b22",
+          "title": {
+            "es": "El telón de boca",
+            "en": "The House Curtain",
+            "pt": "O pano de boca",
+            "fr": "Le rideau de scène"
+          },
+          "duration": "1:50",
+          "audioUrl": {
+            "es": "",
+            "en": "",
+            "pt": "",
+            "fr": ""
+          },
+          "text": {
+            "es": "El telón púrpura que ves es una de nuestras piezas más queridas.\n\nEl original de 1897, con bordados en hilos de oro, se perdió tras un incendio y años de abandono. Del viejo telón solo pudimos rescatar los bordados con las siglas «T» y «E», que fueron cosidos a mano sobre esta nueva pana acrílica.\n\nEl 7 de septiembre de 1992, cuando el telón se abrió por primera vez tras la reconstrucción —incluso antes de tener las butacas listas—, la emoción fue tan grande que no faltaron las lágrimas. Su apertura sigue siendo el momento mágico en que la función comienza.",
+            "en": "The purple curtain you see is one of our most cherished pieces.\n\nThe original from 1897, embroidered with gold thread, was lost to fire and years of neglect. From the old curtain we could only rescue the embroidered initials 'T' and 'E', which were hand-stitched onto this new acrylic velvet.\n\nOn September 7, 1992, when the curtain opened for the first time after the reconstruction — even before the seats were ready — the emotion was so great that tears were not uncommon. Its opening remains the magical moment when the performance begins.",
+            "pt": "O telão púrpura é uma das nossas peças mais queridas. Do original de 1897 só conseguimos resgatar os bordados com as iniciais 'T' e 'E'. Em 7 de setembro de 1992, quando o telão abriu pela primeira vez após a reconstrução, as lágrimas não faltaram.",
+            "fr": "Le rideau pourpre est l'une de nos pièces les plus chéries. De l'original de 1897, nous n'avons pu sauver que les broderies avec les initiales 'T' et 'E'. Le 7 septembre 1992, quand le rideau s'ouvrit pour la première fois après la reconstruction, les larmes ne manquèrent pas."
+          },
+          "images": [
+            "https://images.unsplash.com/photo-1527529482837-4698179dc6ce?w=800&q=80"
+          ],
+          "group": {
+            "es": "El escenario",
+            "en": "The Stage",
+            "pt": "O palco",
+            "fr": "La scène"
+          }
+        },
+        {
+          "id": "b23",
+          "title": {
+            "es": "La parrilla y la mecánica escénica",
+            "en": "The Grid & Stage Mechanics",
+            "pt": "A vara e a mecânica cênica",
+            "fr": "La grille et la mécanique scénique"
+          },
+          "duration": "1:40",
+          "audioUrl": {
+            "es": "",
+            "en": "",
+            "pt": "",
+            "fr": ""
+          },
+          "text": {
+            "es": "Sobre el escenario se extiende la parrilla, una estructura fundamental que permite el manejo de telones, bambalinas y elementos escenográficos.\n\nDurante la restauración se reforzaron vigas, se revisaron poleas y se recuperaron mecanismos originales, combinándolos con mejoras de seguridad.\n\nParte de este sistema funciona de manera manual, como en los teatros históricos. Un saber técnico que requiere oficio, precisión y trabajo en equipo.",
+            "en": "Above the stage extends the grid, a fundamental structure for managing curtains, borders and scenic elements.\n\nDuring restoration, beams were reinforced, pulleys checked and original mechanisms recovered, combined with safety improvements.\n\nPart of this system works manually, as in historic theatres — technical knowledge that requires skill, precision and teamwork.",
+            "pt": "Sobre o palco estende-se a vara, estrutura fundamental para o manejo de telões e elementos cênicos. Durante a restauração, vigas foram reforçadas e mecanismos originais recuperados.",
+            "fr": "Au-dessus de la scène s'étend la grille, structure fondamentale pour la gestion des rideaux et éléments scéniques. Pendant la restauration, les poutres furent renforcées et les mécanismes originaux récupérés."
+          },
+          "images": [
+            "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=800&q=80"
+          ],
+          "group": {
+            "es": "El escenario",
+            "en": "The Stage",
+            "pt": "O palco",
+            "fr": "La scène"
+          }
+        },
+        {
+          "id": "b24",
+          "title": {
+            "es": "El sistema de iluminación de escenario",
+            "en": "The Stage Lighting System",
+            "pt": "O sistema de iluminação do palco",
+            "fr": "Le système d'éclairage de scène"
+          },
+          "duration": "1:40",
+          "audioUrl": {
+            "es": "",
+            "en": "",
+            "pt": "",
+            "fr": ""
+          },
+          "text": {
+            "es": "El escenario fue concebido como una verdadera máquina de precisión.\n\nSu iluminación no se hizo de un día para otro; se concretó por etapas buscando siempre la máxima calidad técnica.\n\nEn 1992 recibimos el asesoramiento del equipo del Teatro Auditorium de Mar del Plata para diseñar las estructuras básicas. Desde entonces, hemos ido renovando consolas y artefactos para que, en cada función, la luz trabaje a favor de la escena.\n\nAcá nada es decorativo: cada foco cumple una función vital.",
+            "en": "The stage was conceived as a true precision machine.\n\nIts lighting was not achieved overnight — it was built up in stages, always seeking the highest technical quality.\n\nIn 1992 we received guidance from the team at the Teatro Auditorium in Mar del Plata to design the basic structures. Since then we have been continually updating consoles and fixtures so that in every performance the light works in service of the scene.\n\nHere nothing is decorative: every spotlight serves a vital function.",
+            "pt": "O palco foi concebido como uma verdadeira máquina de precisão. Em 1992, recebemos o assessoramento da equipe do Teatro Auditorium de Mar del Plata. Desde então, renovamos consoles e equipamentos para que a luz sirva a cada espetáculo.",
+            "fr": "La scène fut conçue comme une véritable machine de précision. En 1992, nous reçûmes les conseils de l'équipe du Teatro Auditorium de Mar del Plata. Depuis, nous renouvelons consoles et équipements pour que la lumière serve chaque spectacle."
+          },
+          "images": [
+            "https://images.unsplash.com/photo-1524985069026-dd778a71c7b4?w=800&q=80"
+          ],
+          "group": {
+            "es": "El escenario",
+            "en": "The Stage",
+            "pt": "O palco",
+            "fr": "La scène"
+          }
+        },
+        {
+          "id": "b25",
+          "title": {
+            "es": "Los camarines",
+            "en": "The Dressing Rooms",
+            "pt": "Os camarins",
+            "fr": "Les loges d'artistes"
+          },
+          "duration": "1:40",
+          "audioUrl": {
+            "es": "",
+            "en": "",
+            "pt": "",
+            "fr": ""
+          },
+          "text": {
+            "es": "Antes de salir a escena, los artistas pasan por acá.\n\nEl teatro cuenta con catorce camarines restaurados y modernizados, con todas las comodidades.\n\nEn esta puesta en valor trabajaron carpinteros locales como Pastore, los hermanos Fortunato y Lateana, logrando un espacio que combina la calidez de la madera con la funcionalidad necesaria para un elenco.\n\nEn estos pasillos, entre el maquillaje y los nervios del debut, es donde se cruzan las generaciones de artistas que le dan vida al Español. ¿Sabés qué artistas los ocuparon?",
+            "en": "Before stepping onto the stage, artists pass through here.\n\nThe theatre has fourteen restored and modernised dressing rooms, fully equipped.\n\nLocal carpenters including Pastore, the Fortunato brothers and Lateana worked on this restoration, creating a space that combines the warmth of wood with the functionality a cast requires.\n\nIn these corridors, between make-up and first-night nerves, the generations of artists who bring the Español to life cross paths. Do you know which artists have occupied them?",
+            "pt": "Antes de entrar no palco, os artistas passam por aqui. O teatro conta com quatorze camarins restaurados e modernizados. Nestes corredores, entre a maquiagem e os nervos da estreia, cruzam-se as gerações de artistas que dão vida ao Español.",
+            "fr": "Avant d'entrer en scène, les artistes passent par ici. Le théâtre dispose de quatorze loges restaurées et modernisées. Dans ces couloirs, entre le maquillage et le trac du premier soir, se croisent les générations d'artistes qui donnent vie à l'Español."
+          },
+          "images": [
+            "https://images.unsplash.com/photo-1493723843671-1d655e66ac1c?w=800&q=80"
+          ],
+          "group": {
+            "es": "El escenario",
+            "en": "The Stage",
+            "pt": "O palco",
+            "fr": "La scène"
+          }
+        }
+      ]
+    }
+  ]
+}

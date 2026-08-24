@@ -1,0 +1,1012 @@
+{
+  "site": {
+    "eyebrow": "Audioguía",
+    "title": {
+      "es": "Teatro Español de Azul",
+      "en": "Teatro Español de Azul",
+      "pt": "Teatro Español de Azul",
+      "fr": "Teatro Español de Azul"
+    },
+    "subtitle": {
+      "es": "Audioguía oficial",
+      "en": "Official Audio Guide",
+      "pt": "Audioguia oficial",
+      "fr": "Audioguide officiel"
+    },
+    "readLabel": {
+      "es": "Leer descripción completa",
+      "en": "Read full description",
+      "pt": "Ler descrição completa",
+      "fr": "Lire la description"
+    },
+    "splashBg": "images/splash.webp",
+    "fallbackImage": "images/splash.webp"
+  },
+  "langs": [
+    {
+      "code": "es",
+      "flag": "🇦🇷",
+      "label": "Español"
+    },
+    {
+      "code": "en",
+      "flag": "🇬🇧",
+      "label": "English"
+    }
+  ],
+  "sections": [
+    {
+      "id": "historico",
+      "label": {
+        "es": "Circuito A — Histórico",
+        "en": "Circuit A — Historical",
+        "pt": "Circuito A — Histórico",
+        "fr": "Circuit A — Historique"
+      },
+      "intro": {
+        "es": "En este circuito vas a conocer el legado de un tesoro histórico y cultural en el corazón de la pampa argentina. Desde los inmigrantes españoles que lo soñaron hasta la comunidad que lo reconstruyó ladrillo a ladrillo durante 25 años.",
+        "en": "In this circuit you'll discover the legacy of a historic and cultural treasure at the heart of the Argentine pampas — from the Spanish immigrants who dreamed it up to the community that rebuilt it brick by brick over 25 years.",
+        "pt": "Neste circuito você vai conhecer o legado de um tesouro histórico e cultural no coração da pampa argentina, desde os imigrantes espanhóis que o sonharam até a comunidade que o reconstruiu tijolo a tijolo.",
+        "fr": "Dans ce circuit, vous découvrirez l'héritage d'un trésor historique et culturel au cœur de la pampa argentine, des immigrants espagnols qui en ont rêvé à la communauté qui l'a reconstruit brique par brique."
+      },
+      "items": [
+        {
+          "id": "a01",
+          "title": {
+            "es": "Bienvenida y memoria de los pioneros",
+            "en": "Welcome & Memory of the Pioneers",
+            "pt": "Boas-vindas e memória dos pioneiros",
+            "fr": "Bienvenue et mémoire des pionniers"
+          },
+          "duration": "2:30",
+          "audioUrl": {
+            "es": "audios/01/01-bienvenida-es.mp3",
+            "en": "audios/01/01-bienvenida-en.mp3",
+            "pt": "audios/01/01-bienvenida-pt.mp3",
+            "fr": "audios/01/01-bienvenida-fr.mp3"
+          },
+          "text": {
+            "es": "Te damos la bienvenida al Teatro Español de Azul.\n\nEn esta audioguía vas a conocer el legado de un tesoro histórico, cultural y arquitectónico en el corazón de la pampa argentina. \n\nInaugurado en 1897—once años antes que el actual edificio del Teatro Colón de Buenos Aires—, este teatro nació de la fuerza y la ilusión de inmigrantes españoles que buscaban algo más que trabajo: buscaban un lugar para desarrollar la cultura y promover el encuentro.\n\nEste edificio es una cadena de sueños y manos que nunca dejaron de sostenerlo. Es el resultado de una comunidad entera empeñada en que este lugar siga vivo.",
+            "en": "Welcome to the Teatro Español de Azul.\n\nIn this audio guide, you'll discover the legacy of a historic, cultural and architectural treasure at the heart of the Argentine pampas.\n\nOpened in 1897 — eleven years before the current Teatro Colón in Buenos Aires — this site was born of the spirit and determination of Spanish immigrants who sought more than work: they sought a place to develop culture and build community.\n\nIts Italian neoclassical style, horseshoe-shaped main hall, fine ornamental details and cast-iron columns seat 500 people.\n\nThis building is a living fragment of the culture those pioneers carried in their memory to plant in new soil — a testament to the ideal of progress of their era.",
+            "pt": "Bem-vindo ao Teatro Español de Azul.\n\nNesta audioguia, você vai conhecer o legado de um tesouro histórico, cultural e arquitetônico no coração da pampa argentina.\n\nInaugurado em 1897 — onze anos antes do atual Teatro Colón de Buenos Aires —, este lugar nasceu da força e da ilusão de imigrantes espanhóis que buscavam mais do que trabalho: queriam um espaço para desenvolver cultura.",
+            "fr": "Bienvenue au Teatro Español de Azul.\n\nDans cet audioguide, vous découvrirez l'héritage d'un trésor historique, culturel et architectural au cœur de la pampa argentine.\n\nInauguré en 1897 — onze ans avant l'actuel Teatro Colón de Buenos Aires —, ce lieu est né de la force et de l'enthousiasme d'immigrants espagnols qui cherchaient bien plus que du travail."
+          },
+          "images": [
+            { "src": "images/01/01.jpg", "caption": {
+              "es": "Acta de fundación del Teatro Español de Azul. Año 1882.",
+              "en": "Founding charter of the Teatro Español de Azul. 1882.",
+              "pt": "Ata de fundação do Teatro Español de Azul. Ano de 1882.",
+              "fr": "Acte de fondation du Teatro Español de Azul. Année 1882." } },
+            { "src": "images/01/02.jpg", "caption": { "es": "", "en": "", "pt": "", "fr": "" } },
+            { "src": "images/01/03.jpg", "caption": { "es": "", "en": "", "pt": "", "fr": "" } },
+            { "src": "images/01/04.jpg", "caption": {
+              "es": "Fachada del teatro.",
+              "en": "The theatre facade.",
+              "pt": "Fachada do teatro.",
+              "fr": "Façade du théâtre." } },
+            { "src": "images/01/05.jpg", "caption": {
+              "es": "Interior del teatro.",
+              "en": "Interior of the theatre.",
+              "pt": "Interior do teatro.",
+              "fr": "Intérieur du théâtre." } },
+            { "src": "images/01/06.jpg", "caption": {
+              "es": "Interior del teatro restaurado.",
+              "en": "The restored interior of the theatre.",
+              "pt": "Interior do teatro restaurado.",
+              "fr": "Intérieur du théâtre restauré." } }
+          ]
+        },
+        {
+          "id": "a02",
+          "title": {
+            "es": "1894–1897: la construcción",
+            "en": "1894–1897: The Construction",
+            "pt": "1894–1897: A construção",
+            "fr": "1894–1897: La construction"
+          },
+          "duration": "2:45",
+          "audioUrl": {
+            "es": "audios/02/02-construccion-es.mp3",
+            "en": "audios/02/02-construccion-en.mp3",
+            "pt": "audios/02/02-construccion-pt.mp3",
+            "fr": "audios/02/02-construccion-fr.mp3"
+          },
+          "text": {
+            "es": "La construcción del Teatro Español fue un proyecto valiente que reflejó el ideal de progreso de aquella época y no estuvo exento de las tensiones propias de las grandes empresas.\n\n\n\nLa obra comenzó unos años antes de que Azul fuera declarada ciudad. Don Antonio Nieva, entonces presidente de la Asociación Española de Socorros Mutuos, donó los primeros diez mil ladrillos y lanzó una suscripción pública en el diario local para sumar a los vecinos.\n\n\n\nSe decidió que el edificio debía ser “de altos” y con una capacidad para 500 localidades para acompañar el crecimiento de la ciudad. Además, tendría un estilo neoclásico italiano con columnas en la fachada, materiales sólidos y techos altos que, como los grandes edificios del momento, mostraría la importancia del teatro. \n\n\n\nCada paso de la obra fue un esfuerzo colectivo y en tres años se abrió al público.",
+            "en": "The construction of the Teatro Español was a brave project, not without the tensions inherent in great enterprises.\n\nDon Antonio Nieva, then president of the Spanish Mutual Aid Society, donated the first ten thousand bricks and launched a public subscription in the local newspaper.\n\nThe original plot proved too small and in 1893 was swapped for this one facing the main square. New plans were drawn up, and it was decided the building should be multi-storey, befitting the town's growth.\n\nEvery step of construction was a collective effort — the theatre taking shape alongside the community of Azul, which was declared a city in 1895.",
+            "pt": "A construção do Teatro Español foi um projeto corajoso, não sem as tensões próprias dos grandes empreendimentos.\n\nDon Antonio Nieva doou os primeiros dez mil tijolos e lançou uma subscrição pública no jornal local. O terreno original foi trocado por este, em frente à praça principal, em 1893.",
+            "fr": "La construction du Teatro Español fut un projet courageux, non sans les tensions propres aux grandes entreprises.\n\nDon Antonio Nieva fit don des dix mille premiers briques et lança une souscription publique dans le journal local. Le terrain original fut échangé contre celui-ci, face à la place principale, en 1893."
+          },
+          "images": [
+            { "src": "images/02/01.jpg", "caption": {
+              "es": "Página del periódico El Imparcial sobre el comienzo de las obras. Año 1893.",
+              "en": "Page from the newspaper El Imparcial on the start of construction. 1893.",
+              "pt": "Página do jornal El Imparcial sobre o início das obras. Ano de 1893.",
+              "fr": "Page du journal El Imparcial sur le début des travaux. Année 1893." } },
+            { "src": "images/02/02.jpg", "caption": { "es": "", "en": "", "pt": "", "fr": "" } },
+            { "src": "images/02/03.jpg", "caption": {
+              "es": "Página del periódico El Imparcial sobre la demora en la construcción del teatro. 24 de junio de 1894.",
+              "en": "Page from El Imparcial on the delay in the theatre's construction. 24 June 1894.",
+              "pt": "Página do jornal El Imparcial sobre o atraso na construção do teatro. 24 de junho de 1894.",
+              "fr": "Page du journal El Imparcial sur le retard des travaux du théâtre. 24 juin 1894." } },
+            { "src": "images/02/04.jpg", "caption": {
+              "es": "Llamado a licitación para la realización de los cielorrasos. Año 1897.",
+              "en": "Call for tenders for the construction of the ceilings. 1897.",
+              "pt": "Chamada de licitação para a execução dos forros. Ano de 1897.",
+              "fr": "Appel d'offres pour la réalisation des plafonds. Année 1897." } },
+            { "src": "images/02/05.jpg", "caption": {
+              "es": "Aviso en clasificados de C. Milleiro, quien finalmente pintó el teatro. Año 1897.",
+              "en": "Classified advertisement for C. Milleiro, who ultimately painted the theatre. 1897.",
+              "pt": "Anúncio nos classificados de C. Milleiro, que acabou pintando o teatro. Ano de 1897.",
+              "fr": "Petite annonce de C. Milleiro, qui a finalement peint le théâtre. Année 1897." } },
+            { "src": "images/02/06.jpg", "caption": {
+              "es": "Plano original de la fachada. Año 1897.",
+              "en": "Original drawing of the facade. 1897.",
+              "pt": "Planta original da fachada. Ano de 1897.",
+              "fr": "Plan d'origine de la façade. Année 1897." } },
+            { "src": "images/02/07.jpg", "caption": { "es": "", "en": "", "pt": "", "fr": "" } },
+            { "src": "images/02/08.jpg", "caption": {
+              "es": "Comentario en el periódico sobre el avance de las obras.",
+              "en": "Newspaper note on the progress of the works.",
+              "pt": "Comentário no jornal sobre o andamento das obras.",
+              "fr": "Commentaire de presse sur l'avancement des travaux." } }
+          ]
+        },
+        {
+          "id": "a03",
+          "title": {
+            "es": "Decisiones quijotescas",
+            "en": "A Key Decision: The Moveable Floor",
+            "pt": "Uma decisão-chave: o piso móvel",
+            "fr": "Une décision clé : le plancher mobile"
+          },
+          "duration": "2:00",
+          "audioUrl": {
+            "es": "audios/03/03-decisiones-es.mp3",
+            "en": "audios/03/03-decisiones-en.mp3",
+            "pt": "audios/03/03-decisiones-pt.mp3",
+            "fr": "audios/03/03-decisiones-fr.mp3"
+          },
+          "text": {
+            "es": "Muchas de las decisiones de diseño desafiaron el sentido común y exigieron esfuerzos “quijotescos”. \n\n\n\nSe estaban terminando los cimientos en un terreno de la calle Burgos cuando se tomó una decisión drástica: había que mudarse a un terreno más grande.  Dejaron todo como estaba, hicieron planos nuevos y empezaron de vuelta en un terreno baldío que estaba frente a la plaza principal. \n\n\n\nEl piso del escenario fue un tema de discusión. Antonio Bugalló, el herrero local, había propuesto un sistema complejo que permitía subir y bajar el escenario. Los defensores de esta idea decían que permitiría realizar bailes y reuniones. Los que estaban en contra, en cambio, sostenían que era inseguro y un gasto innecesario. La solución llegó de una donación que vino con una cláusula: el piso debía ser móvil.",
+            "en": "Many of the design decisions defied common sense and demanded truly “quixotic“ efforts.\n\nThe foundations were already being laid on a plot on Burgos Street when a drastic decision was made: they needed a larger site. They left everything as it was, drew up new plans, and started over on an empty lot facing the main square.\n\nThe stage floor became a point of contention. Antonio Bugalló, the local blacksmith, had proposed a complex system that would allow the stage to be raised and lowered. Those in favour argued it would make the space suitable for dances and gatherings. Those against maintained it was unsafe and an unnecessary expense. The solution came through a donation that arrived with a clause attached: the floor had to be moveable.",
+            "pt": "Durante as obras surgiu uma pergunta que resume o espírito do projeto: a sala deveria ter piso fixo ou móvel?\n\nO ferreiro local Antonio Bugallo apresentou os planos para um sistema móvel. Joaquín Berdes ofereceu-se para perdoar uma dívida do Teatro com uma única condição: que o piso móvel fosse construído.",
+            "fr": "Pendant les travaux, une question résuma l'esprit du projet : la salle devait-elle avoir un plancher fixe ou mobile ?\n\nLe forgeron local Antonio Bugallo soumit des plans pour un système mobile. Joaquín Berdes offrit de remettre une dette du Théâtre à une seule condition : que le plancher mobile soit construit."
+          },
+          "images": [
+            { "src": "images/03/01.jpg", "caption": {
+              "es": "Herrería Bugallo.",
+              "en": "Bugallo ironworks.",
+              "pt": "Serralheria Bugallo.",
+              "fr": "Forge Bugallo." } },
+            { "src": "images/03/02.jpg", "caption": {
+              "es": "Palanca para accionar el piso móvil.",
+              "en": "Lever that operates the movable floor.",
+              "pt": "Alavanca para acionar o piso móvel.",
+              "fr": "Levier actionnant le plancher mobile." } },
+            { "src": "images/03/03.jpg", "caption": {
+              "es": "Mecanismo original para mover el piso.",
+              "en": "Original mechanism for moving the floor.",
+              "pt": "Mecanismo original para mover o piso.",
+              "fr": "Mécanisme d'origine pour déplacer le plancher." } },
+            { "src": "images/03/04.jpg", "caption": {
+              "es": "Mecanismo original para mover el piso.",
+              "en": "Original mechanism for moving the floor.",
+              "pt": "Mecanismo original para mover o piso.",
+              "fr": "Mécanisme d'origine pour déplacer le plancher." } }
+          ]
+        },
+        {
+          "id": "a04",
+          "title": {
+            "es": "1897: La noche inaugural",
+            "en": "1897: The Inaugural Night",
+            "pt": "1897: A noite inaugural",
+            "fr": "1897: La nuit inaugurale"
+          },
+          "duration": "2:15",
+          "audioUrl": {
+            "es": "audios/04/04-inauguracion-es.mp3",
+            "en": "audios/04/04-inauguracion-en.mp3",
+            "pt": "audios/04/04-inauguracion-pt.mp3",
+            "fr": "audios/04/04-inauguracion-fr.mp3"
+          },
+          "text": {
+            "es": "El 16 de enero de 1897, el Teatro Español abrió sus puertas aunque la fachada aún no estuviera terminada.  Los abonos para la función inaugural se agotaron enseguida.\n\n\n\nSe dispuso un gran faro a la entrada para iluminar los arcos del portal de entrada.\n\n\n\nEsa noche brillaron los vestidos, las alhajas y los peinados. El humorista gráfico Piombino contó que no hacía falta rigidez, pero sí sacar “la ropa de cristianar”, reservada para las grandes ocasiones.\n\n\n\nLa Compañía de teatro “Rico y Cos” presentó la zarzuela “La Tempestad” con un elenco de treinta artistas.",
+            "en": "On January 16, 1897, the Teatro Español opened its doors. All subscriptions for the inaugural performance had sold out. And although the facade was still unfinished, a great beacon illuminated the arches of the entrance portal.\n\nThat night dresses, jewels and hairstyles sparkled. The graphic humorist Piombino noted that strict formality wasn't required, but one should bring out their 'christening clothes' — reserved for the grandest occasions.\n\nThe Rico y Cos Company presented the zarzuela La Tempestad with a cast of thirty artists.",
+            "pt": "Em 16 de janeiro de 1897, o Teatro Español abriu suas portas com a casa esgotada. Embora a fachada ainda não estivesse terminada, um grande farol iluminava os arcos da entrada. A Companhia de Rico y Cos apresentou a zarzuela La Tempestad com trinta artistas.",
+            "fr": "Le 16 janvier 1897, le Teatro Español ouvrit ses portes. Toutes les places pour la soirée inaugurale étaient vendues. Bien que la façade fût encore inachevée, un grand phare illuminait les arches du portail. La Compagnie de Rico y Cos présenta la zarzuela La Tempestad avec trente artistes."
+          },
+          "images": [
+            { "src": "images/04/01.jpg", "caption": {
+              "es": "Programa inaugural.",
+              "en": "Opening-night programme.",
+              "pt": "Programa inaugural.",
+              "fr": "Programme inaugural." } },
+            { "src": "images/04/02.jpg", "caption": {
+              "es": "Publicidad en el periódico El Imparcial sobre el espectáculo de inauguración. Año 1897.",
+              "en": "Advertisement in the newspaper El Imparcial for the opening performance. 1897.",
+              "pt": "Anúncio no jornal El Imparcial sobre o espetáculo de inauguração. Ano de 1897.",
+              "fr": "Publicité dans le journal El Imparcial pour le spectacle d'inauguration. Année 1897." } },
+            { "src": "images/04/03.jpg", "caption": {
+              "es": "Fachada del teatro, aún sin revoque. Año 1900.",
+              "en": "The theatre facade, still unrendered. 1900.",
+              "pt": "Fachada do teatro, ainda sem reboco. Ano de 1900.",
+              "fr": "Façade du théâtre, encore sans enduit. Année 1900." } },
+            { "src": "images/04/04.jpg", "caption": {
+              "es": "La Tempestad. Dolores “Lola” Millanes.",
+              "en": "La Tempestad. Dolores “Lola” Millanes.",
+              "pt": "La Tempestad. Dolores “Lola” Millanes.",
+              "fr": "La Tempestad. Dolores « Lola » Millanes." } },
+            { "src": "images/04/05.jpg", "caption": {
+              "es": "Programa de La Tempestad.",
+              "en": "Programme for La Tempestad.",
+              "pt": "Programa de La Tempestad.",
+              "fr": "Programme de La Tempestad." } },
+            { "src": "images/04/06.jpg", "caption": {
+              "es": "Zarzuela La Tempestad.",
+              "en": "The zarzuela La Tempestad.",
+              "pt": "Zarzuela La Tempestad.",
+              "fr": "La zarzuela La Tempestad." } },
+            { "src": "images/04/07.jpg", "caption": {
+              "es": "Zarzuela La Tempestad.",
+              "en": "The zarzuela La Tempestad.",
+              "pt": "Zarzuela La Tempestad.",
+              "fr": "La zarzuela La Tempestad." } }
+          ]
+        },
+        {
+          "id": "a05",
+          "title": {
+            "es": "Primeros años: Vida, riesgo y comunidad",
+            "en": "Early Years: Life, Risk & Community",
+            "pt": "Primeiros anos: vida, risco e comunidade",
+            "fr": "Premières années : vie, risque et communauté"
+          },
+          "duration": "2:10",
+          "audioUrl": {
+            "es": "audios/05/05-inicios-es.mp3",
+            "en": "audios/05/05-inicios-en.mp3",
+            "pt": "audios/05/05-inicios-pt.mp3",
+            "fr": "audios/05/05-inicios-fr.mp3"
+          },
+          "text": {
+            "es": "En sus primeros años, el teatro fue el centro de la vida social y la audacia cultural de la región. La comunidad se encontraba, compartía emociones y construía identidad.\n\n\n\nNi el invierno, ni el viento Pampero que se colaba en cada apertura del telón, detenían al público. Llegaban compañías de todo el país con funciones teatrales, musicales, sainetes, magia e ilusionismo.\n\n\n\nLa sala conservaba el espíritu de los antiguos corrales de comedia con palcos abiertos y butacas móviles que acercaban al público con la escena.",
+            "en": "In its early years the theatre was the centre of social life and cultural daring in the region. The community gathered, shared emotions and built identity.\n\nNeither the winter cold nor the Pampero wind that crept in with every opening of the curtain stopped the audience. Companies arrived from across the country with theatrical, musical and variety performances, magic and illusion shows.\n\nThe hall preserved the spirit of the old Spanish comedy courtyards, with balustraded boxes and moveable seats that brought the audience close to the action.",
+            "pt": "Nos primeiros anos, o teatro foi o centro da vida social da região. Nem o inverno nem o vento Pampeiro detinham o público. Chegavam companhias de todo o país com teatro, música, mágica e ilusionismo.",
+            "fr": "Dans ses premières années, le théâtre fut le centre de la vie sociale de la région. Ni l'hiver ni le vent Pampero n'arrêtaient le public. Des troupes de tout le pays venaient présenter théâtre, musique, magie et illusionnisme."
+          },
+          "images": [
+            { "src": "images/05/01.jpg", "caption": {
+              "es": "Comentarios en el periódico El Imparcial: 27 de enero de 1897.",
+              "en": "Notes in the newspaper El Imparcial: 27 January 1897.",
+              "pt": "Comentários no jornal El Imparcial: 27 de janeiro de 1897.",
+              "fr": "Commentaires dans le journal El Imparcial : 27 janvier 1897." } },
+            { "src": "images/05/02.jpg", "caption": {
+              "es": "Semana de Azul. Vista del teatro con los juegos florales. Año 1918.",
+              "en": "Semana de Azul. The theatre during the floral games. 1918.",
+              "pt": "Semana de Azul. Vista do teatro com os jogos florais. Ano de 1918.",
+              "fr": "Semaine d'Azul. Vue du théâtre pendant les jeux floraux. Année 1918." } },
+            { "src": "images/05/03.jpg", "caption": { "es": "", "en": "", "pt": "", "fr": "" } },
+            { "src": "images/05/04.jpg", "caption": {
+              "es": "Rivero de Rosas. Año 1920.",
+              "en": "Rivero de Rosas. 1920.",
+              "pt": "Rivero de Rosas. Ano de 1920.",
+              "fr": "Rivero de Rosas. Année 1920." } },
+            { "src": "images/05/05.jpg", "caption": {
+              "es": "Rivero de Rosas, Teatro Francés. Año 1920.",
+              "en": "Rivero de Rosas, Teatro Francés. 1920.",
+              "pt": "Rivero de Rosas, Teatro Francés. Ano de 1920.",
+              "fr": "Rivero de Rosas, Teatro Francés. Année 1920." } },
+            { "src": "images/05/06.jpg", "caption": {
+              "es": "Rivero de Rosas. Año 1920.",
+              "en": "Rivero de Rosas. 1920.",
+              "pt": "Rivero de Rosas. Ano de 1920.",
+              "fr": "Rivero de Rosas. Année 1920." } },
+            { "src": "images/05/07.jpg", "caption": {
+              "es": "Podestá, Ballerini, Morganti.",
+              "en": "Podestá, Ballerini, Morganti.",
+              "pt": "Podestá, Ballerini, Morganti.",
+              "fr": "Podestá, Ballerini, Morganti." } },
+            { "src": "images/05/08.jpg", "caption": {
+              "es": "Lírica y danza. Año 1921.",
+              "en": "Opera and dance. 1921.",
+              "pt": "Lírica e dança. Ano de 1921.",
+              "fr": "Art lyrique et danse. Année 1921." } },
+            { "src": "images/05/09.jpg", "caption": {
+              "es": "Lírica y danza. Año 1921.",
+              "en": "Opera and dance. 1921.",
+              "pt": "Lírica e dança. Ano de 1921.",
+              "fr": "Art lyrique et danse. Année 1921." } },
+            { "src": "images/05/10.jpg", "caption": {
+              "es": "Aviso de la actuación de Gardel-Razzano. Año 1922.",
+              "en": "Advertisement for the Gardel-Razzano performance. 1922.",
+              "pt": "Anúncio da apresentação de Gardel-Razzano. Ano de 1922.",
+              "fr": "Annonce du spectacle de Gardel-Razzano. Année 1922." } },
+            { "src": "images/05/11.jpg", "caption": {
+              "es": "Gardel-Razzano. Año 1922.",
+              "en": "Gardel-Razzano. 1922.",
+              "pt": "Gardel-Razzano. Ano de 1922.",
+              "fr": "Gardel-Razzano. Année 1922." } },
+            { "src": "images/05/12.jpg", "caption": {
+              "es": "Baile de carnaval.",
+              "en": "Carnival ball.",
+              "pt": "Baile de carnaval.",
+              "fr": "Bal de carnaval." } },
+            { "src": "images/05/13.jpg", "caption": {
+              "es": "Función de la UCR.",
+              "en": "An event held by the Unión Cívica Radical.",
+              "pt": "Sessão da UCR (Unión Cívica Radical).",
+              "fr": "Représentation de l'Unión Cívica Radical." } },
+            { "src": "images/05/14.jpg", "caption": {
+              "es": "Carlos Gardel.",
+              "en": "Carlos Gardel.",
+              "pt": "Carlos Gardel.",
+              "fr": "Carlos Gardel." } },
+            { "src": "images/05/15.jpg", "caption": {
+              "es": "Público en el teatro. Año 1927.",
+              "en": "The audience at the theatre. 1927.",
+              "pt": "Público no teatro. Ano de 1927.",
+              "fr": "Le public au théâtre. Année 1927." } },
+            { "src": "images/05/16.jpg", "caption": {
+              "es": "Público en el teatro.",
+              "en": "The audience at the theatre.",
+              "pt": "Público no teatro.",
+              "fr": "Le public au théâtre." } },
+            { "src": "images/05/17.jpg", "caption": {
+              "es": "Fiesta Patria. Año 1925.",
+              "en": "National holiday celebration. 1925.",
+              "pt": "Festa Pátria. Ano de 1925.",
+              "fr": "Fête nationale. Année 1925." } }
+          ]
+        },
+        {
+          "id": "a06",
+          "title": {
+            "es": "El cine llega al Teatro",
+            "en": "Cinema Arrives at the Theatre",
+            "pt": "O cinema chega ao teatro",
+            "fr": "Le cinéma arrive au théâtre"
+          },
+          "duration": "2:20",
+          "audioUrl": {
+            "es": "audios/06/06-cine-es.mp3",
+            "en": "audios/06/06-cine-en.mp3",
+            "pt": "audios/06/06-cine-pt.mp3",
+            "fr": "audios/06/06-cine-fr.mp3"
+          },
+          "text": {
+            "es": "Pocas semanas después de la inauguración, en marzo de 1897, el diario anunciaba una novedad extraordinaria: el cinematógrafo llegaría al Teatro Español. Las imágenes se proyectarían a tamaño natural y ocuparían todo el escenario. \n\n\n\nEn esos tiempos las proyecciones eran realizadas por operadores ambulantes que iban de pueblo en pueblo mostrando cortometrajes de vida cotidiana, paisajes o máquinas. Con el avance del cine, pronto empezaron a llegar también películas. Al ser todas filmaciones mudas, la  presencia de un pianista era fundamental en la sala.  \n\n\n\nCerca de 1920 se compró un proyector francés marca “Pathé”. Este aparato había sido fabricado años antes y se manejaba con una manivela lateral que había que girar durante toda la película. ",
+            "en": "Just weeks after the inauguration, in March 1897, the newspaper announced an extraordinary novelty: the cinematograph was coming to the Teatro Español. Images were projected life-size across the entire stage.\n\nThe Pathé projector now displayed in the foyer dates from 1905 and witnesses a story full of contrasts: popular fascination with technological progress first, then the damaging use of the hall as a cinema that accelerated its decay.\n\nBy the 1970s people said, with irony and sadness, that you could see real horror movies here — bats swooping over the audience. The splendour had long since faded…",
+            "pt": "Poucas semanas após a inauguração, em março de 1897, o jornal anunciava o cinematógrafo. O projetor Pathé, exposto no hall, data de 1905. Nos anos 70 dizia-se que aqui se podiam ver filmes de terror reais, com morcegos sobrevoando a sala.",
+            "fr": "Quelques semaines après l'inauguration, en mars 1897, le journal annonçait l'arrivée du cinématographe. Le projecteur Pathé, exposé dans le hall, date de 1905. Dans les années 70, on disait qu'on pouvait voir de vrais films d'horreur ici, les chauves-souris survolant la salle."
+          },
+          "images": [
+            { "src": "images/06/01.jpg", "caption": {
+              "es": "Universal Films. Año 1921.",
+              "en": "Universal Films. 1921.",
+              "pt": "Universal Films. Ano de 1921.",
+              "fr": "Universal Films. Année 1921." } },
+            { "src": "images/06/02.jpg", "caption": {
+              "es": "Vea, oiga y escuche. Año 1929.",
+              "en": "“See, hear and listen.” 1929.",
+              "pt": "“Veja, ouça e escute.” Ano de 1929.",
+              "fr": "« Voyez, oyez, écoutez. » Année 1929." } },
+            { "src": "images/06/03.jpg", "caption": {
+              "es": "Proyector de cine Pathé. Año 2010.",
+              "en": "Pathé film projector. 2010.",
+              "pt": "Projetor de cinema Pathé. Ano de 2010.",
+              "fr": "Projecteur de cinéma Pathé. Année 2010." } },
+            { "src": "images/06/04.jpg", "caption": {
+              "es": "Restauración del proyector de cine mudo Pathé, en Casa Piafil. Año 2010.",
+              "en": "Restoration of the Pathé silent-film projector at Casa Piafil. 2010.",
+              "pt": "Restauração do projetor de cinema mudo Pathé, na Casa Piafil. Ano de 2010.",
+              "fr": "Restauration du projecteur de cinéma muet Pathé, à la Casa Piafil. Année 2010." } },
+            { "src": "images/06/05.jpg", "caption": {
+              "es": "Restauración del proyector de cine mudo Pathé, en Casa Piafil. Año 2010.",
+              "en": "Restoration of the Pathé silent-film projector at Casa Piafil. 2010.",
+              "pt": "Restauração do projetor de cinema mudo Pathé, na Casa Piafil. Ano de 2010.",
+              "fr": "Restauration du projecteur de cinéma muet Pathé, à la Casa Piafil. Année 2010." } },
+            { "src": "images/06/06.jpg", "caption": {
+              "es": "El proyector, actualmente en exhibición en el teatro.",
+              "en": "The projector, now on display in the theatre.",
+              "pt": "O projetor, atualmente exposto no teatro.",
+              "fr": "Le projecteur, aujourd'hui exposé dans le théâtre." } },
+            { "src": "images/06/07.jpg", "caption": {
+              "es": "El proyector, actualmente en exhibición en el teatro.",
+              "en": "The projector, now on display in the theatre.",
+              "pt": "O projetor, atualmente exposto no teatro.",
+              "fr": "Le projecteur, aujourd'hui exposé dans le théâtre." } }
+          ]
+        },
+        {
+          "id": "a07",
+          "title": {
+            "es": "1930: Modernización y transformación",
+            "en": "1930: Modernisation & Transformation",
+            "pt": "1930: Modernização e transformação",
+            "fr": "1930: Modernisation et transformation"
+          },
+          "duration": "2:00",
+          "audioUrl": {
+            "es": "audios/07/07-modernizacion-es.mp3",
+            "en": "audios/07/07-modernizacion-en.mp3",
+            "pt": "audios/07/07-modernizacion-pt.mp3",
+            "fr": "audios/07/07-modernizacion-fr.mp3"
+          },
+          "text": {
+            "es": "Hacia la década del 30, Azul y la Argentina vivía tiempos de “vacas gordas” y el teatro buscó mejorar la experiencia del público.\n\n\n\nLa remodelación fue profunda: se trabajó en fortalecer estructuras, modernizar electricidad y mejorar la calefacción.\n\n\n\nSe renovaron las butacas y se desplazaron un metro hacia atrás las pesadas columnas de fundición del primer piso que interferían en la visión.\n\n\n\nLos palcos abiertos fueron cerrados para evitar “miradas indiscretas” a los tobillos de las damas que ya no usaban polleras hasta el piso. Se aprovechó esta modificación para decorarlos con molduras finas de yeso París.\n\n\n\nLa sala tomó un aire palaciego que dejaba atrás el estilo más popular de los años iniciales.",
+            "en": "By the 1930s, Azul and Argentina were living through prosperous times, and the theatre sought to improve the audience experience.\n\nThe refurbishment was thorough: structural reinforcement, modernised electricity, heating and aesthetics. Seats were replaced and the cast-iron columns that blocked sightlines were moved back.\n\nThe old box balusters were replaced with Paris plaster mouldings, giving the hall a palatial air that still impresses today.",
+            "pt": "Na década de 1930, o teatro buscou melhorar a experiência do público. A reforma foi profunda: estruturas reforçadas, eletricidade e aquecimento modernizados, colunas deslocadas. Os balaústres dos camarotes foram substituídos por molduras de gesso Paris.",
+            "fr": "Dans les années 1930, le théâtre chercha à améliorer l'expérience du public. La rénovation fut profonde : structures renforcées, électricité et chauffage modernisés, colonnes déplacées. Les balustrades des loges furent remplacées par des moulures en plâtre de Paris."
+          },
+          "images": [
+            { "src": "images/07/01.jpg", "caption": {
+              "es": "Interior del teatro modernizado.",
+              "en": "The modernised interior of the theatre.",
+              "pt": "Interior do teatro modernizado.",
+              "fr": "Intérieur du théâtre modernisé." } },
+            { "src": "images/07/02.jpg", "caption": {
+              "es": "Foyer del teatro modernizado: inauguración del cine parlante. Sin deterioros. Año 1930.",
+              "en": "The modernised foyer: opening of the talking-picture cinema. Undamaged. 1930.",
+              "pt": "Foyer do teatro modernizado: inauguração do cinema falado. Sem deteriorações. Ano de 1930.",
+              "fr": "Foyer du théâtre modernisé : inauguration du cinéma parlant. Sans dégradations. Année 1930." } },
+            { "src": "images/07/03.jpg", "caption": {
+              "es": "Asociación Española. Memoria de 1932.",
+              "en": "Asociación Española. 1932 annual report.",
+              "pt": "Asociación Española. Relatório de 1932.",
+              "fr": "Asociación Española. Rapport annuel de 1932." } },
+            { "src": "images/07/04.jpg", "caption": { "es": "", "en": "", "pt": "", "fr": "" } },
+            { "src": "images/07/05.jpg", "caption": { "es": "", "en": "", "pt": "", "fr": "" } },
+            { "src": "images/07/06.jpg", "caption": { "es": "", "en": "", "pt": "", "fr": "" } }
+          ]
+        },
+        {
+          "id": "a08",
+          "title": {
+            "es": "Cambios inesperados",
+            "en": "Crisis & Decline",
+            "pt": "Crise e decadência",
+            "fr": "Crise et déclin"
+          },
+          "duration": "2:10",
+          "audioUrl": {
+            "es": "audios/08/08-cambios-es.mp3",
+            "en": "audios/08/08-cambios-en.mp3",
+            "pt": "audios/08/08-cambios-pt.mp3",
+            "fr": "audios/08/08-cambios-fr.mp3"
+          },
+          "text": {
+            "es": "A partir de 1940 la sala empezó a decaer lentamente. \n\n\n\nLa baja del flujo inmigratorio y la oferta de hospitales y servicios de parte del Estado debilitó a la Asociación Española que ahora contaba con menos integrantes y no tenía el mismo poder de acción ni la demanda que antes. \n\n\n\nEl teatro fue dado en concesión a una empresa que no cuidó la sala ni hizo los mantenimientos adecuados. Como por esos años se había promulgado una ley de alquileres que prorrogaba los contratos indefinidamente, no había manera de exigir que se cumpliera con lo pactado y/o de revocar el acuerdo. \n\n\n\nA esto se sumó la inauguración del Cine Teatro San Martín con lugar para 1300 espectadores y una tecnología más moderna que hizo que muchos espectáculos migraran para esa sala. \n\n\n\nEl Teatro Español se iba apagando e ignorando, pero aún en pie, esperaba que alguien volviera a mirarlo.",
+            "en": "The 1930s and 40s brought profound changes across the country.\n\nThe weakening flow of immigration affected the Spanish Association. In the 1940s, the opening of the modern Cine Teatro San Martín — capacity 1,500 — marked a turning point.\n\nA law that extended rental contracts indefinitely left the theatre in the hands of concessionaires who neglected the building. Without maintenance, the hall fell into progressive decay.\n\nOur Teatro Español was fading, overlooked — but still standing, waiting for someone to look its way again.",
+            "pt": "As décadas de 1930 e 1940 trouxeram mudanças profundas. A inauguração do Cine Teatro San Martín (1.500 lugares) foi um ponto de ruptura. Uma lei prorrogou indefinidamente os aluguéis, deixando o teatro em mãos de concessionários negligentes.",
+            "fr": "Les années 1930 et 1940 apportèrent de profonds changements. L'inauguration du Cine Teatro San Martín (1 500 places) marqua un tournant. Une loi prolongeant les baux indéfiniment laissa le théâtre entre des mains négligentes."
+          },
+          "images": [
+            { "src": "images/08/01.jpg", "caption": {
+              "es": "Prórroga de la ley de alquileres. Año 1949.",
+              "en": "Extension of the rent-control law. 1949.",
+              "pt": "Prorrogação da lei de aluguéis. Ano de 1949.",
+              "fr": "Prorogation de la loi sur les loyers. Année 1949." } },
+            { "src": "images/08/02.jpg", "caption": {
+              "es": "Caldera en estado de abandono. Año 1978.",
+              "en": "The boiler, derelict. 1978.",
+              "pt": "Caldeira em estado de abandono. Ano de 1978.",
+              "fr": "Chaudière à l'abandon. Année 1978." } },
+            { "src": "images/08/03.jpg", "caption": {
+              "es": "Balcón en ruinas. Año 1978.",
+              "en": "The balcony in ruins. 1978.",
+              "pt": "Balcão em ruínas. Ano de 1978.",
+              "fr": "Balcon en ruine. Année 1978." } },
+            { "src": "images/08/04.jpg", "caption": {
+              "es": "Balcón en ruinas. Año 1978.",
+              "en": "The balcony in ruins. 1978.",
+              "pt": "Balcão em ruínas. Ano de 1978.",
+              "fr": "Balcon en ruine. Année 1978." } },
+            { "src": "images/08/05.jpg", "caption": {
+              "es": "Caldera en estado de abandono. Año 1978.",
+              "en": "The boiler, derelict. 1978.",
+              "pt": "Caldeira em estado de abandono. Ano de 1978.",
+              "fr": "Chaudière à l'abandon. Année 1978." } },
+            { "src": "images/08/06.jpg", "caption": {
+              "es": "Abandono.",
+              "en": "Abandonment.",
+              "pt": "Abandono.",
+              "fr": "Abandon." } },
+            { "src": "images/08/07.jpg", "caption": { "es": "", "en": "", "pt": "", "fr": "" } },
+            { "src": "images/08/08.jpg", "caption": {
+              "es": "Dependencias internas en ruinas.",
+              "en": "Interior rooms in ruins.",
+              "pt": "Dependências internas em ruínas.",
+              "fr": "Dépendances intérieures en ruine." } },
+            { "src": "images/08/09.jpg", "caption": {
+              "es": "Deterioro de la escalera interna. Año 1978.",
+              "en": "Decay of the internal staircase. 1978.",
+              "pt": "Deterioração da escada interna. Ano de 1978.",
+              "fr": "Dégradation de l'escalier intérieur. Année 1978." } },
+            { "src": "images/08/10.jpg", "caption": {
+              "es": "Fachada del teatro. Año 1978.",
+              "en": "The theatre facade. 1978.",
+              "pt": "Fachada do teatro. Ano de 1978.",
+              "fr": "Façade du théâtre. Année 1978." } },
+            { "src": "images/08/11.jpg", "caption": {
+              "es": "Hall de entrada antes de la restauración. Año 1978.",
+              "en": "The entrance hall before restoration. 1978.",
+              "pt": "Hall de entrada antes da restauração. Ano de 1978.",
+              "fr": "Hall d'entrée avant la restauration. Année 1978." } },
+            { "src": "images/08/12.jpg", "caption": {
+              "es": "Hall de entrada del teatro. Año 1978.",
+              "en": "The theatre's entrance hall. 1978.",
+              "pt": "Hall de entrada do teatro. Ano de 1978.",
+              "fr": "Hall d'entrée du théâtre. Année 1978." } },
+            { "src": "images/08/13.jpg", "caption": {
+              "es": "Estado de total deterioro del mecanismo que nivelaba el piso de la sala con el escenario. Año 1978.",
+              "en": "The mechanism that levelled the auditorium floor with the stage, completely decayed. 1978.",
+              "pt": "Estado de total deterioração do mecanismo que nivelava o piso da sala com o palco. Ano de 1978.",
+              "fr": "État de dégradation totale du mécanisme qui mettait le plancher de la salle au niveau de la scène. Année 1978." } },
+            { "src": "images/08/14.jpg", "caption": {
+              "es": "Salón Cultural antes de la restauración. Año 1978.",
+              "en": "The Salón Cultural before restoration. 1978.",
+              "pt": "Salão Cultural antes da restauração. Ano de 1978.",
+              "fr": "Le salon culturel avant la restauration. Année 1978." } },
+            { "src": "images/08/15.jpg", "caption": {
+              "es": "Sala antes de la restauración. Año 1978.",
+              "en": "The auditorium before restoration. 1978.",
+              "pt": "Sala antes da restauração. Ano de 1978.",
+              "fr": "La salle avant la restauration. Année 1978." } },
+            { "src": "images/08/16.jpg", "caption": {
+              "es": "Sala antes de la restauración. Año 1978.",
+              "en": "The auditorium before restoration. 1978.",
+              "pt": "Sala antes da restauração. Ano de 1978.",
+              "fr": "La salle avant la restauration. Année 1978." } },
+            { "src": "images/08/17.jpg", "caption": {
+              "es": "Sala en total estado de abandono. Año 1978.",
+              "en": "The auditorium, completely derelict. 1978.",
+              "pt": "Sala em total estado de abandono. Ano de 1978.",
+              "fr": "La salle, totalement à l'abandon. Année 1978." } },
+            { "src": "images/08/18.jpg", "caption": {
+              "es": "Sala en total estado de abandono. Año 1978.",
+              "en": "The auditorium, completely derelict. 1978.",
+              "pt": "Sala em total estado de abandono. Ano de 1978.",
+              "fr": "La salle, totalement à l'abandon. Année 1978." } },
+            { "src": "images/08/19.jpg", "caption": {
+              "es": "Sala en total estado de abandono. Año 1978.",
+              "en": "The auditorium, completely derelict. 1978.",
+              "pt": "Sala em total estado de abandono. Ano de 1978.",
+              "fr": "La salle, totalement à l'abandon. Année 1978." } },
+            { "src": "images/08/20.jpg", "caption": {
+              "es": "Foyer del teatro antes de los trabajos de restauración. Año 1978.",
+              "en": "The foyer before restoration work. 1978.",
+              "pt": "Foyer do teatro antes dos trabalhos de restauração. Ano de 1978.",
+              "fr": "Foyer du théâtre avant les travaux de restauration. Année 1978." } }
+          ]
+        },
+        {
+          "id": "a09",
+          "title": {
+            "es": "Riesgo de desaparición y rescate",
+            "en": "Risk of Disappearance & Rescue",
+            "pt": "Risco de desaparecimento e resgate",
+            "fr": "Risque de disparition et sauvetage"
+          },
+          "duration": "2:20",
+          "audioUrl": {
+            "es": "audios/09/09-riesgo-es.mp3",
+            "en": "audios/09/09-riesgo-en.mp3",
+            "pt": "audios/09/09-riesgo-pt.mp3",
+            "fr": "audios/09/09-riesgo-fr.mp3"
+          },
+          "text": {
+            "es": "A mediados de 1970 el teatro tenía tal abandono y descuido que estuvo a punto de ser demolido. \n\n\n\nEl piso del escenario estaba en mal estado, las butacas rotas, faltaban lámparas, muchas decoraciones de yeso se habían caído, había plagas…\n\n\n\nNada quedaba de las glorias de otros tiempos en donde las mejores compañías y artistas venían al teatro. Los espectadores que se aventuraban a entrar relataban el estado deplorable del lugar.  Se decía, con ironía y tristeza, que podían verse películas de terror reales porque los murciélagos sobrevolaban la sala. \n\n\n\nUna estrategia decisiva cambió el rumbo: en “sana complicidad” con la Asociación Española, la Municipalidad clausuró el teatro por razones de seguridad.\n\n\n\nEl edificio, volvió finalmente a manos de sus legítimos dueños.",
+            "en": "In time the theatre faced the risk of demolition, and rumours of expropriation circulated.\n\nThe cartoonist Leovú in the newspaper El Tiempo caricatured the indignation of Don Manuel Sánchez Trespalacios — fierce champion of the theatre's recovery — at the idea of the building being seized.\n\nIn the mid-1970s a decisive strategy changed the course: in 'healthy complicity' with the Spanish Association, the Municipality closed the theatre on safety grounds.\n\nThe building, now in ruins, finally returned to its rightful owners.",
+            "pt": "O teatro esteve em risco de demolição. Don Manuel Sánchez Trespalacios lutou ferrenhamente contra a expropriação. Em meados dos anos 70, a Municipalidade clausurou o teatro em 'sã cumplicidade' com a Associação Espanhola, devolvendo-o aos seus legítimos donos.",
+            "fr": "Le théâtre courut le risque d'être démoli. Don Manuel Sánchez Trespalacios lutta farouchement contre l'expropriation. Au milieu des années 70, la Municipalité ferma le théâtre en 'saine complicité' avec l'Association Espagnole, le rendant à ses propriétaires légitimes."
+          },
+          "images": [
+            { "src": "images/09/01.jpg", "caption": {
+              "es": "Don Manuel enojado. Caricatura de Leovú, 11 de junio de 1968.",
+              "en": "Don Manuel angry. Cartoon by Leovú, 11 June 1968.",
+              "pt": "Don Manuel irritado. Charge de Leovú, 11 de junho de 1968.",
+              "fr": "Don Manuel en colère. Caricature de Leovú, 11 juin 1968." } },
+            { "src": "images/09/02.jpg", "caption": { "es": "", "en": "", "pt": "", "fr": "" } },
+            { "src": "images/09/03.jpg", "caption": {
+              "es": "Don Manuel, Bogliolo y Ricardes firman el contrato de alquiler. Año 1978.",
+              "en": "Don Manuel, Bogliolo and Ricardes sign the lease. 1978.",
+              "pt": "Don Manuel, Bogliolo e Ricardes assinam o contrato de aluguel. Ano de 1978.",
+              "fr": "Don Manuel, Bogliolo et Ricardes signent le bail. Année 1978." } },
+            { "src": "images/09/04.jpg", "caption": {
+              "es": "Don Manuel y Mingarro ante el panorama de la sala en ruinas. Año 1978.",
+              "en": "Don Manuel and Mingarro facing the ruined auditorium. 1978.",
+              "pt": "Don Manuel e Mingarro diante do panorama da sala em ruínas. Ano de 1978.",
+              "fr": "Don Manuel et Mingarro devant la salle en ruine. Année 1978." } },
+            { "src": "images/09/05.jpg", "caption": {
+              "es": "Logo nuevo con la fachada y letras en bordó y negro.",
+              "en": "New logo with the facade and lettering in burgundy and black.",
+              "pt": "Novo logotipo com a fachada e as letras em bordô e preto.",
+              "fr": "Nouveau logo avec la façade et les lettres en bordeaux et noir." } }
+          ]
+        },
+        {
+          "id": "a10",
+          "title": {
+            "es": "1978–2003: La reconstrucción",
+            "en": "1978–2003: The Reconstruction",
+            "pt": "1978–2003: A reconstrução",
+            "fr": "1978–2003: La reconstruction"
+          },
+          "duration": "3:00",
+          "audioUrl": {
+            "es": "audios/10/10-reconstruccion-es.mp3",
+            "en": "audios/10/10-reconstruccion-en.mp3",
+            "pt": "audios/10/10-reconstruccion-pt.mp3",
+            "fr": "audios/10/10-reconstruccion-fr.mp3"
+          },
+          "text": {
+            "es": "El presidente de la asociación española de esos tiempos, Manuel Sánchez Trespalacios, tomó a su cargo la reconstrucción del teatro. Llamó personalmente a las personas que consideraba idóneas y armó tres comisiones de trabajo: administración, financiamiento y técnica.\n\n\n\nLas obras comenzaron sin un plan prefijado y sin saber de dónde iba a llegar el financiamiento. Los guiaba la convicción y el lema -desde arriba hacia abajo y desde atrás hacia adelante-\n\n\n\nSe consiguieron donaciones y se presentó un plan de abonos para funciones futuras. Además, muchas de las personas involucradas, se endeudaron para cumplir los plazos de pago. \n\n\n\nLa obra llevó 25 años y el esfuerzo y la perseverancia fueron fundamentales. Hubo que lidiar con deudas de años anteriores, una inundación que destruyó las butacas recién reparadas y una cantidad inesperada de problemas que se resolvieron con decisión, audacia y mucha imaginación.",
+            "en": "Twenty-five years of work were needed to recover the entire building.\n\nThe guiding motto: 'from top to bottom and from back to front' — the opposite of what politics sometimes does.\n\nIt was serious, patient work: the Cultural Hall opened in 1980; the café reopened in 1982; the main hall was reinaugurated in 1992; the facade was restored in 1996; and in 2003 the Secretariat opened, marking the end of construction.\n\nThis chapter taught that effort, imagination and perseverance overcome abandonment — and that an organised community can reverse destinies that seem inevitable.",
+            "pt": "Vinte e cinco anos de obras foram necessários. O lema: «de cima para baixo e de trás para a frente». Em 1980, o Salão Cultural; 1982, a confeitaria; 1992, a sala principal; 1996, a fachada; 2003, a Secretaria.",
+            "fr": "Vingt-cinq ans de travaux furent nécessaires. La devise : « de haut en bas et de l'arrière vers l'avant ». 1980: Salle Culturelle; 1982: café; 1992: salle principale; 1996: façade; 2003: Secrétariat."
+          },
+          "images": [
+            { "src": "images/10/01.jpg", "caption": {
+              "es": "Colocación de la caldera nueva. Año 1981.",
+              "en": "Installing the new boiler. 1981.",
+              "pt": "Instalação da nova caldeira. Ano de 1981.",
+              "fr": "Pose de la nouvelle chaudière. Année 1981." } },
+            { "src": "images/10/02.jpg", "caption": {
+              "es": "Estructura para montar el tanque de agua de 16.000 litros. Año 1981.",
+              "en": "Structure built to hold the 16,000-litre water tank. 1981.",
+              "pt": "Estrutura para montar o tanque de água de 16.000 litros. Ano de 1981.",
+              "fr": "Structure destinée au réservoir d'eau de 16 000 litres. Année 1981." } },
+            { "src": "images/10/03.jpg", "caption": {
+              "es": "Tanque de agua montado en la parte superior, para incendios y uso sanitario. Tanque de 16.000 litros. Año 1981.",
+              "en": "Water tank installed at roof level, for firefighting and sanitary use. A 16,000-litre tank. 1981.",
+              "pt": "Tanque de água montado na parte superior, para incêndios e uso sanitário. Tanque de 16.000 litros. Ano de 1981.",
+              "fr": "Réservoir d'eau installé en partie haute, pour l'incendie et l'usage sanitaire. Réservoir de 16 000 litres. Année 1981." } },
+            { "src": "images/10/04.jpg", "caption": {
+              "es": "Comisiones de fin de obra. Año 2003.",
+              "en": "End-of-works committees. 2003.",
+              "pt": "Comissões de fim de obra. Ano de 2003.",
+              "fr": "Commissions de fin de chantier. Année 2003." } },
+            { "src": "images/10/05.jpg", "caption": {
+              "es": "Restauración de los baños.",
+              "en": "Restoration of the bathrooms.",
+              "pt": "Restauração dos banheiros.",
+              "fr": "Restauration des sanitaires." } },
+            { "src": "images/10/06.jpg", "caption": {
+              "es": "Trabajos de obra.",
+              "en": "Construction work.",
+              "pt": "Trabalhos de obra.",
+              "fr": "Travaux." } },
+            { "src": "images/10/07.jpg", "caption": {
+              "es": "Obra en curso.",
+              "en": "Work in progress.",
+              "pt": "Obra em andamento.",
+              "fr": "Chantier en cours." } },
+            { "src": "images/10/08.jpg", "caption": {
+              "es": "Obra en curso.",
+              "en": "Work in progress.",
+              "pt": "Obra em andamento.",
+              "fr": "Chantier en cours." } },
+            { "src": "images/10/09.jpg", "caption": {
+              "es": "Obra en curso.",
+              "en": "Work in progress.",
+              "pt": "Obra em andamento.",
+              "fr": "Chantier en cours." } },
+            { "src": "images/10/10.jpg", "caption": {
+              "es": "Trabajos de restauración en el interior.",
+              "en": "Restoration work inside.",
+              "pt": "Trabalhos de restauração no interior.",
+              "fr": "Travaux de restauration à l'intérieur." } },
+            { "src": "images/10/11.jpg", "caption": {
+              "es": "Trabajos de restauración en el interior.",
+              "en": "Restoration work inside.",
+              "pt": "Trabalhos de restauração no interior.",
+              "fr": "Travaux de restauration à l'intérieur." } },
+            { "src": "images/10/12.jpg", "caption": { "es": "", "en": "", "pt": "", "fr": "" } },
+            { "src": "images/10/13.jpg", "caption": { "es": "", "en": "", "pt": "", "fr": "" } },
+            { "src": "images/10/14.jpg", "caption": { "es": "", "en": "", "pt": "", "fr": "" } },
+            { "src": "images/10/15.jpg", "caption": {
+              "es": "Salón Cultural del Teatro Español de Azul.",
+              "en": "The Salón Cultural of the Teatro Español de Azul.",
+              "pt": "Salão Cultural do Teatro Español de Azul.",
+              "fr": "Le salon culturel du Teatro Español de Azul." } },
+            { "src": "images/10/16.jpg", "caption": {
+              "es": "Confitería del Teatro Español de Azul.",
+              "en": "The café of the Teatro Español de Azul.",
+              "pt": "Confeitaria do Teatro Español de Azul.",
+              "fr": "Le café du Teatro Español de Azul." } },
+            { "src": "images/10/17.jpg", "caption": {
+              "es": "Secretaría del Teatro Español de Azul.",
+              "en": "The offices of the Teatro Español de Azul.",
+              "pt": "Secretaria do Teatro Español de Azul.",
+              "fr": "Le secrétariat du Teatro Español de Azul." } },
+            { "src": "images/10/18.jpg", "caption": {
+              "es": "Detalles estéticos de la fachada.",
+              "en": "Decorative details of the facade.",
+              "pt": "Detalhes estéticos da fachada.",
+              "fr": "Détails décoratifs de la façade." } },
+            { "src": "images/10/19.jpg", "caption": {
+              "es": "Detalles estéticos de la fachada.",
+              "en": "Decorative details of the facade.",
+              "pt": "Detalhes estéticos da fachada.",
+              "fr": "Détails décoratifs de la façade." } },
+            { "src": "images/10/20.jpg", "caption": {
+              "es": "Detalles estéticos del escudo.",
+              "en": "Decorative details of the coat of arms.",
+              "pt": "Detalhes estéticos do brasão.",
+              "fr": "Détails décoratifs du blason." } },
+            { "src": "images/10/21.jpg", "caption": {
+              "es": "Interior de la sala restaurada.",
+              "en": "The restored auditorium.",
+              "pt": "Interior da sala restaurada.",
+              "fr": "Intérieur de la salle restaurée." } },
+            { "src": "images/10/22.jpg", "caption": {
+              "es": "Interior de la sala restaurada.",
+              "en": "The restored auditorium.",
+              "pt": "Interior da sala restaurada.",
+              "fr": "Intérieur de la salle restaurée." } },
+            { "src": "images/10/23.jpg", "caption": {
+              "es": "Interior de la sala restaurada.",
+              "en": "The restored auditorium.",
+              "pt": "Interior da sala restaurada.",
+              "fr": "Intérieur de la salle restaurée." } }
+          ]
+        },
+        {
+          "id": "a11",
+          "title": {
+            "es": "10 de octubre de 1992: La reinauguración",
+            "en": "October 10, 1992: The Reinauguration",
+            "pt": "10 de outubro de 1992: A reinauguração",
+            "fr": "10 octobre 1992: La réinauguration"
+          },
+          "duration": "2:30",
+          "audioUrl": {
+            "es": "audios/11/11-reinaguracion-es.mp3",
+            "en": "audios/11/11-reinaguracion-en.mp3",
+            "pt": "audios/11/11-reinaguracion-pt.mp3",
+            "fr": "audios/11/11-reinaguracion-fr.mp3"
+          },
+          "text": {
+            "es": "La reinauguración fue un acontecimiento inolvidable.\n\n\n\nLa plaza San Martín se colmó de personas que escuchaban bandas juveniles mientras la persiana metálica del acceso se levantaba lentamente. Los festejos duraron tres jornadas, con el Ballet del Teatro Argentino de La Plata y elencos locales.\n\n\n\nEl Teatro Español volvía a latir, combinando el esplendor del siglo XIX con el confort requerido para el público de finales del XX y el desafío que significaba el siglo XXI y el nuevo milenio",
+            "en": "The reinauguration was an unforgettable event.\n\nThe Plaza San Martín filled with people listening to youth bands as the metal shutter of the entrance rose slowly. The celebrations lasted three days, featuring the Ballet of the Teatro Argentino de La Plata and local ensembles.\n\nThe Teatro Español was beating again, combining 19th-century splendour with the comfort required by late-20th-century audiences and the challenge of the new millennium.",
+            "pt": "A reinauguração foi inesquecível. A Plaza San Martín encheu-se de pessoas enquanto a persiana metálica da entrada subia lentamente. As festividades duraram três dias, com o Ballet do Teatro Argentino de La Plata e elencos locais.",
+            "fr": "La réinauguration fut inoubliable. La Plaza San Martín se remplit de gens tandis que le rideau métallique de l'entrée se levait lentement. Les festivités durèrent trois jours avec le Ballet du Teatro Argentino de La Plata et des troupes locales."
+          },
+          "images": [
+            { "src": "images/11/01.jpg", "caption": {
+              "es": "Programa de la reinauguración. Año 1992.",
+              "en": "Programme for the reopening. 1992.",
+              "pt": "Programa da reinauguração. Ano de 1992.",
+              "fr": "Programme de la réouverture. Année 1992." } },
+            { "src": "images/11/02.jpg", "caption": {
+              "es": "La orquesta, la noche de la reinauguración. Año 1992.",
+              "en": "The orchestra on the reopening night. 1992.",
+              "pt": "A orquestra na noite da reinauguração. Ano de 1992.",
+              "fr": "L'orchestre, le soir de la réouverture. Année 1992." } },
+            { "src": "images/11/03.jpg", "caption": {
+              "es": "La noche de la reinauguración.",
+              "en": "Reopening night.",
+              "pt": "A noite da reinauguração.",
+              "fr": "Le soir de la réouverture." } },
+            { "src": "images/11/04.jpg", "caption": {
+              "es": "La noche de la reinauguración.",
+              "en": "Reopening night.",
+              "pt": "A noite da reinauguração.",
+              "fr": "Le soir de la réouverture." } },
+            { "src": "images/11/05.jpg", "caption": {
+              "es": "La noche de la reinauguración.",
+              "en": "Reopening night.",
+              "pt": "A noite da reinauguração.",
+              "fr": "Le soir de la réouverture." } },
+            { "src": "images/11/06.jpg", "caption": {
+              "es": "La noche de la reinauguración.",
+              "en": "Reopening night.",
+              "pt": "A noite da reinauguração.",
+              "fr": "Le soir de la réouverture." } },
+            { "src": "images/11/07.jpg", "caption": {
+              "es": "La noche de la reinauguración.",
+              "en": "Reopening night.",
+              "pt": "A noite da reinauguração.",
+              "fr": "Le soir de la réouverture." } },
+            { "src": "images/11/08.jpg", "caption": {
+              "es": "La noche de la reinauguración.",
+              "en": "Reopening night.",
+              "pt": "A noite da reinauguração.",
+              "fr": "Le soir de la réouverture." } }
+          ]
+        },
+        {
+          "id": "a12",
+          "title": {
+            "es": "Reconocimientos y distinciones",
+            "en": "Recognitions & Awards",
+            "pt": "Reconhecimentos e distinções",
+            "fr": "Reconnaissances et distinctions"
+          },
+          "duration": "1:50",
+          "audioUrl": {
+            "es": "audios/12/12-reconocimientos-es.mp3",
+            "en": "audios/12/12-reconocimientos-en.mp3",
+            "pt": "audios/12/12-reconocimientos-pt.mp3",
+            "fr": "audios/12/12-reconocimientos-fr.mp3"
+          },
+          "text": {
+            "es": "Todo este esfuerzo colectivo no pasó desapercibido. La Provincia lo declaró Monumento Histórico y en 1996 llegó el gran reconocimiento: recibió el Premio Nacional de Patrimonio Edificado.\n\n\n\nEste premio fue compartido con el Palacio de Correos de Buenos Aires (Palacio Libertad-ex CCK) que había sido restaurado en ese tiempo. \n\n\n\nAzul demostró que una obra nacida de la voluntad de un pueblo puede estar a la par de los monumentos más importantes del país.",
+            "en": "All this collective effort did not go unnoticed. First, the Province declared it a Historical Monument. But the great recognition came in 1996: the reconstruction project received the National Built Heritage Award.\n\nDo you know who shared the podium with our theatre at that moment?\n\nNone other than the restoration of the Buenos Aires Post Office — the imposing building now known as Palacio Libertad (formerly CCK). Azul proved that a work born of the will of a community can stand alongside the most important monuments in the country.",
+            "pt": "Em 1996, o projeto de reconstrução recebeu o Prêmio Nacional de Patrimônio Edificado — dividindo o pódio com a restauração do Palácio dos Correios de Buenos Aires, hoje Palácio Libertad.",
+            "fr": "En 1996, le projet de reconstruction reçut le Prix National du Patrimoine Bâti — partageant le podium avec la restauration du Palais des Postes de Buenos Aires, aujourd'hui Palacio Libertad."
+          },
+          "images": [
+            { "src": "images/12/01.jpg", "caption": {
+              "es": "Declaración municipal de interés de las obras. Año 1987.",
+              "en": "Municipal declaration of interest for the works. 1987.",
+              "pt": "Declaração municipal de interesse das obras. Ano de 1987.",
+              "fr": "Déclaration d'intérêt municipal des travaux. Année 1987." } },
+            { "src": "images/12/02.jpg", "caption": {
+              "es": "Promulgación de la declaración de interés municipal de las obras. Año 1987.",
+              "en": "Enactment of the municipal declaration of interest for the works. 1987.",
+              "pt": "Promulgação da declaração de interesse municipal das obras. Ano de 1987.",
+              "fr": "Promulgation de la déclaration d'intérêt municipal des travaux. Année 1987." } },
+            { "src": "images/12/03.jpg", "caption": {
+              "es": "Teatro declarado Monumento Histórico Provincial. Año 1988.",
+              "en": "The theatre declared a Provincial Historic Monument. 1988.",
+              "pt": "Teatro declarado Monumento Histórico Provincial. Ano de 1988.",
+              "fr": "Le théâtre déclaré Monument historique provincial. Année 1988." } },
+            { "src": "images/12/04.jpg", "caption": {
+              "es": "Inclusión en los festejos oficiales por la reinauguración del teatro. Año 1992.",
+              "en": "Inclusion in the official celebrations for the theatre's reopening. 1992.",
+              "pt": "Inclusão nos festejos oficiais pela reinauguração do teatro. Ano de 1992.",
+              "fr": "Inscription aux célébrations officielles de la réouverture du théâtre. Année 1992." } },
+            { "src": "images/12/05.jpg", "caption": {
+              "es": "Primer Premio Nacional de Restauración. Año 1996.",
+              "en": "First National Restoration Prize. 1996.",
+              "pt": "Primeiro Prêmio Nacional de Restauração. Ano de 1996.",
+              "fr": "Premier Prix national de restauration. Année 1996." } }
+          ]
+        },
+        {
+          "id": "a13",
+          "title": {
+            "es": "El teatro hoy y la Ciudad Cervantina",
+            "en": "The Theatre Today & Cervantes City",
+            "pt": "O teatro hoje e a Cidade Cervantina",
+            "fr": "Le théâtre aujourd'hui et la Cité Cervantine"
+          },
+          "duration": "2:00",
+          "audioUrl": {
+            "es": "audios/13/13-hoy-es.mp3",
+            "en": "audios/13/13-hoy-en.mp3",
+            "pt": "audios/13/13-hoy-pt.mp3",
+            "fr": "audios/13/13-hoy-fr.mp3"
+          },
+          "text": {
+            "es": "La relación del teatro con lo cervantino es una marca que lo atraviesa en diferentes sentidos. \n\n\n\nLa construcción y reforma del teatro tuvo siempre espíritu quijotesco. Tanto los pioneros como los que vinieron después se embarcaron en ideas que parecían imposibles y que llevaron adelante con valor y audacia. Tenían un sueño más grande que ellos mismos. \n\n\n\nEn 1932 el señor Bartolomé Ronco, un vecino de la ciudad, redobló esta identidad: presentó su colección de “Quijotes” en el teatro. Pronto se supo que era una de las más grandes del mundo y estaba a unos pasos del teatro. Luego de su muerte y la de su esposa estos libros fueron donados para la comunidad, pero hubo que esperar a 2004 para que este patrimonio se difundiera por toda la ciudad. La gesta de la comisión española de ese momento con Carlos Filipetti a la cabeza y ya sin españoles de origen, logró que se abrieran las puertas y se difundiera en la sociedad entera. \n\n\n\nEn 2007 Azul fue nombrada «Ciudad Cervantina de la Argentina» por el Cervantes Virtual Center y pronto se organizó el festival Cervantino. Un evento que se realiza todos los años en el mes de octubre reuniendo a la población en torno a obras de teatro, desfiles, actividades en la plaza y encuentros de académicos",
+            "en": "Today the Teatro Español is a space of cultural leadership and an engine of local development. From the powerhouse that first supplied electric light to Azul's central square in 1897 to its central role in the 'Azul Ciudad Cervantina' project, it has been an icon of encounter and inspiration.\n\nOwned by the Spanish Association and managed by the Teatro Español de Azul Foundation since 2013, this building demonstrates that culture is not a luxury, but a powerful tool for building identity and collectively imagining the future.",
+            "pt": "Hoje, o Teatro Español é um espaço de liderança cultural e motor de desenvolvimento local. Propriedade da Associação Espanhola e gerido pela Fundação do Teatro Español de Azul desde 2013.",
+            "fr": "Aujourd'hui, le Teatro Español est un espace de leadership culturel. Propriété de l'Association Espagnole et géré par la Fondation du Teatro Español de Azul depuis 2013."
+          },
+          "images": [
+            { "src": "images/13/01.jpg", "caption": {
+              "es": "Retrato de Miguel de Cervantes Saavedra en el Teatro Español de Azul.",
+              "en": "Portrait of Miguel de Cervantes Saavedra in the Teatro Español de Azul.",
+              "pt": "Retrato de Miguel de Cervantes Saavedra no Teatro Español de Azul.",
+              "fr": "Portrait de Miguel de Cervantes Saavedra au Teatro Español de Azul." } },
+            { "src": "images/13/02.jpg", "caption": {
+              "es": "Placa de Ciudad Cervantina, en cerámica talaverana. Año 2007.",
+              "en": "Cervantine City plaque, in Talavera ceramic. 2007.",
+              "pt": "Placa de Cidade Cervantina, em cerâmica de Talavera. Ano de 2007.",
+              "fr": "Plaque de Ville cervantine, en céramique de Talavera. Année 2007." } },
+            { "src": "images/13/03.jpg", "caption": {
+              "es": "Exposición Cervantes. Año 2004.",
+              "en": "Cervantes exhibition. 2004.",
+              "pt": "Exposição Cervantes. Ano de 2004.",
+              "fr": "Exposition Cervantès. Année 2004." } },
+            { "src": "images/13/04.jpg", "caption": {
+              "es": "Exposición Cervantes. Año 2004.",
+              "en": "Cervantes exhibition. 2004.",
+              "pt": "Exposição Cervantes. Ano de 2004.",
+              "fr": "Exposition Cervantès. Année 2004." } },
+            { "src": "images/13/05.jpg", "caption": {
+              "es": "Exposición Cervantes. Año 2004.",
+              "en": "Cervantes exhibition. 2004.",
+              "pt": "Exposição Cervantes. Ano de 2004.",
+              "fr": "Exposition Cervantès. Année 2004." } },
+            { "src": "images/13/06.jpg", "caption": {
+              "es": "Exposición Cervantes. Año 2004.",
+              "en": "Cervantes exhibition. 2004.",
+              "pt": "Exposição Cervantes. Ano de 2004.",
+              "fr": "Exposition Cervantès. Année 2004." } },
+            { "src": "images/13/07.jpg", "caption": {
+              "es": "Proyecto Cervantino: Don Quixote: La Pasión tiene su nombre.",
+              "en": "Cervantine Project: Don Quixote: La Pasión tiene su nombre.",
+              "pt": "Projeto Cervantino: Don Quixote: La Pasión tiene su nombre.",
+              "fr": "Projet cervantin : Don Quixote: La Pasión tiene su nombre." } },
+            { "src": "images/13/08.jpg", "caption": {
+              "es": "Exposición del Bicentenario. Tapa del catálogo: Martín Fierro. Año 2010.",
+              "en": "Bicentennial exhibition. Catalogue cover: Martín Fierro. 2010.",
+              "pt": "Exposição do Bicentenário. Capa do catálogo: Martín Fierro. Ano de 2010.",
+              "fr": "Exposition du Bicentenaire. Couverture du catalogue : Martín Fierro. Année 2010." } },
+            { "src": "images/13/09.jpg", "caption": {
+              "es": "Crist: ¿De qué color era la Mancha?",
+              "en": "Crist: ¿De qué color era la Mancha?",
+              "pt": "Crist: ¿De qué color era la Mancha?",
+              "fr": "Crist : ¿De qué color era la Mancha?" } },
+            { "src": "images/13/10.jpg", "caption": {
+              "es": "Tapa y contratapa de El Quijotito.",
+              "en": "Front and back covers of El Quijotito.",
+              "pt": "Capa e contracapa de El Quijotito.",
+              "fr": "Première et quatrième de couverture d'El Quijotito." } },
+            { "src": "images/13/11.jpg", "caption": { "es": "", "en": "", "pt": "", "fr": "" } },
+            { "src": "images/13/12.jpg", "caption": {
+              "es": "Un Quijote para niños, ilustrado por los niños de Azul. Editorial Alfaguara.",
+              "en": "Un Quijote para niños, illustrated by the children of Azul. Alfaguara.",
+              "pt": "Un Quijote para niños, ilustrado pelas crianças de Azul. Editora Alfaguara.",
+              "fr": "Un Quijote para niños, illustré par les enfants d'Azul. Éditions Alfaguara." } },
+            { "src": "images/13/13.jpg", "caption": {
+              "es": "Mural en la ciudad de Azul.",
+              "en": "Mural in the city of Azul.",
+              "pt": "Mural na cidade de Azul.",
+              "fr": "Fresque murale dans la ville d'Azul." } },
+            { "src": "images/13/14.jpg", "caption": {
+              "es": "Don Quijote en Azul 1: actas de las I Jornadas Cervantinas Internacionales. Azul, 21 y 22 de abril de 2007.",
+              "en": "Don Quijote en Azul 1: proceedings of the 1st International Cervantine Conference. Azul, 21-22 April 2007.",
+              "pt": "Don Quijote en Azul 1: atas das I Jornadas Cervantinas Internacionais. Azul, 21 e 22 de abril de 2007.",
+              "fr": "Don Quijote en Azul 1 : actes des Ires Journées cervantines internationales. Azul, 21 et 22 avril 2007." } },
+            { "src": "images/13/15.jpg", "caption": {
+              "es": "Mural en Azul que representa el hermanamiento con Alcalá.",
+              "en": "Mural in Azul depicting the twinning with Alcalá.",
+              "pt": "Mural em Azul representando a geminação com Alcalá.",
+              "fr": "Fresque à Azul représentant le jumelage avec Alcalá." } }
+          ]
+        },
+        {
+          "id": "a14",
+          "title": {
+            "es": "Memoria activa y continuidad",
+            "en": "Active Memory & Continuity",
+            "pt": "Memória ativa e continuidade",
+            "fr": "Mémoire active et continuité"
+          },
+          "duration": "1:30",
+          "audioUrl": {
+            "es": "audios/14/14-memoria-es.mp3",
+            "en": "audios/14/14-memoria-en.mp3",
+            "pt": "audios/14/14-memoria-pt.mp3",
+            "fr": "audios/14/14-memoria-fr.mp3"
+          },
+          "text": {
+            "es": "La historia del Teatro Español es memoria en movimiento.\n\n\n\nCada generación que se sienta en estas butacas suma una capa nueva al relato.\n\n\n\nLa continuidad no se hereda, se construye todos los días con respeto por lo recibido y libertad para innovar.\n\n\n\nSi hay algo que une toda esta historia, es la voluntad colectiva.\n\n\n\nDesde sus pioneros hasta hoy, el teatro nos enseña que los sueños se sostienen con compromiso y trabajo compartido.\n\n\n\nAl recorrer estas salas, estás entrando en una historia que sigue escribiéndose función tras función.\n\n\n\nGracias por ser parte de este camino.",
+            "en": "The history of the Teatro Español is memory in motion.\n\nEvery generation that sits in these seats adds a new layer to the story.\n\nContinuity is not inherited — it is built every day, with respect for what has been received and freedom to innovate.",
+            "pt": "A história do Teatro Español é memória em movimento. Cada geração que se senta nestas poltronas acrescenta uma nova camada à narrativa. A continuidade não se herda, constrói-se todos os dias.",
+            "fr": "L'histoire du Teatro Español est une mémoire en mouvement. Chaque génération qui s'assoit dans ces fauteuils ajoute une nouvelle couche au récit. La continuité ne s'hérite pas, elle se construit chaque jour."
+          },
+          "images": [
+            { "src": "images/14/01.jpg", "caption": {
+              "es": "Utilería de El elixir de amor. Año 1996.",
+              "en": "Props from El elixir de amor. 1996.",
+              "pt": "Adereços de El elixir de amor. Ano de 1996.",
+              "fr": "Accessoires d'El elixir de amor. Année 1996." } },
+            { "src": "images/14/02.jpg", "caption": { "es": "", "en": "", "pt": "", "fr": "" } },
+            { "src": "images/14/03.jpg", "caption": {
+              "es": "Integración de coros, Teatro Colón. Año 2006.",
+              "en": "Joint choirs, Teatro Colón. 2006.",
+              "pt": "Integração de coros, Teatro Colón. Ano de 2006.",
+              "fr": "Chœurs réunis, Teatro Colón. Année 2006." } },
+            { "src": "images/14/04.jpg", "caption": {
+              "es": "Sandra Marzochini. Año 2008.",
+              "en": "Sandra Marzochini. 2008.",
+              "pt": "Sandra Marzochini. Ano de 2008.",
+              "fr": "Sandra Marzochini. Année 2008." } },
+            { "src": "images/14/05.jpg", "caption": {
+              "es": "Teatro Colón en Azul. Año 2009.",
+              "en": "The Teatro Colón in Azul. 2009.",
+              "pt": "Teatro Colón em Azul. Ano de 2009.",
+              "fr": "Le Teatro Colón à Azul. Année 2009." } }
+          ]
+        }
+      ]
+    }
+  ]
+}
